@@ -1,0 +1,126 @@
+body {
+    background-color: #212020; /* Cambiar el color de fondo de la página */
+  }
+
+  .sidebar {
+    background-color: #351357d2; /* Cambiar el color de fondo de la barra vertical */
+    width: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+.top-bar {
+    background-color: #351357d2;
+    padding: 10px;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    max-width: 50px; /* Ajusta el tamaño máximo del logo según tus necesidades */
+    margin-right: 10px;
+  }
+  
+  .store-name {
+    font-size: 27px; /* Ajusta el tamaño de la fuente del nombre de la tienda según tus necesidades */
+  }
+  
+  .other-logos {
+    display: flex;
+    align-items: center;
+  }
+  
+  .other-logo {
+    max-width: 30px; /* Ajusta el tamaño máximo de los otros logos según tus necesidades */
+    margin-left: 22px;
+  }
+  
+  .sidebar {
+    background-color: #351357d2;
+    width: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .sidebar-logos {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sidebar-logo {
+    max-width: 50px; /* Ajusta el tamaño máximo de los logos en la barra lateral según tus necesidades */
+    margin-bottom: 33px;
+  }
+
+  .product {
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+    border-radius: 10px; /* Agregar bordes redondeados a las cajas de productos */
+  overflow: hidden; /* Asegurar que el contenido no sobresalga de los bordes redondeados */
+}
+
+  
+  .product-image {
+    max-width: 50%;
+    border-radius: 10px;
+    margin-top: 10px;
+  }
+
+  .product-name {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #efe7e7; /* Cambiar el color de texto del nombre del producto */
+  font-family:'Times New Roman', Times, serif /* Cambiar el tipo de letra del nombre del producto */
+}
+  
+  .product-price {
+    margin-top: 5px;
+    font-size: 16px;
+    color: #ede9e9; /* Cambiar el color de texto del precio del producto */
+  font-family:'Times New Roman', Times, serif /* Cambiar el tipo de letra del precio del producto */
+}
+
+  
+  .product-name {
+    margin-top: 10px;
+    font-size: 18px;
+  }
+  
+  .product-price {
+    margin-top: 20px;
+    font-size: 22px;
+  }
+  
+  .corner-logo {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .store-name {
+    font-family: "Times New Roman", Times, serif; /* Cambiar el tipo de letra del nombre de la tienda en la barra superior */
+    color: #ede8e8; /* Cambiar el color del nombre de la tienda */
+  }
+  
+  /* Agregar espacio entre la barra superior y los productos */
+  .main-content {
+    margin-top: 20px;
+  }
