@@ -1,6 +1,5 @@
 <?php
-    include "include/functions/conexion.php";
-    session_start();
+    include "include/functions/conexion.php"
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +24,7 @@
         <div class="container">
             <div class="row">
                 <?php 
-                    $resultado = $conn -> query("SELECT * FROM producto");
+                    $resultado = $conn -> query("SELECT * FROM producto WHERE id_categoria = 2");
 
                     $datos = $resultado->fetch_assoc();
 
@@ -41,7 +40,8 @@
 
                         $datos = $resultado->fetch_assoc();
                     }
-                
+
+
                 ?>
             </div>
         </div>
