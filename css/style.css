@@ -80,6 +80,7 @@ body {
     overflow: hidden; /* Asegurar que el contenido no sobresalga de los bordes redondeados */
 }
 
+
   
   .product-image {
     width: 150px;
@@ -259,4 +260,101 @@ body {
   border-radius: 15px;
 
   margin-right: 8px;
+}
+
+
+/* Estilo para usuario.php
+   ========================================================================== */
+
+.login-container {
+  
+  margin-left: 200px;
+  margin-right: 100px;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+}
+
+.profile-picture {
+  width: 20rem;
+  height: 20rem;
+  border-radius: 20%;
+  margin-right: 20rem;
+  border: 5px solid #ccc;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 60%; 
+}
+
+label {
+  margin-left: 16rem;
+  padding-top: 5px;
+  margin-top: 20px;
+  color:white;
+}
+
+input {
+  
+  padding: 10px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  color:white;
+  background: rgb(73,24,140);
+  background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+  margin-left: 15rem;
+  margin-right: 15rem;
+}
+
+button {
+  background: rgb(73,24,140);
+  background: radial-gradient(circle, rgb(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+  color: #fff;
+  margin-left: 20rem;
+  margin-right: 20rem;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+.name_pag{
+  margin-top: 3rem;
+  color:white;
+  text-align: center;
+}
+.recover{
+  
+  color:white;
+  margin-right: 2rem;
+}
+
+.recover-content-pass{
+  margin-top: 3rem;
+  color:white;
+  display: flex; 
+  padding-left: 15rem;
+
+
+}
+
+.recover-content-log{
+  margin-top: 1rem;
+  color:white;
+  display: flex; 
+  padding-left: 15rem;
+
+
+}
+.redi-link{
+  color:rgb(89, 38, 162);
 }
