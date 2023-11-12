@@ -25,10 +25,10 @@
         
         
             <form action="login.php" method="post" >
-                <label for="email" >Correo Electrónico:</label>
-                    <input type="email" name="email" required>
+                <label for="email" class="sesion-label">Correo Electrónico:</label>
+                    <input type="email"  name="email" required>
 
-                    <label for="password">Contraseña:</label>
+                    <label for="password" class="sesion-label">Contraseña:</label>
                 <input type="password" name="password" required>
 
                 <button type="submit" class="btn-log">Entrar</button>

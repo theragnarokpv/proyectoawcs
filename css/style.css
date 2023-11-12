@@ -296,11 +296,11 @@ form {
   width: 60%; 
 }
 
-label {
+.sesion-label {
   margin-left: 16rem;
   padding-top: 5px;
   margin-top: 20px;
-  color:rgb(73,24,140);
+  color:white;
 }
 
 input {
