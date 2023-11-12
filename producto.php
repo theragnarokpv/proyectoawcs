@@ -33,42 +33,29 @@
                     $resultado = $conn -> query("SELECT * FROM producto WHERE id_producto= $id");
 
                     $datos = $resultado->fetch_assoc();
-            
+                    $cId = $datos['id_categoria'];
+                    $cResultado = $conn -> query("SELECT descripcion FROM categoria WHERE id_categoria= $cId");
+
+                    $cDatos = $cResultado->fetch_assoc();
             
                     
                     if(!empty($datos)){
-                       echo" <h2 class='name_pag'>Iniciar Sesión</h2>";
-                            echo"<div class='login-container'>";
-                            echo"<img src=",$datos['ruta_imagen']," alt='Foto de Perfil' class='profile-picture'>";
+                       
+                            echo"<div class='product-container'>";
+                            echo"<img src=",$datos['ruta_imagen']," alt='Foto de Perfil' class='product-picture'>";
         
-        
-                                echo"<form action='login.php' method='post' >";
-                                    echo"<label for='email' >Correo Electrónico:</label>";
-                                    echo"<input type='email' name='email' required>";
-
-                                    echo"<label for='password'>Contraseña:</label>";
-                                    echo"<input type='password' name='password' required>";
-
-                                    echo"<button type='submit'>Entrar</button>";
-                
-                                    echo"<div class='recover-content-pass'>";
-                                        echo"<h6 class='recover'>¿Olvidaste tu contraseña?</h6>";
-                                        echo"<a href='recovery.html' class='recover redi-link' >Recuperar</a>";
-                                    echo"</div>";
-                                    echo" <div class='recover-content-log'>";
-                                        echo"<h6 class='recover'>¿No tienes cuenta?</h6>";
-                                        echo"<a href='recovery.html' class='recover redi-link' >Registrarse</a>";
-                                    echo"</div>";
-            
-                                echo"</form>";
+                                echo"<div class='formula'>";
                                 
+                                    echo" <h2 class='use_pag'>",$datos['descripcion'],"</h2>";
+                                    echo" <h2 class='use_pag'>Categoria:  ",$cDatos['descripcion']," </h2>";
+                                    echo" <h2 class='use_pag'>Descripcion: ","<h6 class='com_pag'>",$datos['detalle'],"</h6>","</h2>";
+                                    echo" <h2 class='use_pag'>Precio:  ₡",$datos['precio'],"</h2>";
+
+                                    echo"<a href='include/functions/agregarCarrito.php?codigo={$datos['id_producto']}'><button class='btn_compra' ><i class='bi bi-cart-plus-fill'></i>AÑADIR</button></a>";
+                                
+                                echo"</div>";
             
                             echo"</div>";
-                
-        
-                        echo "Nombre: ",$datos['descripcion'], "<br>" ;
-                        echo "Correo: ",$datos['detalle'], "<br>";
-                        echo "Telefono: ",$datos['precio'];
                     }
             
         ?>

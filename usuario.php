@@ -31,7 +31,7 @@
                     <label for="password">Contraseña:</label>
                 <input type="password" name="password" required>
 
-                <button type="submit">Entrar</button>
+                <button type="submit" class="btn-log">Entrar</button>
                 
                 <div class="recover-content-pass">
                     <h6 class="recover">¿Olvidaste tu contraseña?</h6>

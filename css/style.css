@@ -290,12 +290,17 @@ form {
   flex-direction: column;
   width: 60%; 
 }
+.formula {
+  display: flex;
+  flex-direction: column;
+  width: 60%; 
+}
 
 label {
   margin-left: 16rem;
   padding-top: 5px;
   margin-top: 20px;
-  color:white;
+  color:rgb(73,24,140);
 }
 
 input {
@@ -311,7 +316,7 @@ input {
   margin-right: 15rem;
 }
 
-button {
+.btn-log {
   background: rgb(73,24,140);
   background: radial-gradient(circle, rgb(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
   color: #fff;
@@ -357,4 +362,40 @@ button:hover {
 }
 .redi-link{
   color:rgb(89, 38, 162);
+}
+
+
+/* Estilo para producto.php
+   ========================================================================== */
+
+.product-container{
+  
+  margin-left: 50px;
+  margin-right: 100px;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+}
+
+.product-picture {
+  width: 20rem;
+  height: 20rem;
+  border-radius: 20%;
+  margin-right: 3rem;
+  border: 5px solid #ccc;
+}
+.use_pag{
+  margin-top: 3rem;
+  color:white;
+  text-align: left;
+}
+
+.com_pag{
+  margin-left: 4rem;
+  margin-top: 1rem;
+  color:white;
+  text-align: left;
+  font-style: italic;
 }
