@@ -1,5 +1,5 @@
 <?php 
-    include "include/functions/conexion.php"
+    require_once "include/functions/conexion.php"
 ?>
 
 <!DOCTYPE html>

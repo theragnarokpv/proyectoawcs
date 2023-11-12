@@ -32,7 +32,7 @@
                     while ($datos != null){
                         echo "<div class='col-md-3'>";
                             echo "<div class='product'>";
-                                echo "<a href='#' class='product-link'><img src='{$datos['ruta_imagen']}' alt='{$datos['descripcion']}' class='product-image'></a>";
+                                echo "<a href='producto.php?codigo={$datos['id_producto']}'><img src='{$datos['ruta_imagen']}' alt='{$datos['descripcion']}' class='product-image'></a>";
                                 echo "<h3 class='product-name'>{$datos['descripcion']}</h3>";
                                 echo "<h3 class='product-price'>₡ {$datos['precio']}</h3>";
                                 echo"<a href='include/functions/agregarCarrito.php?codigo={$datos['id_producto']}'><button class='btn_compra' ><i class='bi bi-cart-plus-fill'></i>AÑADIR</button></a>";
