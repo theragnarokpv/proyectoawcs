@@ -25,7 +25,8 @@
             <div class="other-logos">
                 <a href="busqueda.html"><img src="img/buscar.png" alt="Busqueda" class="other-logo"></a>
                 <a href="carrito.php"><img src="img/carrito-de-compras (1).png" alt="Compras" class="other-logo"></a>
-                <a href="usuario.html"><img src="img/perfil-del-usuario.png" alt="Usuario" class="other-logo"></a>
+                <a href="registro.php"><img src="img/usuario_nuevo.png" alt="Usuario" class="other-logo"></a>
+                <a href="usuario.php"><img src="img/perfil-del-usuario.png" alt="Usuario" class="other-logo"></a>
             </div>
             </div>
         </div>

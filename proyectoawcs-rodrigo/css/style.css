@@ -260,3 +260,12 @@ body {
 
   margin-right: 8px;
 }
+
+#tit_form{
+  color: white;
+  font-size: 25px;
+  margin-top: 20px;
+
+  display: flex;
+  justify-content: center;
+}
