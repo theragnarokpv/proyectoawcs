@@ -25,14 +25,31 @@
         <div class="container">
             <div class="row">
                 <?php 
-                    $resultado = $conn -> query("SELECT * FROM producto");
+                    if (isset($_GET['idcat'])) {
+                        $id = $_GET['idcat'];
+
+                        $resultado = $conn -> query("SELECT * FROM producto where id_categoria = $id");
+                    } else {
+                        $resultado = $conn -> query("SELECT * FROM producto");
+                    }
 
                     $datos = $resultado->fetch_assoc();
+                    
+                    if (isset($_GET['idcat'])) {
+                        $id = $_GET['idcat'];
+
+                        $datoCat = $conn -> query("SELECT descripcion FROM categoria where id_categoria = $id");
+                        $titcat = $datoCat->fetch_assoc();
+
+                        echo "<div id='tit_carrito'>";
+                        echo    "{$titcat['descripcion']}";
+                        echo"</div>";
+                    }
 
                     while ($datos != null){
                         echo "<div class='col-md-3'>";
                             echo "<div class='product'>";
-                                echo "<a href='#' class='product-link'><img src='{$datos['ruta_imagen']}' alt='{$datos['descripcion']}' class='product-image'></a>";
+                                echo "<a href='producto.php?codigo={$datos['id_producto']}' class='product-link'><img src='{$datos['ruta_imagen']}' alt='{$datos['descripcion']}' class='product-image'></a>";
                                 echo "<h3 class='product-name'>{$datos['descripcion']}</h3>";
                                 echo "<h3 class='product-price'>₡ {$datos['precio']}</h3>";
                                 echo"<a href='include/functions/agregarCarrito.php?codigo={$datos['id_producto']}'><button class='btn_compra' ><i class='bi bi-cart-plus-fill'></i>AÑADIR</button></a>";

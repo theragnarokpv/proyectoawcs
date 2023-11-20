@@ -33,7 +33,11 @@ try {
                 $_SESSION['carrito'][$codigo] = $producto;
             }
     
-            header("Location: ../../index.php");
+                // Almacena la URL de referencia en la sesión
+                $_SESSION['referer'] = $_SERVER['HTTP_REFERER'];
+
+                // Redirige de vuelta a la página de referencia
+                header("Location: " . $_SESSION['referer']);
         } else {
             echo "Producto no encontrado.";
         }

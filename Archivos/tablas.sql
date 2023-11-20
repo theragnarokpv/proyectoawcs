@@ -35,9 +35,18 @@ create table valhalla.producto (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4;
 
+create table valhalla.rol (
+  id_rol INT NOT NULL AUTO_INCREMENT,
+  nombre varchar(20),
+  PRIMARY KEY (id_rol)
+)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4;
+
 /*Se crea la tabla de clientes*/
 CREATE TABLE valhalla.usuario (
   id_usuario INT NOT NULL AUTO_INCREMENT,
+  id_rol INT,
   username varchar(20) NOT NULL,
   password varchar(512) NOT NULL,
   nombre VARCHAR(20) NOT NULL,
@@ -45,8 +54,8 @@ CREATE TABLE valhalla.usuario (
   correo VARCHAR(25) NULL,
   telefono VARCHAR(15) NULL,
   ruta_imagen varchar(1024),
-  activo boolean,
-  PRIMARY KEY (`id_usuario`))
+  PRIMARY KEY (`id_usuario`),
+  foreign key fk_usuario_rol(id_rol) references rol(id_rol))  
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4;
 
@@ -75,21 +84,28 @@ create table valhalla.venta (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4;
 
+
+insert into valhalla.rol (id_rol, nombre) values
+ (1,'Dueño'), (2,'Administrador'), (3,'Usuario');
+
 /*Se insertan 3 registros del usuario*/
-INSERT INTO valhalla.usuario (id_usuario, username,password,nombre, apellidos, correo, telefono,ruta_imagen,activo) VALUES 
-(1,'juan','$2a$10$P1.w58XvnaYQUQgZUCk4aO/RTRl8EValluCqB3S2VMLTbRt.tlre.','Juan', 'Castro Mora',    'jcastro@gmail.com',    '4556-8978', 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Juan_Diego_Madrigal.jpg/250px-Juan_Diego_Madrigal.jpg',true),
-(2,'rebeca','$2a$10$GkEj.ZzmQa/aEfDmtLIh3udIH5fMphx/35d0EYeqZL5uzgCJ0lQRi','Rebeca',  'Contreras Mora', 'acontreras@gmail.com', '5456-8789','https://upload.wikimedia.org/wikipedia/commons/0/06/Photo_of_Rebeca_Arthur.jpg',true),
-(3,'pedro','$2a$10$koGR7eS22Pv5KdaVJKDcge04ZB53iMiw76.UjHPY.XyVYlYqXnPbO','Pedro', 'Mena Loria',     'lmena@gmail.com',      '7898-8936','https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Eduardo_de_Pedro_2019.jpg/480px-Eduardo_de_Pedro_2019.jpg?20200109230854',true);
+INSERT INTO valhalla.usuario (id_usuario, id_rol,username,password,nombre, apellidos, correo, telefono,ruta_imagen) VALUES 
+(1, 1,'juan','$2a$10$P1.w58XvnaYQUQgZUCk4aO/RTRl8EValluCqB3S2VMLTbRt.tlre.','Juan', 'Castro Mora',    'jcastro@gmail.com',    '4556-8978', 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Juan_Diego_Madrigal.jpg/250px-Juan_Diego_Madrigal.jpg'),
+(2, 2,'rebeca','$2a$10$GkEj.ZzmQa/aEfDmtLIh3udIH5fMphx/35d0EYeqZL5uzgCJ0lQRi','Rebeca',  'Contreras Mora', 'acontreras@gmail.com', '5456-8789','https://upload.wikimedia.org/wikipedia/commons/0/06/Photo_of_Rebeca_Arthur.jpg'),
+(3, 3,'pedro','$2a$10$koGR7eS22Pv5KdaVJKDcge04ZB53iMiw76.UjHPY.XyVYlYqXnPbO','Pedro', 'Mena Loria',     'lmena@gmail.com',      '7898-8936','https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Eduardo_de_Pedro_2019.jpg/480px-Eduardo_de_Pedro_2019.jpg?20200109230854');
 
 /*Se insertan 3 categorias de productos*/
-INSERT INTO valhalla.categoria (id_categoria,descripcion,ruta_imagen,activo) VALUES 
-('1','monitores', 'https://cdn.discordapp.com/attachments/1132040104370769920/1169444928707895466/vr.png?ex=65556d76&is=6542f876&hm=70ef784ac10b662fd5b438091d915d582bee0b297c1280ef7904b3728f2a5960&',   true), 
-('2','audifonos','https://cdn.discordapp.com/attachments/1132040104370769920/1169444929056030801/auriculares.png?ex=65556d76&is=6542f876&hm=152f315cb421425f71c99502354fdd1d939ccf5ede7630a05fee411e144c8219&',true),
-('3','teclados', 'https://cdn.discordapp.com/attachments/1132040104370769920/1169444929467068566/teclado.png?ex=65556d76&is=6542f876&hm=5d09eb3e357583a496bd9af24cccab233d4eedfe62614fba3b70a02478bd8582&',   true),
-('4','mouse','https://cdn.discordapp.com/attachments/1132040104370769920/1169444929714528386/raton-inalambrico.png?ex=65556d76&is=6542f876&hm=cccbf2cff1fd699b01e81588320ef7f5bac5e9fa89c87b5a89247b61fefb81ef&', true),
-('5','controles','https://cdn.discordapp.com/attachments/1132040104370769920/1169444930192687124/almohadilla-de-juego_1.png?ex=65556d76&is=6542f876&hm=a6fc47bb961debd87fd99c0814646f83cb991a217777fb75b448ad12dddefd6f&',true),
-('6','camaras','https://cdn.discordapp.com/attachments/1132040104370769920/1169444930448535673/camara.png?ex=65556d76&is=6542f876&hm=7a276ea13d00f181682552e8aa2cb8498e490cb4f45fed98543ee9eb7cfe2487&',true),
-('7','exteriores','https://cdn.discordapp.com/attachments/1132040104370769920/1169444930754715728/zumbido.png?ex=65556d76&is=6542f876&hm=dd785e41cfa728e7c48b52ac2fec10f699369070d4cf7aae97372cb489a05c63&',true);
+INSERT INTO valhalla.categoria (id_categoria,descripcion,ruta_imagen,activo) VALUES
+('1','Procesadores', 'https://cdn.discordapp.com/attachments/1132040104370769920/1173704033400258661/upc.png?ex=6564ec0f&is=6552770f&hm=b2b6282c66b76c89cfa30de8bd73765d7999880e685a999e435cebf208fdaedb&',   true),
+('2','Tarjetas de Video', 'https://cdn.discordapp.com/attachments/1132040104370769920/1173704034062958663/gpu.png?ex=6564ec10&is=65527710&hm=dee11e270d7ff1cf116cf1346b171b6472b9bb10c9db3e4cadbbc51fe387b934&',   true),
+('3','Tarjetas Madre', 'https://cdn.discordapp.com/attachments/1132040104370769920/1173704032779509905/tarjeta-madre.png?ex=6564ec0f&is=6552770f&hm=fbfbc842254adc7d14311add33c9acab53fa5ea4bdb51d0b02b6b9bdf5284bae&',   true),
+('4','Fuente de Alimentacion', 'https://cdn.discordapp.com/attachments/1132040104370769920/1173704032490094622/fuente-de-alimentacion.png?ex=6564ec0f&is=6552770f&hm=5551df6d0cf6d5000f0ee5a3575d531cd965dad516605817dcfb13de2fa15430&',   true),
+('5','Ram', 'https://cdn.discordapp.com/attachments/1132040104370769920/1173704033685479474/ram.png?ex=6564ec0f&is=6552770f&hm=88b25f6a62796bf9afdc4a26a2222217006eef9615db6a77d6bbf2f3024d6d68&',   true),
+
+('6','Monitores', 'https://cdn.discordapp.com/attachments/1132040104370769920/1169444928707895466/vr.png?ex=65556d76&is=6542f876&hm=70ef784ac10b662fd5b438091d915d582bee0b297c1280ef7904b3728f2a5960&',   true), 
+('7','Audifonos','https://cdn.discordapp.com/attachments/1132040104370769920/1169444929056030801/auriculares.png?ex=65556d76&is=6542f876&hm=152f315cb421425f71c99502354fdd1d939ccf5ede7630a05fee411e144c8219&',true),
+('8','Teclados', 'https://cdn.discordapp.com/attachments/1132040104370769920/1169444929467068566/teclado.png?ex=65556d76&is=6542f876&hm=5d09eb3e357583a496bd9af24cccab233d4eedfe62614fba3b70a02478bd8582&',   true),
+('9','Mouse','https://cdn.discordapp.com/attachments/1132040104370769920/1169444929714528386/raton-inalambrico.png?ex=65556d76&is=6542f876&hm=cccbf2cff1fd699b01e81588320ef7f5bac5e9fa89c87b5a89247b61fefb81ef&', true);
 
 
 /*Se insertan 4 productos por categoria */
@@ -155,18 +171,3 @@ INSERT INTO valhalla.venta (id_venta,id_factura,id_producto,precio,cantidad) val
 (16,3,15,330000,1),
 (17,3,12,45000,1),
 (18,3,10,15000,3);
-
-create table valhalla.rol (
-  id_rol INT NOT NULL AUTO_INCREMENT,
-  nombre varchar(20),
-  id_usuario int,
-  PRIMARY KEY (id_rol),
-  foreign key fk_rol_usuario (id_usuario) references usuario(id_usuario)
-)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8mb4;
-
-insert into valhalla.rol (id_rol, nombre, id_usuario) values
- (1,'ROLE_ADMIN',1), (2,'ROLE_VENDEDOR',1), (3,'ROLE_USER',1),
- (4,'ROLE_VENDEDOR',2), (5,'ROLE_USER',2),
- (6,'ROLE_USER',3);

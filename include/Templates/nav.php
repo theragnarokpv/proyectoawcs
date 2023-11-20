@@ -21,7 +21,7 @@
                     $datos = $resultado->fetch_assoc();
 
                     while ($datos != null){
-                        echo "<a href='{$datos['descripcion']}" . ".php'><img src='{$datos['ruta_imagen']}' alt='{$datos['descripcion']}' class='sidebar-logo'></a>";
+                        echo "<a href='index.php?idcat={$datos['id_categoria']}'><img src='{$datos['ruta_imagen']}' alt='{$datos['descripcion']}' class='sidebar-logo'></a>";
                         $datos = $resultado->fetch_assoc();
                     }
                 ?>

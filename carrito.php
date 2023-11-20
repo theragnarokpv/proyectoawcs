@@ -27,8 +27,9 @@
     <div class="container">
         <?php
             echo "<div id='datos_prod'>";
+                $total = 0;
                 if (isset($_SESSION['carrito']) && !empty($_SESSION['carrito'])) {
-                    $total = 0;
+                    
                     foreach ($_SESSION['carrito'] as $codigo => $producto) {
                         $subtotal = $producto['precio'] * $producto['cantidad'];
                          $total += $subtotal;
@@ -55,7 +56,7 @@
                     }
 
                 } else {
-                    echo "<p class='total_pagar'>El carrito está vacío.</p>";
+                    echo "<p class='total'>El carrito está vacío.</p>";
                 }
             echo "</div>";
 
@@ -76,9 +77,16 @@
                         echo "<a href='#'><button class='btn_carrito' >Limpiar historial</button></a>";
                     echo "</div>";
 
-                    echo "<div class='terminar'>";
-                        echo "<a href='#'><button class='btn_carrito' >Terminar Proceso</button></a>";
-                    echo "</div>";
+                    if (isset($_SESSION['id_usuario'])) :
+                        echo "<div class='terminar'>";
+                            echo "<a href='pago.php'><button class='btn_carrito' >Terminar Proceso</button></a>";
+                        echo "</div>";
+
+                    else :
+                        echo "<a href='inicioSesion.php' class='btn'>";
+                            echo "<a href='inicioSesion.php'><button class='btn_carrito' >Terminar Proceso</button></a>";
+                        echo "</a>";
+                    endif;
                 
                 echo "</div>";
 

@@ -1,99 +1,117 @@
 body {
-    background-color: #212020; /* Cambiar el color de fondo de la página */
-  }
-
-  .sidebar {
-    background-color: #351357d2; /* Cambiar el color de fondo de la barra vertical */
-    width: 80px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
+  background-color: #212020; /* Cambiar el color de fondo de la página */
 }
+
+
 .top-bar {
-    background-color: #351357d2;
-    padding: 10px;
-  }
-  
-  .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .logo-container {
-    display: flex;
-    align-items: center;
-  }
-  
-  .logo {
-    max-width: 50px; /* Ajusta el tamaño máximo del logo según tus necesidades */
-    margin-right: 10px;
-  }
-  
-  .store-name {
-    font-size: 27px; /* Ajusta el tamaño de la fuente del nombre de la tienda según tus necesidades */
-  }
-  
-  .other-logos {
-    display: flex;
-    align-items: center;
-  }
-  
-  .other-logo {
-    max-width: 30px; /* Ajusta el tamaño máximo de los otros logos según tus necesidades */
-    margin-left: 22px;
-  }
-  
-  .sidebar {
-    background-color: #351357d2;
-    width: 80px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .sidebar-logos {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .sidebar-logo {
-    max-width: 50px; /* Ajusta el tamaño máximo de los logos en la barra lateral según tus necesidades */
-    margin-bottom: 33px;
-  }
+  background: rgb(73,24,140);
+  background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+  padding: 10px;
+  z-index: 2;
+}
 
-  .product {
-    background: rgb(73,24,140);
-    background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-    text-align: center;
-    margin-bottom: 20px;
-    width: 250px;
-    height: 270px;
-    position: relative;
-    border-radius: 10px; /* Agregar bordes redondeados a las cajas de productos */
-    overflow: hidden; /* Asegurar que el contenido no sobresalga de los bordes redondeados */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  max-width: 50px; /* Ajusta el tamaño máximo del logo según tus necesidades */
+  margin-right: 10px;
+}
+
+.store-name {
+  font-size: 27px; /* Ajusta el tamaño de la fuente del nombre de la tienda según tus necesidades */
+}
+
+.other-logos {
+  display: flex;
+  align-items: center;
+}
+
+.other-logo {
+  max-width: 30px; /* Ajusta el tamaño máximo de los otros logos según tus necesidades */
+  margin-left: 22px;
+}
+
+#drop {
+  background: rgb(73,24,140);
+  background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%); 
+}
+
+#drop li{
+  border-bottom: white 2px solid;
+} 
+
+#drop li a:hover{
+  backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+#drop li a{
+  color: white;
+  font-size: 16px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.sidebar {
+  background: rgb(73,24,140);
+  background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+  width: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  display: flex;
+  padding-top: 120px;
+  justify-content: center;
+}
+
+.sidebar-logos {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-logo {
+  max-width: 50px; /* Ajusta el tamaño máximo de los logos en la barra lateral según tus necesidades */
+  margin-bottom: 33px;
+}
+
+.product {
+  background: rgb(73,24,140);
+  background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 250px;
+  height: 270px;
+  position: relative;
+  border-radius: 10px; /* Agregar bordes redondeados a las cajas de productos */
+  overflow: hidden; /* Asegurar que el contenido no sobresalga de los bordes redondeados */
 }
 
   
-  .product-image {
-    width: 150px;
-    height: 100px;
-    border-radius: 10px;
-    margin-top: 10px;
+.product-image {
+  width: 150px;
+  height: 100px;
+  border-radius: 10px;
+  margin-top: 10px;
 
-  }
+}
 
 .product-name {
-    margin-top: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    color: #efe7e7; /* Cambiar el color de texto del nombre del producto */
+  margin-top: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #efe7e7; /* Cambiar el color de texto del nombre del producto */
   font-family:'Times New Roman', Times, serif /* Cambiar el tipo de letra del nombre del producto */
 }
   
@@ -123,23 +141,23 @@ body {
 }
 
   
-  .corner-logo {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 30px;
-    height: 30px;
-  }
+.corner-logo {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+}
 
-  .store-name {
-    font-family: "Times New Roman", Times, serif; /* Cambiar el tipo de letra del nombre de la tienda en la barra superior */
-    color: #ede8e8; /* Cambiar el color del nombre de la tienda */
-  }
-  
-  /* Agregar espacio entre la barra superior y los productos */
-  .main-content {
-    margin-top: 20px;
-  }
+.store-name {
+  font-family: "Times New Roman", Times, serif; /* Cambiar el tipo de letra del nombre de la tienda en la barra superior */
+  color: #ede8e8; /* Cambiar el color del nombre de la tienda */
+}
+
+/* Agregar espacio entre la barra superior y los productos */
+.main-content {
+  margin-top: 20px;
+}
 
 
   /*Carrito de compras*/
@@ -260,3 +278,274 @@ body {
 
   margin-right: 8px;
 }
+
+/* Estilo para usuario.php
+   ========================================================================== */
+
+   .login-container {
+  
+    margin-left: 200px;
+    margin-right: 100px;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+  }
+  
+  .profile-picture {
+    width: 20rem;
+    height: 20rem;
+    border-radius: 20%;
+    margin-right: 20rem;
+    border: 5px solid #ccc;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 60%; 
+  }
+  .formula {
+    display: flex;
+    flex-direction: column;
+    width: 60%; 
+  }
+  
+  .sesion-label {
+    margin-left: 16rem;
+    padding-top: 5px;
+    margin-top: 20px;
+    color:white;
+  }
+  
+  .session-input {
+    
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    color:white;
+    background: rgb(73,24,140);
+    background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+    margin-left: 15rem;
+    margin-right: 15rem;
+  }
+  
+  .btn-log {
+    background: rgb(73,24,140);
+    background: radial-gradient(circle, rgb(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+    color: #fff;
+    margin-left: 20rem;
+    margin-right: 20rem;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  .name_pag{
+    margin-top: 3rem;
+    color:white;
+    text-align: center;
+  }
+  .recover{
+    
+    color:white;
+    margin-right: 2rem;
+  }
+  
+  .recover-content-pass{
+    margin-top: 3rem;
+    color:white;
+    display: flex; 
+    padding-left: 15rem;
+  
+  
+  }
+  
+  .recover-content-log{
+    margin-top: 1rem;
+    color:white;
+    display: flex; 
+    padding-left: 15rem;
+  
+  
+  }
+  .redi-link{
+    color:rgb(89, 38, 162);
+  }
+  
+  
+  /* Estilo para producto.php
+     ========================================================================== */
+  
+  .product-container{
+    
+    margin-left: 50px;
+    margin-right: 100px;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+  }
+  
+  .product-picture {
+    width: 20rem;
+    height: 20rem;
+    border-radius: 20%;
+    margin-right: 3rem;
+    border: 5px solid #ccc;
+  }
+  .use_pag{
+    margin-top: 3rem;
+    color:white;
+    text-align: left;
+  }
+  
+  .com_pag{
+    margin-left: 4rem;
+    margin-top: 1rem;
+    color:white;
+    text-align: left;
+    font-style: italic;
+  }
+
+  /* Estilo para registro.php
+    ========================================================================== */
+.container_registro{
+  margin-left: 500px;
+}
+
+.registro-label{
+  margin-left: 140px;
+  padding-top: 5px;
+  margin-top: 20px;
+  color:white;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.registro-input{
+  padding: 10px;
+  margin-left: 140px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  color:white;
+  background: rgb(73,24,140);
+  background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+}
+
+#btn_registrar{
+  background: rgb(73,24,140);
+  background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+
+  color: white;
+  font-size: 20px;
+  padding:  10px 20px 10px 20px;
+  font-weight: bold;
+  border-radius: 25px;
+}
+
+ /* Estilo para pago.php
+    ========================================================================== */
+.metodo_pago{
+  color: white;
+  margin-left: 10PX;
+  font-weight: bold;
+}
+
+/* Estilo para adminIndex.php
+    ========================================================================== */
+#titAdmin{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+  font-size: 20px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.layout {
+  display: grid;
+  
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px 8px;
+}
+
+.cuerpo_carta{
+  display: flex;
+  justify-content: center;
+}
+
+.card{
+  height: 100px;
+  width: 300px;
+  background: rgb(73,24,140);
+  background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+
+}
+
+.card a{
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+
+.card-body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* Estilo para navadmin.php
+    ========================================================================== */
+
+.admin{
+  background: rgb(73,24,140);
+  background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+  width: 150px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  display: flex;
+  padding-top: 120px;
+  justify-content: center;
+}
+
+.opciones_admin {
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+}
+
+.opciones_admin a{
+  color: white;
+  text-decoration: none;
+
+  padding-top: 25px;
+}
+
+.opciones_admin a .bi {
+  padding-right: 10px;
+}
+
+
+/* Estilo para admincategorias.php
+    ========================================================================== */
+
+  .catimg_adm img{
+    height: 80px;
+    width: 80px;
+  }
