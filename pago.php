@@ -28,7 +28,7 @@
     </div>
 
     <div class="container_registro">
-        <form action="procesarMetodoPago.php" method="post" class="form-inline row">
+        <form action="include/functions/MetodoPago.php" method="post" class="form-inline row">
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-check">
@@ -109,7 +109,7 @@
                 <div class="col-md-7">
                 </div>
                 <div class="col-md-1">
-                    <a href="pagohecho.php" class="btn btn_carrito mt-3">Confirmar</a>
+                    <button type="submit" class="btn btn_carrito mt-3">Confirmar</button>
                 </div>
             </div>
 
@@ -117,36 +117,6 @@
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var retiroSelect = document.getElementById('retiro');
-            var localOptions = document.getElementById('localOptions');
-            var domicilioOptions = document.getElementById('domicilioOptions');
-            var tarjetaOptions = document.getElementById('tarjetaOptions');
-
-            retiroSelect.addEventListener('change', function () {
-                if (retiroSelect.value === 'local') {
-                    localOptions.style.display = 'block';
-                    domicilioOptions.style.display = 'none';
-                } else if (retiroSelect.value === 'domicilio') {
-                    localOptions.style.display = 'none';
-                    domicilioOptions.style.display = 'block';
-                }
-            });
-            
-            var metodoPagoSelect = document.getElementById('metodo_pago');
-            metodoPagoSelect.addEventListener('change', function () {
-                if (metodoPagoSelect.value === 'tarjeta') {
-                    tarjetaOptions.style.display = 'block';
-                } else {
-                    tarjetaOptions.style.display = 'none';
-                }
-            });
-
-            var btnVolver = document.getElementById('btn_volver');
-            btnVolver.addEventListener('click', function () {
-                history.back();
-            });
-        });
     </script>
 
 </body>

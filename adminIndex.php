@@ -1,11 +1,13 @@
 <?php
-session_start();
+    include "include/functions/conexion.php";
+    session_start();
 
-$id_rol_usuario = $_SESSION['id_rol'] ?? null;
 
-// Verifica que se haya iniciado sesión y el rol sea menor o igual a 2
-if (isset($_SESSION['id_usuario']) && $id_rol_usuario !== null && $id_rol_usuario <= 2) {
-    // Usuario autenticado y es un administrador
+    $id_rol_usuario = $_SESSION['id_rol'] ?? null;
+
+    // Verifica que se haya iniciado sesión y el rol sea menor o igual a 2
+    if (isset($_SESSION['id_usuario']) && $id_rol_usuario !== null && $id_rol_usuario <= 2) {
+        // Usuario autenticado y es un administrador
 ?>
 
 
@@ -34,7 +36,7 @@ if (isset($_SESSION['id_usuario']) && $id_rol_usuario !== null && $id_rol_usuari
         <section class="layout">
             <div class="cuerpo_carta">
                 <div class="card">
-                    <a href="">
+                    <a href="adminpedidos.php">
                         <div class="card-body">
                             PEDIDOS
                         </div>
@@ -52,40 +54,30 @@ if (isset($_SESSION['id_usuario']) && $id_rol_usuario !== null && $id_rol_usuari
             </div>
             <div class="cuerpo_carta">
                 <div class="card">
-                    <a href="">
+                    <a href="admincategorias.php">
                         <div class="card-body">
                             CATEGORIAS
                         </div>
                     </a>
                 </div>
             </div>
-            <div class="cuerpo_carta">
-                <div class="card">
-                    <a href="">
-                        <div class="card-body">
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="cuerpo_carta">
-                <div class="card">
-                    <a href="adminusuarios.php">
-                        <div class="card-body">
-                            USUARIOS
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="cuerpo_carta">
-                <div class="card">
-                    <a href="">
-                        <div class="card-body">
-                        </div>
-                    </a>
-                </div>
-            </div>
+
+            <?php
+            // Verificar si el id_rol del usuario es igual a 3
+                if ($id_rol_usuario == 1) {
+                    echo '<div class="cuerpo_carta">';
+                        echo '<div class="card">';
+                            echo '<a href="adminusuarios.php">';
+                                echo '<div class="card-body">Usuarios</div>';
+                            echo '</a>';
+                        echo '</div>';
+                    echo '</div>';
+                }
+            ?>
         </section>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
 

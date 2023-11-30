@@ -38,13 +38,12 @@
                     </div>
                 </a>
                 <div class="other-logos">
-                    <a href="busqueda.html"><img src="img/buscar.png" alt="Busqueda" class="other-logo"></a>
                     <a href="carrito.php"><img src="img/carrito-de-compras (1).png" alt="Compras" class="other-logo"></a>
 
                     <?php if (isset($_SESSION['id_usuario'])) : ?>
                     <div class="dropdown">
                         <button class="btn dropdown-toggle" id="btn_usuario" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <a href="usuario.html"><img src="img/perfil-del-usuario.png" alt="Usuario" class="other-logo"></a>
+                            <img src="img/perfil-del-usuario.png" alt="Usuario" class="other-logo">
                         </button>
                         <ul class="dropdown-menu dropdown-menu-dark" id="drop">
                         <?php
@@ -53,7 +52,7 @@
                                 echo '<li><a class="dropdown-item" href="adminIndex.php">Administración</a></li>';
                             }
                         ?>
-                            <li><a class="dropdown-item" href="#">Perfil</a></li>
+                            <li><a class="dropdown-item" href="perfil.php">Perfil</a></li>
                             <li><a class="dropdown-item" href="pedidos.php">Pedidos</a></li>
                             <li><a class="dropdown-item" href="?cerrar_sesion=1">Cerrar sesión</a></li>
                         </ul>

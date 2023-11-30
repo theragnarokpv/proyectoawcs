@@ -20,19 +20,18 @@
         include "include/Templates/header.php";
     ?>
 
-    <div id="tit_carrito">
-        CARRITO DE COMRPRAS
+<div id="tit_carrito">
+        CARRITO DE COMPRAS
     </div>
 
     <div class="container">
-        <?php
-            echo "<div id='datos_prod'>";
+        <div id='datos_prod'>
+            <?php
                 $total = 0;
                 if (isset($_SESSION['carrito']) && !empty($_SESSION['carrito'])) {
-                    
                     foreach ($_SESSION['carrito'] as $codigo => $producto) {
                         $subtotal = $producto['precio'] * $producto['cantidad'];
-                         $total += $subtotal;
+                        $total += $subtotal;
 
                         echo "<div class='tarj_cuerpo'>";
                             echo "<div class='img_prod'>";
@@ -44,7 +43,9 @@
                                 
                                 echo "<div class='tarj_precio'>";
                                     echo "<div class='precio_prod'>₡ {$producto['precio']}</div>";
-                                    echo "<div class='cant_prod'>x {$producto['cantidad']}</div>";
+                                    echo "<div class='cant_prod'>
+                                              <input type='number' class='cantidad-input' data-codigo='{$codigo}' value='{$producto['cantidad']}' min='1' onchange='actualizarCantidad(this)'>
+                                          </div>";
                                 echo "</div>";
                             echo "</div>";
 
@@ -52,50 +53,50 @@
                                 echo "<a href='include/functions/eliminarProducto.php?codigo={$codigo}'><button type='button' class='btn btn-danger'><i class='bi bi-x-circle-fill' id='circle_x'></i></button></a>";
                             echo "</div>";
                         echo "</div>";
-
                     }
-
                 } else {
                     echo "<p class='total'>El carrito está vacío.</p>";
                 }
-            echo "</div>";
+            ?>
+        </div>
 
+        <div id='precio_total'>
+            <div id='cuadro_precio'>
+                <div id='tit_precio'>
+                    Total a pagar
+                </div>
+                <div class='total'>
+                    ₡ <span id="total"><?php echo $total; ?></span>
+                </div>
+            </div>
 
-            echo "<div id='precio_total'>";
-                echo "<div id='cuadro_precio'>";
-                    echo "<div id='tit_precio'>";
-                        echo "Total a pagar";
-                    echo "</div>";
+            <div id='btn_opciones'>
+                <div class='limpiar'>
+                    <a href='#'><button class='btn_carrito'>Limpiar historial</button></a>
+                </div>
 
-                    echo "<div class='total'>";
-                        echo "₡ $total";
-                    echo "</div>";
-                echo "</div>";
-
-                echo "<div id='btn_opciones'>";
-                    echo "<div class='limpiar>";
-                        echo "<a href='#'><button class='btn_carrito' >Limpiar historial</button></a>";
-                    echo "</div>";
-
+                <?php
                     if (isset($_SESSION['id_usuario'])) :
-                        echo "<div class='terminar'>";
-                            echo "<a href='pago.php'><button class='btn_carrito' >Terminar Proceso</button></a>";
-                        echo "</div>";
-
+                ?>
+                    <div class='terminar'>
+                        <a href='pago.php'><button class='btn_carrito'>Terminar Proceso</button></a>
+                    </div>
+                <?php
                     else :
-                        echo "<a href='inicioSesion.php' class='btn'>";
-                            echo "<a href='inicioSesion.php'><button class='btn_carrito' >Terminar Proceso</button></a>";
-                        echo "</a>";
+                ?>
+                    <a href='inicioSesion.php' class='btn'>
+                        <a href='inicioSesion.php'><button class='btn_carrito'>Terminar Proceso</button></a>
+                    </a>
+                <?php
                     endif;
-                
-                echo "</div>";
-
-            echo "</div>";
-        ?>
-
+                ?>
+            </div>
+        </div>
     </div>
-    
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="js/jquery-3.7.1.js"></script>
+    <script src="js/jquery-ui-1.12.1/jquery-ui.js"></script>
+    <script src="js/pago.js"></script>
 </body>
 </html>

@@ -49,8 +49,8 @@ CREATE TABLE valhalla.usuario (
   id_rol INT,
   username varchar(20) NOT NULL,
   password varchar(512) NOT NULL,
-  nombre VARCHAR(20) NOT NULL,
-  apellidos VARCHAR(30) NOT NULL,
+  nombre VARCHAR(20) NULL,
+  apellidos VARCHAR(30) NULL,
   correo VARCHAR(25) NULL,
   telefono VARCHAR(15) NULL,
   ruta_imagen varchar(1024),
@@ -59,30 +59,33 @@ CREATE TABLE valhalla.usuario (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4;
 
-create table valhalla.factura (
-  id_factura INT NOT NULL AUTO_INCREMENT,
-  id_usuario INT NOT NULL,
-  fecha date,  
-  total double,
-  estado int,
-  PRIMARY KEY (id_factura),
-  foreign key fk_factura_usuario (id_usuario) references usuario(id_usuario)  
-)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8mb4;
 
-create table valhalla.venta (
-  id_venta INT NOT NULL AUTO_INCREMENT,
-  id_factura INT NOT NULL,
+CREATE TABLE valhalla.compra (
+  id_compra INT NOT NULL AUTO_INCREMENT,
+  id_usuario INT NOT NULL,
+  fecha_compra TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  total_pagar DOUBLE NOT NULL,
+  metodo_entrega ENUM('local', 'domicilio') NOT NULL,
+  tienda VARCHAR(50),  -- Usada si el método de entrega es 'local'
+  provincia VARCHAR(50),  -- Usada si el método de entrega es 'domicilio'
+  canton VARCHAR(50),  -- Usada si el método de entrega es 'domicilio'
+  distrito VARCHAR(50),  -- Usada si el método de entrega es 'domicilio'
+  datos_adicionales TEXT,  -- Usada si el método de entrega es 'domicilio'
+  PRIMARY KEY (id_compra),
+  FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE valhalla.detalle_compra (
+  id_detalle INT NOT NULL AUTO_INCREMENT,
+  id_compra INT NOT NULL,
   id_producto INT NOT NULL,
-  precio double, 
-  cantidad int,
-  PRIMARY KEY (id_venta),
-  foreign key fk_ventas_factura (id_factura) references factura(id_factura),
-  foreign key fk_ventas_producto (id_producto) references producto(id_producto) 
-)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8mb4;
+  cantidad INT NOT NULL,
+  precio_unitario DOUBLE NOT NULL,
+  subtotal DOUBLE NOT NULL,
+  PRIMARY KEY (id_detalle),
+  FOREIGN KEY (id_compra) REFERENCES compra(id_compra),
+  FOREIGN KEY (id_producto) REFERENCES producto(id_producto)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
 insert into valhalla.rol (id_rol, nombre) values
@@ -144,30 +147,3 @@ INSERT INTO valhalla.producto (id_producto,id_categoria,descripcion,detalle,prec
 (32,7,'Dron Holy','Lorem ipsum dolor sit amet consectetur adipiscing elit iaculis, ullamcorper in fringilla eu cras tempor mi. Luctus blandit sapien mauris vestibulum consequat mattis taciti aliquam ullamcorper, sagittis suscipit etiam urna convallis interdum tempor bibendum, ultricies habitant viverra natoque dictum posuere senectus volutpat. Cum ad vehicula condimentum nunc lacus nec tellus eleifend, a platea curae nullam sollicitudin nibh class cursus taciti, posuere purus inceptos facilisis cubilia suspendisse ut.',89000,3,'https://cdn.pacifiko.com/image/cache/catalog/p/MzFhMThhZD-484x484.jpg',true);
 
 /*Se crean 6 facturas */   /*'Activa','Pagada','Anulada')*/
-INSERT INTO valhalla.factura (id_factura,id_usuario,fecha,total,estado) VALUES
-(1,1,'2022-01-05',211560,2),
-(2,2,'2022-01-07',554340,2),
-(3,3,'2022-01-07',871000,2),
-(4,1,'2022-01-15',244140,1),
-(5,2,'2022-01-17',414800,1),
-(6,3,'2022-01-21',420000,1);
-
-INSERT INTO valhalla.venta (id_venta,id_factura,id_producto,precio,cantidad) values
-(1,1,5,45000,3),
-(2,1,9,15780,2),
-(3,1,10,15000,3),
-(4,2,5,45000,1),
-(5,2,14,154000,3),
-(6,2,9,15780,3),
-(7,3,14,154000,1),
-(8,3,6,57000,1),
-(9,3,15,330000,2),
-(10,1,6,57000,2),
-(11,1,8,27600,3),
-(12,1,9,15780,3),
-(13,2,8,27600,3),
-(14,2,14,154000,2),
-(15,2,3,24000,1),
-(16,3,15,330000,1),
-(17,3,12,45000,1),
-(18,3,10,15000,3);

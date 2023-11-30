@@ -11,10 +11,15 @@
 <body>
         <div class="admin">
             <div class="opciones_admin">
-                <a href=''><i class="bi bi-backpack4-fill"></i> Pedidos</a>
+                <a href='adminpedidos.php'><i class="bi bi-backpack4-fill"></i> Pedidos</a>
                 <a href='adminproductos.php'><i class="bi bi-box2-fill"></i> Productos</a>
                 <a href='admincategorias.php'><i class="bi bi-bookmark-fill"></i> Categorias</a>
-                <a href="adminusuarios.php"><i class="bi bi-people-fill"></i>Usuarios</a>
+                <?php
+                // Verificar si el id_rol del usuario es igual a 3
+                    if ($id_rol_usuario == 1) {
+                        echo '<a href="adminusuarios.php"><i class="bi bi-people-fill"></i>Usuarios</a>';
+                    }
+                ?>
             </div>
         </div>
     </header>    

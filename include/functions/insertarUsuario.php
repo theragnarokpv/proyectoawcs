@@ -14,7 +14,7 @@
         // Puedes asignar un valor predeterminado para otros campos si es necesario
 
         // Insertar datos en la tabla de usuarios
-        $sql = "INSERT INTO valhalla.usuario (id_rol, username, password, nombre, apellidos, correo, telefono)
+        $sql = "INSERT INTO usuario (id_rol, username, password, nombre, apellidos, correo, telefono)
                 VALUES ($id_rol, '$usuario', '$contrasena', '$nombre', '$apellidos', '$correo', '$telefono')";
 
         $stmt = $conn->prepare($sql);
@@ -30,10 +30,7 @@
         }
 
 
-        // Almacena la URL de referencia en la sesión
-        $_SESSION['referer'] = $_SERVER['HTTP_REFERER'];
-
         // Redirige de vuelta a la página de referencia
-        header("Location: " . $_SESSION['referer']);
+        header("Location: ../../iniciosesion.php");
     }
 ?>

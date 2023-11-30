@@ -34,7 +34,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-label registro-label">Usuario:</div>
-                    <input type="text" class="form-control registro-input" id="usuario" name="usuario" style="width:350px;" required>
+                    <input type="text" class="form-control registro-input" id="usuario_registro" name="usuario" style="width:350px;" required>
                 </div>
                 <div class="col-md-6">
                 <div class="form-label registro-label">Nombre:</div>

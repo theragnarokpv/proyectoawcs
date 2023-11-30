@@ -47,43 +47,62 @@
                 echo "<div class='row'>";
                     echo "<div class='col-md-6 justify-content-center' id='avatar_usuario'>";
                         echo "<img src='{$datos['ruta_imagen']}' alt='' class='profile-img'>";
-                        echo "<div class='datosperfil' id='usuario'> {$datos['username']}</div>";
+                        echo "<input type='text' class='perfil-input' id='input-usuario' name='username' value='{$datos['username']}' required>";
                     echo "</div>";
                     echo "<div class='col-md-6'>";
                     echo "</div>";
-                echo "</div";
+                echo "</div>";
 
                 echo "<div class='row'>";
                     echo "<div class='col-md-2'></div>";
                     echo "<div class='col-md-4 text-center'>";
                         echo "<div class='tituloperfil'>Nombre:</div>";
-                        echo "<div class='datosperfil'> {$datos['nombre']}</div>";
+                        echo "<input type='text' class='perfil-input' id='input-nombre' name='nombre' value='{$datos['nombre']}' required>";
                     echo "</div>";
                     echo "<div class='col-md-4 text-center'>";
                         echo "<div class='tituloperfil'>Apellidos:</div>";
-                        echo "<div class='datosperfil'> {$datos['apellidos']} </div>";
+                        echo "<input type='text' class='perfil-input' id='input-apellidos' name='apellidos' value='{$datos['apellidos']}' required>";
                     echo "</div>";
                     echo "<div class='col-md-2'></div>";
-                echo "</div";
+                echo "</div>";
 
                 echo "<div class='row'>";
                     echo "<div class='col-md-2'></div>";
                     echo "<div class='col-md-4 text-center'>";
-                        echo "<div class='tituloperfil'>Telefono:</div>";
-                        echo "<div class='datosperfil'> {$datos['telefono']} </div>";
+                        echo "<div class='tituloperfil'>telefono:</div>";
+                        echo "<input type='text' class='perfil-input' id='input-telefono' name='telefono' value='{$datos['telefono']}' >";
                     echo "</div>";
                     echo "<div class='col-md-4 text-center'>";
                         echo "<div class='tituloperfil'>Correo Electronico:</div>";
-                        echo "<div class='datosperfil'> {$datos['correo']} </div>";
+                        echo "<input type='text' class='perfil-input' id='input-correo' name='correo' value='{$datos['correo']}' required>";
                     echo "</div>";
                     echo "<div class='col-md-2'></div>";
-                echo "</div";
+                echo "</div>";
 
                 echo "<div class='row'>";
-                    echo "<div class='col-md-12 text-center'>";
-                        echo "<a href='editarperfil.php' class='btn btn_carrito mt-3'>Editar</a>";
-                    echo"</div>";
-                echo "</div";
+                    echo "<div class='col-md-2'></div>";
+                    echo "<div class='col-md-4 text-center'>";
+                        echo "<div class='tituloperfil'>Contraseña Anterior:</div>";
+                        echo "<input type='text' class='perfil-input' id='input-viejacontra' name='viejacontra'  required>";
+                    echo "</div>";
+                    echo "<div class='col-md-4 text-center'>";
+                        echo "<div class='tituloperfil'>Nueva Contraseña:</div>";
+                        echo "<input type='text' class='perfil-input' id='input-nuevacontra' name='nuevacontra' required>";
+                    echo "</div>";
+                    echo "<div class='col-md-2'></div>";
+                echo "</div>";
+
+                echo "<div class='row'>";
+                    echo "<div class='col-md-2'></div>";
+                    echo "<div class='col-md-4 text-center'>";
+                        echo "<div class='tituloperfil'>Confirmar Nueva Contraseña:</div>";
+                        echo "<input type='text' class='perfil-input' id='input-nueva_contra' name='nueva_contra'  required>";
+                    echo "</div>";
+                    echo "<div class='col-md-4 text-center'>";
+                        echo "<a href='editarperfil.php' id='btn_confirmar' class='btn btn_carrito'>Confirmar</a>";
+                    echo "</div>";
+                    echo "<div class='col-md-2'></div>";
+                echo "</div>";
             ?>
             </div>
         </div>

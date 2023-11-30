@@ -98,7 +98,27 @@ body {
   overflow: hidden; /* Asegurar que el contenido no sobresalga de los bordes redondeados */
 }
 
-  
+.btn-mas{
+  position: fixed;
+  display: flex;
+  justify-content: end;
+
+  bottom: 20px;
+  right: 80px;
+
+  width: 60px;
+  height: 60px;
+
+  background: rgb(73,24,140);
+  background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+  border-radius: 100%;
+}
+
+#boton_buscar img{
+  right: 80px;
+}
+
+
 .product-image {
   width: 150px;
   height: 100px;
@@ -207,13 +227,21 @@ body {
 }
 
 .cant_prod{
-  margin-left: 100px;
+  margin-left: 80px;
   display: flex;
+
+  height: 30px;
+  width: 30px;
+}
+
+.cant_prod input{
+  width: 50px;
 }
 
 #cant_prod_e{
   margin-left: 10px;
   width: 35px;
+  
 }
 
 
@@ -278,6 +306,7 @@ body {
 
   margin-right: 8px;
 }
+
 
 /* Estilo para usuario.php
    ========================================================================== */
@@ -478,7 +507,7 @@ body {
   display: grid;
   
   grid-template-rows: repeat(2, 1fr);
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 50px 8px;
 }
 
@@ -543,9 +572,107 @@ body {
 
 
 /* Estilo para admincategorias.php
-    ========================================================================== */
+  ========================================================================== */
 
-  .catimg_adm img{
-    height: 80px;
-    width: 80px;
+.catimg_adm img{
+  height: 80px;
+  width: 80px;
+}
+
+/* Estilo para adminproductos.php
+  ========================================================================== */
+
+  #boton_agregar{
+    margin-bottom: 35px;
+  }
+
+/* Estilo para perfil.php
+  ========================================================================== */
+
+  .tituloperfil, .datosperfil{
+    color: white;
+  }
+
+  .tituloperfil{
+    margin-top: 80px;
+    font-size: 22px;
+    font-weight: bold;
+  } 
+
+  .datosperfil{
+    
+    font-size: 18px;
+  }
+
+  .profile-img {
+    max-width: 500px;
+    max-height: 170px;
+    margin-bottom: 20px;
+  }
+
+  #avatar_usuario{
+    display: flex;
+  }
+
+  #usuario{
+    margin-top: 70px;
+    margin-left: 30px;
+    font-size: 30px;
+  }
+
+  #tit{
+    color: white;
+    font-size: 25px;
+  }
+
+  .perfil-input{
+    height: 40px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    color:white;
+    background: rgb(73,24,140);
+    background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+    
+  }
+
+  #input-usuario{
+    margin-top: 70px;
+    margin-left: 30px;
+  }
+
+  #btn_confirmar{
+    margin-top: 80px;
+  }
+
+  /* Estilo para pedido.php
+  ========================================================================== */
+  /* Agrega estilos específicos aquí */
+  #pedidos-container {
+    display: flex;
+    flex-direction: column;/* Ajusta la altura al 100% de la ventana */
+  }
+
+  #titulo-pedidos {
+      color: white;
+  }
+
+  .pedido_productos{
+    margin-left: 25px;
+    width: 500px;
+  }
+
+  .pedido-box {
+    background: rgb(73, 24, 140);
+    background: radial-gradient(circle, rgba(73, 24, 140, 1) 0%, rgba(21, 2, 62, 1) 57%);
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+    margin-top: 20px;
+    margin-left: 80px;
+    width: 750px;
+    border-radius: 15px;
+    text-align: center;
+
+    display: flex;
   }
