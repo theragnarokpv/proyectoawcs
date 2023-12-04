@@ -10,118 +10,344 @@ body {
     left: 0;
     height: 100%;
 }
-.top-bar {
-    background-color: #351357d2;
-    padding: 10px;
+
+/*adaptar*/
+@media screen and (max-width: 599px) {
+  body {
+    font-size: 10px; /* Modifica el tamaño de fuente en pantallas pequeñas hacia abajo */
   }
-  
-  .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .logo-container {
-    display: flex;
-    align-items: center;
-  }
-  
-  .logo {
-    max-width: 50px; /* Ajusta el tamaño máximo del logo según tus necesidades */
-    margin-right: 10px;
-  }
-  
-  .store-name {
-    font-size: 27px; /* Ajusta el tamaño de la fuente del nombre de la tienda según tus necesidades */
-  }
-  
-  .other-logos {
-    display: flex;
-    align-items: center;
-  }
-  
-  .other-logo {
-    max-width: 30px; /* Ajusta el tamaño máximo de los otros logos según tus necesidades */
-    margin-left: 22px;
-  }
-  
   .sidebar {
-    background-color: #351357d2;
-    width: 80px;
+    background: rgb(73,24,140);
+    background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+    width: 3rem;
     position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
     display: flex;
-    align-items: center;
+    padding-top: 8rem;
     justify-content: center;
+    z-index: -1;
   }
-  
-  .sidebar-logos {
-    display: flex;
-    flex-direction: column;
-  }
-  
   .sidebar-logo {
-    max-width: 50px; /* Ajusta el tamaño máximo de los logos en la barra lateral según tus necesidades */
-    margin-bottom: 33px;
+    max-width: 2rem; /* Ajusta el tamaño máximo de los logos en la barra lateral según tus necesidades */
+    margin-bottom: 1rem;
+  }
+
+  .top-bar {
+    position: fixed;
+    background: rgb(73,24,140);
+    background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+    padding-top: 1rem;
+    width: 100%;
+    top: 0;
+
+    z-index: 2;
+  
+  }
+  .logo {
+    max-width: 2rem; /* Ajusta el tamaño máximo del logo según tus necesidades */
+    margin-right: 1rem;
+  }
+  
+  .store-name {
+    font-size: 17px; /* Ajusta el tamaño de la fuente del nombre de la tienda según tus necesidades */
+  }
+  .other-logo {
+    max-width: 1.5rem; /* Ajusta el tamaño máximo de los otros logos según tus necesidades */
+    margin-left: 0.2rem;
   }
 
   .product {
     background: rgb(73,24,140);
     background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
-
-    text-align: center;
-    margin-bottom: 20px;
-    width: 250px;
-    height: 270px;
-    position: relative;
-    border-radius: 10px; /* Agregar bordes redondeados a las cajas de productos */
-    overflow: hidden; /* Asegurar que el contenido no sobresalga de los bordes redondeados */
-}
-
-
   
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 6rem;
+    height: 9rem;
+    position: relative;
+    border-radius: 1rem; /* Agregar bordes redondeados a las cajas de productos */
+    overflow: hidden; /* Asegurar que el contenido no sobresalga de los bordes redondeados */
+  }
   .product-image {
-    width: 150px;
-    height: 100px;
+    width: 3.5rem;
+    height: 2.5rem;
     border-radius: 10px;
     margin-top: 10px;
+  
+  }
+  
+  .product-name {
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #efe7e7; /* Cambiar el color de texto del nombre del producto */
+    font-family:'Times New Roman', Times, serif /* Cambiar el tipo de letra del nombre del producto */
+  }
+    
+  .product-price {
+    margin-top: 5px;
+    margin-bottom: 15px;
+    font-size: 9px;
+    font-weight: bold;
+    color: #ede9e9; /* Cambiar el color de texto del precio del producto */
+    font-family:'Times New Roman', Times, serif /* Cambiar el tipo de letra del precio del producto */
+  }
+  .btn_compra{
+    background: rgb(47,217,210);
+    background: radial-gradient(circle, rgba(47,217,210,1) 64%, rgba(237,237,237,1) 100%);
+  
+    color: black;
+    font-size: 20px;
+    padding: 20px, 10px, 20px, 10px;
+    font-weight: bold;
+    border-radius: 13px;
+    width: 4rem;
+    height: 1.5rem;
+  
+  }
+
+  .bi{
+    font-size: 0.5rem;
 
   }
 
-.product-name {
+  .btn-mas{
+    position: absolute;
+    display: flex;
+    justify-content: end;
+
+  
+    width: 50px;
+    height: 50px;
+  
+    background: rgb(73,24,140);
+    background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+    border-radius: 100%;
+  }
+
+  
+
+}
+
+
+
+
+
+@media screen and (min-width: 600px) {
+  body {
+    font-size: 20px; /* Modifica el tamaño de fuente en pantallas pequeñas hacia abajo */
+  }
+  .sidebar {
+    background: rgb(73,24,140);
+    background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+    width: 4rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    display: flex;
+    padding-top: 9rem;
+    justify-content: center;
+    z-index: -1;
+  }
+  .sidebar-logo {
+    max-width: 3rem; /* Ajusta el tamaño máximo de los logos en la barra lateral según tus necesidades */
+    margin-top: 2.5rem;
+  }
+
+  .top-bar {
+    position: fixed;
+    background: rgb(73,24,140);
+    background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+    padding-top: 1rem;
+    width: 100%;
+    top: 0;
+
+    z-index: 2;
+  
+  }
+  .logo {
+    max-width: 5rem; /* Ajusta el tamaño máximo del logo según tus necesidades */
+    margin-right: 2rem;
+  }
+  
+  .store-name {
+    font-size: 27px; /* Ajusta el tamaño de la fuente del nombre de la tienda según tus necesidades */
+  }
+
+  .other-logo {
+    max-width: 2rem; /* Ajusta el tamaño máximo de los otros logos según tus necesidades */
+    margin-left: 1.5rem;
+  }
+
+  .product {
+    background: rgb(73,24,140);
+    background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+  
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 10rem;
+    height: 17rem;
+    position: relative;
+    border-radius: 1rem; /* Agregar bordes redondeados a las cajas de productos */
+    overflow: hidden; /* Asegurar que el contenido no sobresalga de los bordes redondeados */
+  }
+
+  .product-image {
+    width: 8rem;
+    height: 5rem;
+    border-radius: 10px;
+    margin-top: 10px;
+  
+  }
+  
+  .product-name {
     margin-top: 10px;
     font-size: 24px;
     font-weight: bold;
     color: #efe7e7; /* Cambiar el color de texto del nombre del producto */
-  font-family:'Times New Roman', Times, serif /* Cambiar el tipo de letra del nombre del producto */
-}
+    font-family:'Times New Roman', Times, serif /* Cambiar el tipo de letra del nombre del producto */
+  }
+    
+  .product-price {
+    margin-top: 5px;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ede9e9; /* Cambiar el color de texto del precio del producto */
+    font-family:'Times New Roman', Times, serif /* Cambiar el tipo de letra del precio del producto */
+  }
+
+  .btn_compra{
+    background: rgb(47,217,210);
+    background: radial-gradient(circle, rgba(47,217,210,1) 64%, rgba(237,237,237,1) 100%);
   
-.product-price {
-  margin-top: 5px;
-  margin-bottom: 15px;
-  font-size: 18px;
-  font-weight: bold;
-  color: #ede9e9; /* Cambiar el color de texto del precio del producto */
-  font-family:'Times New Roman', Times, serif /* Cambiar el tipo de letra del precio del producto */
+    color: black;
+    font-size: 40px;
+    padding: 20px, 10px, 20px, 10px;
+    font-weight: bold;
+    border-radius: 13px;
+    width: 7rem;
+    height: 3rem;
+  
+  }
+
+  .bi{
+    font-size: 1rem;
+
+  }
+
+
+  .btn-mas{
+    position: fixed;
+    display: flex;
+    justify-content: end;
+  
+    width: 60px;
+    height: 60px;
+  
+    background: rgb(73,24,140);
+    background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+    border-radius: 100%;
+  }
 }
 
-.btn_compra{
-  background: rgb(47,217,210);
-  background: radial-gradient(circle, rgba(47,217,210,1) 64%, rgba(237,237,237,1) 100%);
+@media screen and (min-width: 1061px) {
+  .btn-mas{
+    position: fixed;
+    display: flex;
+    justify-content: end;
 
-  color: black;
-  font-size: 20px;
-  padding:  10px 20px 10px 20px;
-  font-weight: bold;
-  border-radius: 25px;
+    top: 38rem;
+    left: 80rem;
+  
+    width: 60px;
+    height: 60px;
+  
+    background: rgb(73,24,140);
+    background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+    border-radius: 100%;
+  }
+  
+}
+
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-container {
+
+  display: flex;
+  align-items: center;
 
 }
+
+.indice{
+  padding-left: 1rem;
+}
+
+
+
+.other-logos {
+  display: flex;
+  align-items: center;
+}
+
+
+
+#drop {
+  background: rgb(73,24,140);
+  background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%); 
+}
+
+#drop li{
+  border-bottom: white 2px solid;
+} 
+
+#drop li a:hover{
+  backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+
+
+
+
+.sidebar-logos {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.aco{
+  padding-left: 4rem;
+}
+
+
+
+
+
+#boton_buscar img{
+  right: 80px;
+}
+
+
+
 
 .bi-cart-plus-fill {
   margin-right: 5px;
+
 }
+
 
   
   .corner-logo {
@@ -368,15 +594,17 @@ button:hover {
 /* Estilo para producto.php
    ========================================================================== */
 
-.product-container{
-  
-  margin-left: 50px;
-  margin-right: 100px;
-  border-radius: 8px;
-  padding: 20px;
-  display: flex; 
-  align-items: center; 
-  justify-content: space-between; 
+.admin{
+  background: rgb(73,24,140);
+  background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+  width: 150px;
+  position: fixed;
+  top: auto;
+  left: 0;
+  height: 100vh;
+  display: flex;
+  padding-top: 120px;
+  justify-content: center;
 }
 
 .product-picture {
