@@ -2,86 +2,60 @@ body {
   background-color: #212020; /* Cambiar el color de fondo de la página */
 }
 
-
-.top-bar {
-  background: rgb(73,24,140);
-  background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
-  padding: 10px;
-  z-index: 2;
+.sidebar {
+  background-color: #351357d2; /* Cambiar el color de fondo de la barra vertical */
+  width: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
 }
 
-.container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/*adaptar*/
+@media screen and (max-width: 599px) {
+body {
+  font-size: 10px; /* Modifica el tamaño de fuente en pantallas pequeñas hacia abajo */
 }
-
-.logo-container {
-  display: flex;
-  align-items: center;
-}
-
-.logo {
-  max-width: 50px; /* Ajusta el tamaño máximo del logo según tus necesidades */
-  margin-right: 10px;
-}
-
-.store-name {
-  font-size: 27px; /* Ajusta el tamaño de la fuente del nombre de la tienda según tus necesidades */
-}
-
-.other-logos {
-  display: flex;
-  align-items: center;
-}
-
-.other-logo {
-  max-width: 30px; /* Ajusta el tamaño máximo de los otros logos según tus necesidades */
-  margin-left: 22px;
-}
-
-#drop {
-  background: rgb(73,24,140);
-  background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%); 
-}
-
-#drop li{
-  border-bottom: white 2px solid;
-} 
-
-#drop li a:hover{
-  backdrop-filter: blur(5px);
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-
-#drop li a{
-  color: white;
-  font-size: 16px;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-
 .sidebar {
   background: rgb(73,24,140);
   background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
-  width: 80px;
+  width: 3rem;
   position: fixed;
   top: 0;
   left: 0;
   height: 100vh;
   display: flex;
-  padding-top: 120px;
+  padding-top: 8rem;
   justify-content: center;
+  z-index: -1;
 }
-
-.sidebar-logos {
-  display: flex;
-  flex-direction: column;
-}
-
 .sidebar-logo {
-  max-width: 50px; /* Ajusta el tamaño máximo de los logos en la barra lateral según tus necesidades */
-  margin-bottom: 33px;
+  max-width: 2rem; /* Ajusta el tamaño máximo de los logos en la barra lateral según tus necesidades */
+  margin-bottom: 1rem;
+}
+
+.top-bar {
+  position: fixed;
+  background: rgb(73,24,140);
+  background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+  padding-top: 1rem;
+  width: 100%;
+  top: 0;
+
+  z-index: 2;
+
+}
+.logo {
+  max-width: 2rem; /* Ajusta el tamaño máximo del logo según tus necesidades */
+  margin-right: 1rem;
+}
+
+.store-name {
+  font-size: 17px; /* Ajusta el tamaño de la fuente del nombre de la tienda según tus necesidades */
+}
+.other-logo {
+  max-width: 1.5rem; /* Ajusta el tamaño máximo de los otros logos según tus necesidades */
+  margin-left: 0.2rem;
 }
 
 .product {
@@ -89,39 +63,143 @@ body {
   background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
 
   text-align: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  width: 250px;
-  height: 270px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 6rem;
+  height: 9rem;
   position: relative;
-  border-radius: 10px; /* Agregar bordes redondeados a las cajas de productos */
+  border-radius: 1rem; /* Agregar bordes redondeados a las cajas de productos */
   overflow: hidden; /* Asegurar que el contenido no sobresalga de los bordes redondeados */
+}
+.product-image {
+  width: 3.5rem;
+  height: 2.5rem;
+  border-radius: 10px;
+  margin-top: 10px;
+
+}
+
+.product-name {
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #efe7e7; /* Cambiar el color de texto del nombre del producto */
+  font-family:'Times New Roman', Times, serif /* Cambiar el tipo de letra del nombre del producto */
+}
+  
+.product-price {
+  margin-top: 5px;
+  margin-bottom: 15px;
+  font-size: 9px;
+  font-weight: bold;
+  color: #ede9e9; /* Cambiar el color de texto del precio del producto */
+  font-family:'Times New Roman', Times, serif /* Cambiar el tipo de letra del precio del producto */
+}
+.btn_compra{
+  background: rgb(47,217,210);
+  background: radial-gradient(circle, rgba(47,217,210,1) 64%, rgba(237,237,237,1) 100%);
+
+  color: black;
+  font-size: 20px;
+  padding: 20px, 10px, 20px, 10px;
+  font-weight: bold;
+  border-radius: 13px;
+  width: 4rem;
+  height: 1.5rem;
+
+}
+
+.bi{
+  font-size: 0.5rem;
+
 }
 
 .btn-mas{
-  position: fixed;
+  position: absolute;
   display: flex;
   justify-content: end;
 
-  bottom: 20px;
-  right: 80px;
 
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
 
   background: rgb(73,24,140);
   background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
   border-radius: 100%;
 }
 
-#boton_buscar img{
-  right: 80px;
+
+
 }
 
 
+
+
+
+@media screen and (min-width: 600px) {
+body {
+  font-size: 20px; /* Modifica el tamaño de fuente en pantallas pequeñas hacia abajo */
+}
+.sidebar {
+  background: rgb(73,24,140);
+  background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+  width: 4rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  display: flex;
+  padding-top: 9rem;
+  justify-content: center;
+  z-index: -1;
+}
+.sidebar-logo {
+  max-width: 3rem; /* Ajusta el tamaño máximo de los logos en la barra lateral según tus necesidades */
+  margin-top: 2.5rem;
+}
+
+.top-bar {
+  position: fixed;
+  background: rgb(73,24,140);
+  background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+  padding-top: 1rem;
+  width: 100%;
+  top: 0;
+
+  z-index: 2;
+
+}
+.logo {
+  max-width: 5rem; /* Ajusta el tamaño máximo del logo según tus necesidades */
+  margin-right: 2rem;
+}
+
+.store-name {
+  font-size: 27px; /* Ajusta el tamaño de la fuente del nombre de la tienda según tus necesidades */
+}
+
+.other-logo {
+  max-width: 2rem; /* Ajusta el tamaño máximo de los otros logos según tus necesidades */
+  margin-left: 1.5rem;
+}
+
+.product {
+  background: rgb(73,24,140);
+  background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  width: 10rem;
+  height: 17rem;
+  position: relative;
+  border-radius: 1rem; /* Agregar bordes redondeados a las cajas de productos */
+  overflow: hidden; /* Asegurar que el contenido no sobresalga de los bordes redondeados */
+}
+
 .product-image {
-  width: 150px;
-  height: 100px;
+  width: 8rem;
+  height: 5rem;
   border-radius: 10px;
   margin-top: 10px;
 
@@ -149,18 +227,129 @@ body {
   background: radial-gradient(circle, rgba(47,217,210,1) 64%, rgba(237,237,237,1) 100%);
 
   color: black;
-  font-size: 20px;
-  padding:  10px 20px 10px 20px;
+  font-size: 40px;
+  padding: 20px, 10px, 20px, 10px;
   font-weight: bold;
-  border-radius: 25px;
+  border-radius: 13px;
+  width: 7rem;
+  height: 3rem;
 
 }
+
+.bi{
+  font-size: 1rem;
+
+}
+
+
+.btn-mas{
+  position: fixed;
+  display: flex;
+  justify-content: end;
+
+  width: 60px;
+  height: 60px;
+
+  background: rgb(73,24,140);
+  background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+  border-radius: 100%;
+}
+}
+
+@media screen and (min-width: 1061px) {
+.btn-mas{
+  position: fixed;
+  display: flex;
+  justify-content: end;
+
+  top: 38rem;
+  left: 80rem;
+
+  width: 60px;
+  height: 60px;
+
+  background: rgb(73,24,140);
+  background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+  border-radius: 100%;
+}
+
+}
+
+
+.container {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.logo-container {
+
+display: flex;
+align-items: center;
+
+}
+
+.indice{
+padding-left: 1rem;
+}
+
+
+
+.other-logos {
+display: flex;
+align-items: center;
+}
+
+
+
+#drop {
+background: rgb(73,24,140);
+background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%); 
+}
+
+#drop li{
+border-bottom: white 2px solid;
+} 
+
+#drop li a:hover{
+backdrop-filter: blur(5px);
+background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+
+
+
+
+.sidebar-logos {
+display: flex;
+flex-direction: column;
+}
+
+
+
+.aco{
+padding-left: 4rem;
+}
+
+
+
+
+
+#boton_buscar img{
+right: 80px;
+}
+
+
+
 
 .bi-cart-plus-fill {
-  margin-right: 5px;
+margin-right: 5px;
+
 }
 
-  
+
+
 .corner-logo {
   position: absolute;
   top: 10px;
@@ -180,499 +369,261 @@ body {
 }
 
 
-  /*Carrito de compras*/
+/*Carrito de compras*/
 #tit_carrito{
-  color: white;
-  font-size: 25px;
-  margin-top: 20px;
+color: white;
+font-size: 25px;
+margin-top: 20px;
 
-  display: flex;
-  justify-content: center;
+display: flex;
+justify-content: center;
 }
 
 .tarj_cuerpo{
-  width: 600px;
-  display: flex;
+width: 600px;
+display: flex;
 
-  background-color: rgb(245, 245, 245);
-  margin: 20px;
-  border-radius: 20px;
+background-color: rgb(245, 245, 245);
+margin: 20px;
+border-radius: 20px;
 }
 
 .img_prod img{
-  height: 90px;
-  width: 90px;
-  padding: 10px;
-  border-radius: 25px;
+height: 90px;
+width: 90px;
+padding: 10px;
+border-radius: 25px;
 }
 
 .tarj_info{
-  margin-left: 60px;
-  width: 300px;
+margin-left: 60px;
+width: 300px;
 }
 
 .nom_prod {
-  padding-top: 10px;
-  font-size: 26px;
-  font-weight: bold;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+padding-top: 10px;
+font-size: 26px;
+font-weight: bold;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .tarj_precio{
-  display: 	flex;
-  font-size: 20px;
+display: 	flex;
+font-size: 20px;
 
-  margin-top: 4px;
-  margin-left: 10px;
+margin-top: 4px;
+margin-left: 10px;
 }
 
 .cant_prod{
-  margin-left: 80px;
-  display: flex;
-
-  height: 30px;
-  width: 30px;
-}
-
-.cant_prod input{
-  width: 50px;
+margin-left: 100px;
+display: flex;
 }
 
 #cant_prod_e{
-  margin-left: 10px;
-  width: 35px;
-  
+margin-left: 10px;
+width: 35px;
 }
 
 
 .eliminar_prod{
-  margin-top: 20px;
-  margin-left: 80px;
+margin-top: 20px;
+margin-left: 80px;
 }
 
 .btn-danger{
-  border-radius: 50%;
+border-radius: 50%;
 }
 
 #circle_x{
-  font-size: 20px;
+font-size: 20px;
 }
 
 
 #cuadro_precio{
-  width: 300px;
-  height: 300px;
-  margin-bottom: 70px;
-  margin-left: 50px;
+width: 300px;
+height: 300px;
+margin-bottom: 70px;
+margin-left: 50px;
 
-  background: rgb(73,24,140);
-  background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
-  border-radius: 30px;
+background: rgb(73,24,140);
+background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+border-radius: 30px;
 }
 
 #tit_precio{
-  color: white;
-  font-size: 25px;
-  display: flex;
+color: white;
+font-size: 25px;
+display: flex;
 
-  justify-content: center;
+justify-content: center;
 
-  padding-top: 60px;
+padding-top: 60px;
 }
 
 .total{
-  color: white;
-  font-size: 32px;
-  display: flex;
+color: white;
+font-size: 32px;
+display: flex;
 
-  justify-content: center;
+justify-content: center;
 
-  padding-top: 30px;
+padding-top: 30px;
 }
 
 #btn_opciones{
-  display: flex;
+display: flex;
 }
 
 .btn_carrito{
-  background: rgb(73,24,140);
-  background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+background: rgb(73,24,140);
+background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
 
-  color: white;
-  font-size: 20px;
-  padding:  10px 20px 10px 20px;
-  font-weight: bold;
-  border-radius: 15px;
+color: white;
+font-size: 20px;
+padding:  10px 20px 10px 20px;
+font-weight: bold;
+border-radius: 15px;
 
-  margin-right: 8px;
+margin-right: 8px;
 }
 
 
 /* Estilo para usuario.php
-   ========================================================================== */
+ ========================================================================== */
 
-   .login-container {
-  
-    margin-left: 200px;
-    margin-right: 100px;
-    border-radius: 8px;
-    padding: 20px;
-    display: flex; 
-    align-items: center; 
-    justify-content: space-between; 
-  }
-  
-  .profile-picture {
-    width: 20rem;
-    height: 20rem;
-    border-radius: 20%;
-    margin-right: 20rem;
-    border: 5px solid #ccc;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    width: 60%; 
-  }
-  .formula {
-    display: flex;
-    flex-direction: column;
-    width: 60%; 
-  }
-  
-  .sesion-label {
-    margin-left: 16rem;
-    padding-top: 5px;
-    margin-top: 20px;
-    color:white;
-  }
-  
-  .session-input {
-    
-    padding: 10px;
-    margin-bottom: 16px;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    color:white;
-    background: rgb(73,24,140);
-    background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
-    margin-left: 15rem;
-    margin-right: 15rem;
-  }
-  
-  .btn-log {
-    background: rgb(73,24,140);
-    background: radial-gradient(circle, rgb(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
-    color: #fff;
-    margin-left: 20rem;
-    margin-right: 20rem;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    cursor: pointer;
-    margin-top: 20px;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  .name_pag{
-    margin-top: 3rem;
-    color:white;
-    text-align: center;
-  }
-  .recover{
-    
-    color:white;
-    margin-right: 2rem;
-  }
-  
-  .recover-content-pass{
-    margin-top: 3rem;
-    color:white;
-    display: flex; 
-    padding-left: 15rem;
-  
-  
-  }
-  
-  .recover-content-log{
-    margin-top: 1rem;
-    color:white;
-    display: flex; 
-    padding-left: 15rem;
-  
-  
-  }
-  .redi-link{
-    color:rgb(89, 38, 162);
-  }
-  
-  
-  /* Estilo para producto.php
-     ========================================================================== */
-  
-  .product-container{
-    
-    margin-left: 50px;
-    margin-right: 100px;
-    border-radius: 8px;
-    padding: 20px;
-    display: flex; 
-    align-items: center; 
-    justify-content: space-between; 
-  }
-  
-  .product-picture {
-    width: 20rem;
-    height: 20rem;
-    border-radius: 20%;
-    margin-right: 3rem;
-    border: 5px solid #ccc;
-  }
-  .use_pag{
-    margin-top: 3rem;
-    color:white;
-    text-align: left;
-  }
-  
-  .com_pag{
-    margin-left: 4rem;
-    margin-top: 1rem;
-    color:white;
-    text-align: left;
-    font-style: italic;
-  }
+.login-container {
 
-  /* Estilo para registro.php
-    ========================================================================== */
-.container_registro{
-  margin-left: 500px;
+margin-left: 200px;
+margin-right: 100px;
+border-radius: 8px;
+padding: 20px;
+display: flex; 
+align-items: center; 
+justify-content: space-between; 
 }
 
-.registro-label{
-  margin-left: 140px;
-  padding-top: 5px;
-  margin-top: 20px;
-  color:white;
-  font-size: 18px;
-  font-weight: bold;
+.profile-picture {
+width: 20rem;
+height: 20rem;
+border-radius: 20%;
+margin-right: 20rem;
+border: 5px solid #ccc;
 }
 
-.registro-input{
-  padding: 10px;
-  margin-left: 140px;
-  margin-bottom: 16px;
-  border: 1px solid #ccc;
-  border-radius: 20px;
-  color:white;
-  background: rgb(73,24,140);
-  background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+form {
+display: flex;
+flex-direction: column;
+width: 60%; 
+}
+.formula {
+display: flex;
+flex-direction: column;
+width: 60%; 
 }
 
-#btn_registrar{
-  background: rgb(73,24,140);
-  background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
-
-  color: white;
-  font-size: 20px;
-  padding:  10px 20px 10px 20px;
-  font-weight: bold;
-  border-radius: 25px;
+.sesion-label {
+margin-left: 16rem;
+padding-top: 5px;
+margin-top: 20px;
+color:white;
 }
 
- /* Estilo para pago.php
-    ========================================================================== */
-.metodo_pago{
-  color: white;
-  margin-left: 10PX;
-  font-weight: bold;
+input {
+
+padding: 10px;
+margin-bottom: 16px;
+border: 1px solid #ccc;
+border-radius: 20px;
+color:white;
+background: rgb(73,24,140);
+background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+margin-left: 15rem;
+margin-right: 15rem;
 }
 
-/* Estilo para adminIndex.php
-    ========================================================================== */
-#titAdmin{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  color: white;
-  font-size: 20px;
-  margin-top: 25px;
-  margin-bottom: 25px;
+.btn-log {
+background: rgb(73,24,140);
+background: radial-gradient(circle, rgb(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+color: #fff;
+margin-left: 20rem;
+margin-right: 20rem;
+padding: 12px;
+border: 1px solid #ccc;
+border-radius: 20px;
+cursor: pointer;
+margin-top: 20px;
 }
 
-.layout {
-  display: grid;
-  
-  grid-template-rows: repeat(2, 1fr);
-  grid-template-columns: repeat(2, 1fr);
-  gap: 50px 8px;
+button:hover {
+background-color: #0056b3;
+}
+.name_pag{
+margin-top: 3rem;
+color:white;
+text-align: center;
+}
+.recover{
+
+color:white;
+margin-right: 2rem;
 }
 
-.cuerpo_carta{
-  display: flex;
-  justify-content: center;
-}
+.recover-content-pass{
+margin-top: 3rem;
+color:white;
+display: flex; 
+padding-left: 15rem;
 
-.card{
-  height: 100px;
-  width: 300px;
-  background: rgb(73,24,140);
-  background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
 
 }
 
-.card a{
-  text-decoration: none;
-  color: white;
-  font-size: 20px;
+.recover-content-log{
+margin-top: 1rem;
+color:white;
+display: flex; 
+padding-left: 15rem;
+
+
+}
+.redi-link{
+color:rgb(89, 38, 162);
 }
 
-.card-body{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
-
-/* Estilo para navadmin.php
-    ========================================================================== */
+/* Estilo para producto.php
+ ========================================================================== */
 
 .admin{
-  background: rgb(73,24,140);
-  background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
-  width: 150px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  display: flex;
-  padding-top: 120px;
-  justify-content: center;
+background: rgb(73,24,140);
+background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+width: 150px;
+position: fixed;
+top: auto;
+left: 0;
+height: 100vh;
+display: flex;
+padding-top: 120px;
+justify-content: center;
 }
 
-.opciones_admin {
-  display: flex;
-  flex-direction: column;
-  font-size: 18px;
+.product-picture {
+width: 20rem;
+height: 20rem;
+border-radius: 20%;
+margin-right: 3rem;
+border: 5px solid #ccc;
+}
+.use_pag{
+margin-top: 3rem;
+color:white;
+text-align: left;
 }
 
-.opciones_admin a{
-  color: white;
-  text-decoration: none;
-
-  padding-top: 25px;
+.com_pag{
+margin-left: 4rem;
+margin-top: 1rem;
+color:white;
+text-align: left;
+font-style: italic;
 }
-
-.opciones_admin a .bi {
-  padding-right: 10px;
-}
-
-
-/* Estilo para admincategorias.php
-  ========================================================================== */
-
-.catimg_adm img{
-  height: 80px;
-  width: 80px;
-}
-
-/* Estilo para adminproductos.php
-  ========================================================================== */
-
-  #boton_agregar{
-    margin-bottom: 35px;
-  }
-
-/* Estilo para perfil.php
-  ========================================================================== */
-
-  .tituloperfil, .datosperfil{
-    color: white;
-  }
-
-  .tituloperfil{
-    margin-top: 80px;
-    font-size: 22px;
-    font-weight: bold;
-  } 
-
-  .datosperfil{
-    
-    font-size: 18px;
-  }
-
-  .profile-img {
-    max-width: 500px;
-    max-height: 170px;
-    margin-bottom: 20px;
-  }
-
-  #avatar_usuario{
-    display: flex;
-  }
-
-  #usuario{
-    margin-top: 70px;
-    margin-left: 30px;
-    font-size: 30px;
-  }
-
-  #tit{
-    color: white;
-    font-size: 25px;
-  }
-
-  .perfil-input{
-    height: 40px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    color:white;
-    background: rgb(73,24,140);
-    background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
-    
-  }
-
-  #input-usuario{
-    margin-top: 70px;
-    margin-left: 30px;
-  }
-
-  #btn_confirmar{
-    margin-top: 80px;
-  }
-
-  /* Estilo para pedido.php
-  ========================================================================== */
-  /* Agrega estilos específicos aquí */
-  #pedidos-container {
-    display: flex;
-    flex-direction: column;/* Ajusta la altura al 100% de la ventana */
-  }
-
-  #titulo-pedidos {
-      color: white;
-  }
-
-  .pedido_productos{
-    margin-left: 25px;
-    width: 500px;
-  }
-
-  .pedido-box {
-    background: rgb(73, 24, 140);
-    background: radial-gradient(circle, rgba(73, 24, 140, 1) 0%, rgba(21, 2, 62, 1) 57%);
-    color: white;
-    font-size: 20px;
-    padding: 10px;
-    margin-top: 20px;
-    margin-left: 80px;
-    width: 750px;
-    border-radius: 15px;
-    text-align: center;
-
-    display: flex;
-  }
