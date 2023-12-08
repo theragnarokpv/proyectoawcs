@@ -59,6 +59,7 @@ body {
 }
 
 .product {
+  top: 20%;
   background: rgb(73,24,140);
   background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
 
@@ -115,9 +116,11 @@ body {
 }
 
 .btn-mas{
-  position: absolute;
+  
+  position: fixed;
   display: flex;
   justify-content: end;
+  top: 10%;
 
 
   width: 50px;
@@ -127,6 +130,64 @@ body {
   background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
   border-radius: 100%;
 }
+/* Estilo para producto.php
+ ========================================================================== */
+
+ .admin{
+  background: rgb(73,24,140);
+  background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+  width: 4.5rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  display: flex;
+  padding-top: 8rem;
+  justify-content: start;
+  z-index: -1;
+  }
+
+  .opciones_admin{
+    max-width: 2rem; /* Ajusta el tamaño máximo de los logos en la barra lateral */
+    margin-bottom: 1rem;
+    margin-left: 0.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .item_admin{
+    margin-top: 0.7rem;
+    margin-bottom: 0.7rem;
+    box-sizing: content-box;
+    width: 4rem;
+  }
+
+  .product-table{
+    width: 1rem;
+    height: 1rem;
+  }
+  
+  .product-picture {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 20%;
+  margin-right: 3rem;
+  border: 5px solid #ccc;
+  }
+  .use_pag{
+  margin-top: 3rem;
+  color:white;
+  text-align: left;
+  }
+  
+  .com_pag{
+  margin-left: 4rem;
+  margin-top: 1rem;
+  color:white;
+  text-align: left;
+  font-style: italic;
+  }
+
+  
 
 
 
@@ -184,6 +245,7 @@ body {
 }
 
 .product {
+  top: 20%;
   background: rgb(73,24,140);
   background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
 
@@ -246,6 +308,7 @@ body {
   position: fixed;
   display: flex;
   justify-content: end;
+  top: 15%;
 
   width: 60px;
   height: 60px;
@@ -254,6 +317,62 @@ body {
   background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
   border-radius: 100%;
 }
+
+/* Estilo para admincategorias.php
+ ========================================================================== */
+
+ .admin{
+  background: rgb(73,24,140);
+  background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+  width: 10rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  display: flex;
+  padding-top: 8rem;
+  justify-content: start;
+  z-index: -1;
+  }
+
+  .opciones_admin{
+    max-width: 2rem; /* Ajusta el tamaño máximo de los logos en la barra lateral */
+    margin-bottom: 1rem;
+    margin-left: 0.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .item_admin{
+    margin-top: 0.7rem;
+    margin-bottom: 0.7rem;
+    box-sizing: content-box;
+    width: 7.5rem;
+  }
+
+  /* Estilo para producto.php
+ ========================================================================== */
+  
+  .product-picture {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 20%;
+  margin-right: 3rem;
+  border: 5px solid #ccc;
+  }
+  .use_pag{
+  margin-top: 3rem;
+  color:white;
+  text-align: left;
+  }
+  
+  .com_pag{
+  margin-left: 4rem;
+  margin-top: 1rem;
+  color:white;
+  text-align: left;
+  font-style: italic;
+  }
+
 }
 
 @media screen and (min-width: 1061px) {
@@ -591,39 +710,3 @@ color:rgb(89, 38, 162);
 }
 
 
-/* Estilo para producto.php
- ========================================================================== */
-
-.admin{
-background: rgb(73,24,140);
-background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
-width: 150px;
-position: fixed;
-top: auto;
-left: 0;
-height: 100vh;
-display: flex;
-padding-top: 120px;
-justify-content: center;
-}
-
-.product-picture {
-width: 20rem;
-height: 20rem;
-border-radius: 20%;
-margin-right: 3rem;
-border: 5px solid #ccc;
-}
-.use_pag{
-margin-top: 3rem;
-color:white;
-text-align: left;
-}
-
-.com_pag{
-margin-left: 4rem;
-margin-top: 1rem;
-color:white;
-text-align: left;
-font-style: italic;
-}
