@@ -243,7 +243,109 @@ body {
   text-align: left;
   font-style: italic;
   }
+/* Estilo para usuario.php
+ ========================================================================== */
 
+ .login-container {
+
+  margin-left: 4rem;
+  margin-right: 1rem;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex; 
+  align-items: start; 
+  justify-content: center; 
+  width: 23rem;
+  }
+  
+  .profile-picture {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 15%;
+  margin-right: 1rem;
+  border: 5px solid #ccc;
+  position: relative;
+  top: 4rem;
+  }
+  
+  form {
+  display: flex;
+  flex-direction: column;
+  width: 15rem; 
+  }
+  .formula {
+  display: flex;
+  flex-direction: column;
+  width: 60%; 
+  }
+  
+  .sesion-label {
+  margin-left: 1rem;
+  padding-top: 5px;
+  margin-top: 20px;
+  color:white;
+  }
+  
+  input {
+  
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 1.7rem;
+  color:white;
+  background: rgb(73,24,140);
+  background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+  margin-left: 0.5rem;
+  margin-right: 12rem;
+  width: 13rem;
+  }
+  
+  .btn-log {
+  background: rgb(73,24,140);
+  background: radial-gradient(circle, rgb(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+  color: #fff;
+  margin-left: 4rem;
+  margin-right: 1rem;
+  position: relative;
+  right: 0.5rem;
+
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 1.7rem;
+  cursor: pointer;
+  margin-top: 3rem;
+  }
+.name_pag{
+margin-top: 5rem;
+color:white;
+text-align: center;
+}
+.recover{
+
+color:white;
+margin-right: 2rem;
+position: relative;
+right: 11rem;
+font-size: 10px;
+}
+
+.recover-content-pass{
+margin-top: 3rem;
+color:white;
+display: flex; 
+padding-left: 15rem;
+
+
+}
+
+.recover-content-log{
+margin-top: 1rem;
+color:white;
+display: flex; 
+padding-left: 15rem;
+
+
+}
   
 
 
@@ -477,7 +579,117 @@ body {
   font-style: italic;
   }
 
+  /* Estilo para usuario.php
+ ========================================================================== */
+
+ .login-container {
+
+  margin-left: 4rem;
+  margin-right: 1rem;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex; 
+  align-items: start; 
+  justify-content: center; 
+  width: 23rem;
+  position: relative;
+  }
+  
+  .profile-picture {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 15%;
+  margin-right: 1rem;
+  border: 5px solid #ccc;
+  position: relative;
+  top: 4rem;
+  }
+  
+  form {
+  display: flex;
+  flex-direction: column;
+  width: 15rem; 
+  }
+  .formula {
+  display: flex;
+  flex-direction: column;
+  width: 60%; 
+  }
+  
+  .sesion-label {
+  margin-left: 1rem;
+  padding-top: 5px;
+  margin-top: 20px;
+  color:white;
+  }
+  
+  input {
+  
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 1.7rem;
+  color:white;
+  background: rgb(73,24,140);
+  background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+  margin-left: 0.5rem;
+  margin-right: 12rem;
+  width: 13rem;
+  }
+  
+  .btn-log {
+  background: rgb(73,24,140);
+  background: radial-gradient(circle, rgb(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+  color: #fff;
+  margin-left: 4rem;
+  margin-right: 1rem;
+  position: relative;
+  right: 0.5rem;
+
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 1.7rem;
+  cursor: pointer;
+  margin-top: 3rem;
+  }
+.name_pag{
+margin-top: 5rem;
+color:white;
+text-align: center;
 }
+.recover{
+
+color:white;
+margin-right: 2rem;
+position: relative;
+right: 10rem;
+font-size: 10px;
+}
+
+.recover-content-pass{
+margin-top: 3rem;
+color:white;
+display: flex; 
+padding-left: 15rem;
+
+
+}
+
+.recover-content-log{
+margin-top: 1rem;
+color:white;
+display: flex; 
+padding-left: 15rem;
+
+
+}
+  
+
+
+
+}
+
+
 
 @media screen and (min-width: 1061px) {
 .btn-mas{
@@ -701,103 +913,12 @@ display: flex;
 
 
 
-/* Estilo para usuario.php
- ========================================================================== */
 
-.login-container {
-
-margin-left: 200px;
-margin-right: 100px;
-border-radius: 8px;
-padding: 20px;
-display: flex; 
-align-items: center; 
-justify-content: space-between; 
-}
-
-.profile-picture {
-width: 20rem;
-height: 20rem;
-border-radius: 20%;
-margin-right: 20rem;
-border: 5px solid #ccc;
-}
-
-form {
-display: flex;
-flex-direction: column;
-width: 60%; 
-}
-.formula {
-display: flex;
-flex-direction: column;
-width: 60%; 
-}
-
-.sesion-label {
-margin-left: 16rem;
-padding-top: 5px;
-margin-top: 20px;
-color:white;
-}
-
-input {
-
-padding: 10px;
-margin-bottom: 16px;
-border: 1px solid #ccc;
-border-radius: 20px;
-color:white;
-background: rgb(73,24,140);
-background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
-margin-left: 15rem;
-margin-right: 15rem;
-}
-
-.btn-log {
-background: rgb(73,24,140);
-background: radial-gradient(circle, rgb(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
-color: #fff;
-margin-left: 20rem;
-margin-right: 20rem;
-padding: 12px;
-border: 1px solid #ccc;
-border-radius: 20px;
-cursor: pointer;
-margin-top: 20px;
-}
 
 button:hover {
 background-color: #0056b3;
 }
-.name_pag{
-margin-top: 3rem;
-color:white;
-text-align: center;
-}
-.recover{
 
-color:white;
-margin-right: 2rem;
-}
-
-.recover-content-pass{
-margin-top: 3rem;
-color:white;
-display: flex; 
-padding-left: 15rem;
-
-
-}
-
-.recover-content-log{
-margin-top: 1rem;
-color:white;
-display: flex; 
-padding-left: 15rem;
-
-
-}
 .redi-link{
 color:rgb(89, 38, 162);
 }
