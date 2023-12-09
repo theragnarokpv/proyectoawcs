@@ -30,7 +30,7 @@ body {
   z-index: -1;
 }
 .sidebar-logo {
-  max-width: 2rem; /* Ajusta el tamaño máximo de los logos en la barra lateral según tus necesidades */
+  max-width: 2rem; /* Ajusta el tamaño máximo de los logos en la barra lateral */
   margin-bottom: 1rem;
 }
 
@@ -41,21 +41,23 @@ body {
   padding-top: 1rem;
   width: 100%;
   top: 0;
+  right: 0;
 
   z-index: 2;
 
 }
 .logo {
-  max-width: 2rem; /* Ajusta el tamaño máximo del logo según tus necesidades */
+  max-width: 2rem; /* Ajusta el tamaño máximo del logo */
   margin-right: 1rem;
 }
 
 .store-name {
-  font-size: 17px; /* Ajusta el tamaño de la fuente del nombre de la tienda según tus necesidades */
+  font-size: 17px; /* Ajusta el tamaño de la fuente del nombre de la tienda  */
 }
 .other-logo {
-  max-width: 1.5rem; /* Ajusta el tamaño máximo de los otros logos según tus necesidades */
-  margin-left: 0.2rem;
+  max-width: 1.5rem; /* Ajusta el tamaño máximo de los otros logos */
+  margin-right: 0.2rem;
+
 }
 
 .product {
@@ -130,13 +132,30 @@ body {
   background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
   border-radius: 100%;
 }
-/* Estilo para producto.php
+
+.btn_carrito{
+  background: rgb(73,24,140);
+  background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+  
+  color: white;
+  font-size: 6px;
+  padding:  0.2rem 0.4rem 0.2rem 0.4rem;
+  font-weight: bold;
+  border-radius: 1rem;
+  
+  margin-right: 0.1rem;
+  display: flex;
+  flex-direction: column;
+  }
+
+
+/* Estilo para admincategorias.php
  ========================================================================== */
 
  .admin{
   background: rgb(73,24,140);
   background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
-  width: 4.5rem;
+  width: 5rem;
   position: fixed;
   top: 0;
   left: 0;
@@ -145,6 +164,18 @@ body {
   padding-top: 8rem;
   justify-content: start;
   z-index: -1;
+  }
+  .adaco{
+    margin-left: 5rem;
+  }
+
+  .table td{
+    padding: 0.2rem;
+  }
+
+  .table th{
+    padding: 0.2rem;
+    font-size: 6px;
   }
 
   .opciones_admin{
@@ -158,13 +189,26 @@ body {
     margin-top: 0.7rem;
     margin-bottom: 0.7rem;
     box-sizing: content-box;
-    width: 4rem;
+    width: 7.5rem;
   }
 
-  .product-table{
-    width: 1rem;
-    height: 1rem;
+  .catimg_adm img{
+    height: 1.5rem;
+    width: 1.5rem;
   }
+
+  .catimg_adm{
+    width: 0.5rem;
+  }
+
+
+  .table-elements{
+    position: relative;
+    top: 4rem;
+  }
+
+  /* Estilo para producto.php
+ ========================================================================== */
   
   .product-picture {
   width: 3rem;
@@ -215,7 +259,7 @@ body {
   z-index: -1;
 }
 .sidebar-logo {
-  max-width: 3rem; /* Ajusta el tamaño máximo de los logos en la barra lateral según tus necesidades */
+  max-width: 3rem; /* Ajusta el tamaño máximo de los logos en la barra lateral */
   margin-top: 2.5rem;
 }
 
@@ -231,16 +275,16 @@ body {
 
 }
 .logo {
-  max-width: 5rem; /* Ajusta el tamaño máximo del logo según tus necesidades */
+  max-width: 5rem; /* Ajusta el tamaño máximo del logo */
   margin-right: 2rem;
 }
 
 .store-name {
-  font-size: 27px; /* Ajusta el tamaño de la fuente del nombre de la tienda según tus necesidades */
+  font-size: 27px; /* Ajusta el tamaño de la fuente del nombre de la tienda */
 }
 
 .other-logo {
-  max-width: 2rem; /* Ajusta el tamaño máximo de los otros logos según tus necesidades */
+  max-width: 2rem; /* Ajusta el tamaño máximo de los otros logos */
   margin-left: 1.5rem;
 }
 
@@ -318,13 +362,25 @@ body {
   border-radius: 100%;
 }
 
+.btn_carrito{
+  background: rgb(73,24,140);
+  background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+  
+  color: white;
+  font-size: 10px;
+  padding:  0.5rem 1.5rem 0.5rem 1.5rem;
+  font-weight: bold;
+  border-radius: 1rem;
+  
+  margin-right: 0.5rem;
+  }
 /* Estilo para admincategorias.php
  ========================================================================== */
 
  .admin{
   background: rgb(73,24,140);
   background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
-  width: 10rem;
+  width: 8rem;
   position: fixed;
   top: 0;
   left: 0;
@@ -333,6 +389,18 @@ body {
   padding-top: 8rem;
   justify-content: start;
   z-index: -1;
+  }
+  .adaco{
+    margin-left: 8rem;
+  }
+
+  .table td{
+    padding: 0.5rem;
+  }
+
+  .table th{
+    padding: 0.5rem;
+    font-size: 10px;
   }
 
   .opciones_admin{
@@ -347,6 +415,22 @@ body {
     margin-bottom: 0.7rem;
     box-sizing: content-box;
     width: 7.5rem;
+  }
+
+  .catimg_adm img{
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+
+  .catimg_adm{
+    width: 0.5rem;
+  }
+
+
+  .table-elements{
+    position: relative;
+    top: 4rem;
+    left: 3rem;
   }
 
   /* Estilo para producto.php
@@ -594,18 +678,7 @@ padding-top: 30px;
 display: flex;
 }
 
-.btn_carrito{
-background: rgb(73,24,140);
-background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
 
-color: white;
-font-size: 20px;
-padding:  10px 20px 10px 20px;
-font-weight: bold;
-border-radius: 15px;
-
-margin-right: 8px;
-}
 
 
 /* Estilo para usuario.php

@@ -23,7 +23,7 @@
 
     <section class="main-content">
         <div class="container">
-            <div class="row">
+            <div class="row adaco">
                 <div class="col-md-4">
                     <button type='button' id="boton_agregar" class='btn btn_carrito' data-bs-toggle='modal' data-bs-target='#agregarcategoria'> Agregar Categoria</button>
                 </div>
@@ -36,7 +36,7 @@
 
                     $datos = $resultado->fetch_assoc();
 
-                    echo "<table class='table table-striped table-hover'>";
+                    echo "<table class='table table-elements table-striped table-hover'>";
                         echo "<thead>";
                             echo "<tr>";
                                 echo "<th scope='col'>#</th>";
