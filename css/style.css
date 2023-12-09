@@ -207,6 +207,12 @@ body {
     top: 4rem;
   }
 
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 60%; 
+  }
+
   /* Estilo para producto.php
  ========================================================================== */
  
