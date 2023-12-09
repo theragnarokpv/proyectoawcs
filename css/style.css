@@ -210,7 +210,7 @@ body {
   form {
     display: flex;
     flex-direction: column;
-    width: 60%; 
+    width: 40%; 
   }
 
   /* Estilo para producto.php

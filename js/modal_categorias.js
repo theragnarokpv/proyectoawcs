@@ -1,3 +1,5 @@
+modal_categorias.js
+
 var ModalAgregarCat = new bootstrap.Modal(document.getElementById('agregarcategoria'));
 
 // Evento que se dispara al abrir el modal
