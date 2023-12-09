@@ -83,7 +83,7 @@
                                     <img src="" alt="Imagen del Producto" id="agregar_imagen" class="img-fluid">
                                     <input type="file" name="agregar__imagen" id="agregar_imagen">
                                 </div>
-                                <!-- Agrega más campos según tus necesidades -->
+                                
                             </form>
                         </div>
                         <div class="modal-footer">
