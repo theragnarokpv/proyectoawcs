@@ -253,7 +253,6 @@ body {
   border-radius: 8px;
   padding: 20px;
   display: flex; 
-  align-items: start; 
   justify-content: center; 
   width: 23rem;
   }
@@ -263,7 +262,7 @@ body {
   height: 6rem;
   border-radius: 15%;
   margin-right: 1rem;
-  border: 5px solid #ccc;
+  border: 2px solid #ccc;
   position: relative;
   top: 4rem;
   }
@@ -584,20 +583,20 @@ body {
 
  .login-container {
 
-  margin-left: 4rem;
+  margin-left: 10%;
   margin-right: 1rem;
   border-radius: 8px;
   padding: 20px;
   display: flex; 
-  align-items: start; 
-  justify-content: center; 
-  width: 23rem;
+  justify-content: space-between; 
+  width: 33rem;
   position: relative;
+  left: 18%;
   }
   
   .profile-picture {
-  width: 6rem;
-  height: 6rem;
+  width: 10rem;
+  height: 10rem;
   border-radius: 15%;
   margin-right: 1rem;
   border: 5px solid #ccc;
@@ -608,7 +607,7 @@ body {
   form {
   display: flex;
   flex-direction: column;
-  width: 15rem; 
+  width: 18rem; 
   }
   .formula {
   display: flex;
@@ -625,7 +624,7 @@ body {
   
   input {
   
-  padding: 1rem;
+  padding: 0.5rem;
   margin-bottom: 1rem;
   border: 1px solid #ccc;
   border-radius: 1.7rem;
@@ -634,7 +633,7 @@ body {
   background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
   margin-left: 0.5rem;
   margin-right: 12rem;
-  width: 13rem;
+  width: 16rem;
   }
   
   .btn-log {
@@ -653,7 +652,7 @@ body {
   margin-top: 3rem;
   }
 .name_pag{
-margin-top: 5rem;
+margin-top: 7rem;
 color:white;
 text-align: center;
 }
@@ -661,7 +660,7 @@ text-align: center;
 
 color:white;
 margin-right: 2rem;
-position: relative;
+position: initial;
 right: 10rem;
 font-size: 10px;
 }
