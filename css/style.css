@@ -323,8 +323,6 @@ text-align: center;
 
 color:white;
 margin-right: 2rem;
-position: relative;
-right: 11rem;
 font-size: 10px;
 }
 
@@ -332,7 +330,8 @@ font-size: 10px;
 margin-top: 3rem;
 color:white;
 display: flex; 
-padding-left: 15rem;
+position: relative;
+left: 3rem;
 
 
 }
@@ -341,7 +340,8 @@ padding-left: 15rem;
 margin-top: 1rem;
 color:white;
 display: flex; 
-padding-left: 15rem;
+position: relative;
+left: 3rem;
 
 
 }
@@ -660,16 +660,15 @@ text-align: center;
 
 color:white;
 margin-right: 2rem;
-position: initial;
-right: 10rem;
-font-size: 10px;
+font-size: 13px;
 }
 
 .recover-content-pass{
 margin-top: 3rem;
 color:white;
 display: flex; 
-padding-left: 15rem;
+position: relative;
+left: 3rem;
 
 
 }
@@ -678,7 +677,9 @@ padding-left: 15rem;
 margin-top: 1rem;
 color:white;
 display: flex; 
-padding-left: 15rem;
+position: relative;
+left: 3rem;
+
 
 
 }
