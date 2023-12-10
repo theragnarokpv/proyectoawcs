@@ -1,4 +1,14 @@
+<?php
+    include "include/functions/conexion.php";
+    session_start();
 
+
+    $id_rol_usuario = $_SESSION['id_rol'] ?? null;
+
+    // Verifica que se haya iniciado sesión y el rol sea menor o igual a 2
+    if (isset($_SESSION['id_usuario']) && $id_rol_usuario !== null && $id_rol_usuario <= 2) {
+        // Usuario autenticado y es un administrador
+?>
 
 
 <!DOCTYPE html>
@@ -70,3 +80,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
+
+<?php
+} else {
+    // Usuario no autenticado o no es un administrador, redirige a la página de inicio de sesión
+    header("Location: inicioSesion.php");
+    exit();
+}
+?>

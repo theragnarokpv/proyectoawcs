@@ -148,7 +148,6 @@ body {
   flex-direction: column;
   }
 
-
 /* Estilo para admincategorias.php
  ========================================================================== */
 
@@ -167,15 +166,20 @@ body {
   }
   .adaco{
     margin-left: 5rem;
+    margin-top: 4rem;
+
   }
 
   .table td{
     padding: 0.2rem;
+    font-size: 6px;
+    max-width: 4rem;
   }
 
   .table th{
     padding: 0.2rem;
     font-size: 6px;
+    max-width: 2rem;
   }
 
   .opciones_admin{
@@ -202,10 +206,6 @@ body {
   }
 
 
-  .table-elements{
-    position: relative;
-    top: 4rem;
-  }
 
   form {
     display: flex;
@@ -218,7 +218,7 @@ body {
  
  #boton_agregar{
   position: relative;
-  top: 5rem;
+  top: 2rem;
   right: 1rem;
   margin-bottom: 35px;
 }

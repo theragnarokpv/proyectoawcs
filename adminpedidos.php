@@ -25,7 +25,7 @@
 
     <section class="main-content">
         <div class="container">
-            <div class="row">
+            <div class="row adaco">
 
                 <?php 
                     $query = "SELECT c.*, u.nombre as nombre_usuario , u.apellidos as apellidos_usuario
