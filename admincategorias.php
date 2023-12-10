@@ -36,7 +36,7 @@
 
                     $datos = $resultado->fetch_assoc();
 
-                    echo "<table class='table table-elements table-striped table-hover'>";
+                    echo "<table class='table  table-striped table-hover'>";
                         echo "<thead>";
                             echo "<tr>";
                                 echo "<th scope='col'>#</th>";

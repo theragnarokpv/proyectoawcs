@@ -27,8 +27,8 @@
     <section class="main-content">
         <div class="container">
 
-            <div class="row">
-                <div class="col-md-3">
+            <div class="row adaco">
+                <div class="col-md-4">
                     <button type='button' id="boton_agregar" class='btn btn_carrito' data-bs-toggle='modal' data-bs-target='#agregarproducto'> Agregar Producto</button>
                 </div>
 

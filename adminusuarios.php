@@ -17,8 +17,7 @@
 </head>
 <body>
     <?php
-        include "include/Templates/header.php";
-        include "include/Templates/navadmin.php";
+      
     ?>
 
     <section class="main-content">
