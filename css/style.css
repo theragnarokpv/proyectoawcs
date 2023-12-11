@@ -128,7 +128,7 @@ body {
   position: fixed;
   display: flex;
   justify-content: end;
-  top: 10%;
+  top: 4rem;
 
 
   width: 50px;
@@ -519,7 +519,7 @@ left: 3rem;
 
 
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 600px ) {
 body {
   font-size: 20px; /* Modifica el tamaño de fuente en pantallas pequeñas hacia abajo */
 }
@@ -635,7 +635,7 @@ body {
   position: fixed;
   display: flex;
   justify-content: end;
-  top: 15%;
+  top: 6.5rem;
 
   width: 60px;
   height: 60px;
@@ -1018,14 +1018,14 @@ left: 3rem;
 
 
 
-@media screen and (min-width: 1061px) {
+@media screen and (min-width: 1400px) {
 .btn-mas{
   position: fixed;
   display: flex;
   justify-content: end;
 
-  top: 38rem;
-  left: 80rem;
+  top: 70%;
+  left: 90%;
 
   width: 60px;
   height: 60px;
