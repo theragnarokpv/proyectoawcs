@@ -57,7 +57,7 @@ body {
 }
 .other-logo {
   max-width: 1.5rem; /* Ajusta el tamaño máximo de los otros logos */
-  margin-right: 1rem;
+
 
 }
 .other-logos {
@@ -563,7 +563,7 @@ body {
 
 .other-logo {
   max-width: 2rem; /* Ajusta el tamaño máximo de los otros logos */
-  margin-right: 2rem;
+  
 }
 .other-logos {
   display: flex;
