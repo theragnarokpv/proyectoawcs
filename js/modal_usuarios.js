@@ -124,6 +124,7 @@ function modificarUsuario() {
     var imagenInput = document.getElementById('modif_subir_imagen');
     var imagen = imagenInput.files[0];
 
+    var nuevaImagen = imagen ? true : false;
 
     mostrarVistaPreviaModif(imagenInput);
 
@@ -137,10 +138,13 @@ function modificarUsuario() {
     formData.append('correo', correo);
     formData.append('telefono', telefono);
 
-    if (imagen) {
+    if (nuevaImagen) {
         formData.append('ruta_imagen', imagen, imagen.name);
     }
     
+    var rutaImagenActual = document.getElementById('modif_imagen').getAttribute('src');
+    formData.append('ruta_imagen_actual', rutaImagenActual);
+
     $.ajax({
         url: 'include/functions/usuario_actualizar.php',
         method: 'POST',

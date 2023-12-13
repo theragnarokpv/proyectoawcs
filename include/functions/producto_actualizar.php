@@ -80,13 +80,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     if($idProductoOk && $idCategoriaOk && $descripcionOk && $detalleOk && $precioOk && $existenciasOk){
-        $permitidos = array('image/jpeg', 'image/jpg', 'image/png');
-        if (in_array($archivo_tipo, $permitidos)) {
-            $carpeta_destino = '../../server/productos/';
-            $archivo_destino = $carpeta_destino . $archivo_nombre;
-            move_uploaded_file($archivo_tmp, $archivo_destino);
-    
-            $ruta_guardar_bd = str_replace('../../server', '/ambiente/server', $archivo_destino);
+        if (!empty($archivo_nombre)) {
+            // Se ha seleccionado un nuevo archivo
+            $permitidos = array('image/jpeg', 'image/jpg', 'image/png');
+            if (in_array($archivo_tipo, $permitidos)) {
+                $carpeta_destino = '../../server/productos/';
+                $archivo_destino = $carpeta_destino . $archivo_nombre;
+                move_uploaded_file($archivo_tmp, $archivo_destino);
+                $ruta_guardar_bd = str_replace('../../server', '/ambiente/server', $archivo_destino);
+            } else {
+                echo "Formato de archivo no permitido. Sube una imagen en formato JPEG, JPG o PNG.";
+                exit;
+            }
+        } else {
+            // No se seleccionó un nuevo archivo, mantener la ruta anterior
+            $ruta_guardar_bd = $_POST['ruta_imagen_actual'];
+        }
     
         // Actualizar el producto en la base de datos
             $sql = "UPDATE producto SET
@@ -108,11 +117,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             } catch (PDOException $e) {
                 $response = ['status' => 'error', 'message' => 'Error al actualizar el producto: ' . $e->getMessage()];
             }
-    
-        } else {
-            echo "Formato de archivo no permitido. Sube una imagen en formato JPEG, JPG o PNG.";
-        }
-    
 
         echo json_encode($response);
     }

@@ -1,6 +1,5 @@
 $(document).ready(function () {
     $("#btn_registrar").click(function () {
-        // Obtener datos del formulario
         var usuario = $("#usuario_registro").val();
         var nombre = $("#nombre").val();
         var apellidos = $("#apellidos").val();
@@ -9,7 +8,7 @@ $(document).ready(function () {
         var confirmarContrasena = $("#confirmar_contrasena").val();
         var telefono = $("#telefono").val();
         
-        // Realizar la llamada AJAX
+
         $.ajax({
             type: "POST",
             url: "include/functions/insertarUsuario.php",
@@ -24,9 +23,6 @@ $(document).ready(function () {
             },
             success: function (r) {
                 ActualizacionExitosa(r);
-    
-                myModal.hide();
-                location.reload();
             },
             error: function (r) {
                 ActualizacionFallida(r)
@@ -37,13 +33,14 @@ $(document).ready(function () {
 
 
 
-    function ActualizacionExitosa (TextoJSON) {
+    function ActualizacionExitosa(response) {
         $("#pnlInfo").dialog();
-        $("#blInfo").html('<p>' + TextoJSON + '</p>');
+        $("#blInfo").html('<p>' + response.message + '</p>');
+        window.location.href = 'inicioSesion.php';
     }
     
-    function ActualizacionFallida (TextoJSON) {
+    function ActualizacionFallida(response) {
         $("#pnlMensaje").dialog();
-        $("#blMensajes").html('<p>Ocurrio un error en el servidor. </p>' + TextoJSON.responseText);
+        $("#blMensajes").html('<p>Ocurrió un error en el servidor. </p>' + response.error);
     }
 });

@@ -103,9 +103,11 @@ function guardarCambios() {
     // Obtener datos del formulario
     var categoria = document.getElementById('modif_id_categoria').value;
     var descripcion = document.getElementById('modif_descripcion').value;
-
     var imagenInput = document.getElementById('modif_imagen');
     var imagen = imagenInput.files[0];
+
+    // Obtener la imagen actual del campo oculto
+    var imagenActual = document.getElementById('imagen_actual').value;
 
     mostrarVistaPreviaModif(imagenInput);
 
@@ -113,8 +115,12 @@ function guardarCambios() {
     formData.append('id_categoria', categoria);
     formData.append('descripcion', descripcion);
 
+    // Si se proporciona una nueva imagen, adjúntala a los datos del formulario
     if (imagen) {
         formData.append('ruta_imagen', imagen, imagen.name);
+    } else {
+        // Si no se proporciona una nueva imagen, adjunta la imagen actual al formulario
+        formData.append('imagen_actual', imagenActual);
     }
 
     try {
@@ -134,11 +140,9 @@ function guardarCambios() {
             error: function (r) {
                 ActualizacionFallida(r)
             }
-    
-        })
-        
+        });
     } catch (error) {
-        alert (err);
+        alert(err);
     }
 }
 

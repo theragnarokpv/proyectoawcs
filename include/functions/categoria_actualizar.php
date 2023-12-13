@@ -11,6 +11,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $archivo_tipo = $_FILES['ruta_imagen']['type'];
 
 
+    $imagenActual = $_POST['imagen_actual'];
+
     /* VERIFICACION DE DATOS */
     $idCategoriaOk = false;
     $descripcionOk = false;
@@ -33,15 +35,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if($idCategoriaOk && $descripcion){
-        $permitidos = array('image/jpeg', 'image/jpg', 'image/png');
-        if (in_array($archivo_tipo, $permitidos)) {
-            $carpeta_destino = '../../server/categorias/';
-            $archivo_destino = $carpeta_destino . $archivo_nombre;
-            move_uploaded_file($archivo_tmp, $archivo_destino);
-    
-    
+        if (!empty($_FILES['ruta_imagen']['name'])) {
+            $permitidos = array('image/jpeg', 'image/jpg', 'image/png');
+            if (in_array($archivo_tipo, $permitidos)) {
+                $carpeta_destino = '../../server/categorias/';
+                $archivo_destino = $carpeta_destino . $archivo_nombre;
+                move_uploaded_file($archivo_tmp, $archivo_destino);
+        
             $ruta_guardar_bd = str_replace('../../server', '/ambiente/server', $archivo_destino);
-    
+            } else {
+                echo "Formato de archivo no permitido. Sube una imagen en formato JPEG, JPG o PNG.";
+            }
+        } else {
+            // Si no se proporciona una nueva imagen, usa la imagen actual
+            $ruta_guardar_bd = $imagenActual;
+        }
             $sql = "UPDATE categoria SET
             descripcion = ?,
             ruta_imagen = ?
@@ -57,9 +65,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             } catch (PDOException $e) {
                 $response = ['status' => 'error', 'message' => 'Error al actualizar la categoria: ' . $e->getMessage()];
             }
-        } else {
-            echo "Formato de archivo no permitido. Sube una imagen en formato JPEG, JPG o PNG.";
-        }
         echo json_encode($response);
 
     }

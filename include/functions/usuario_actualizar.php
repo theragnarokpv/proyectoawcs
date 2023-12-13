@@ -67,13 +67,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if($idUsuarioOk && $idRolOk && $usernameOk && $contrasenaOk && $correoOk){
-        $permitidos = array('image/jpeg', 'image/jpg', 'image/png');
-        if (in_array($archivo_tipo, $permitidos)) {
-            $carpeta_destino = '../../server/usuarios/';
-            $archivo_destino = $carpeta_destino . $archivo_nombre;
-            move_uploaded_file($archivo_tmp, $archivo_destino);
-    
-            $ruta_guardar_bd = str_replace('../../server', '/ambiente/server', $archivo_destino);
+        if (!empty($archivo_nombre)) {
+            // Se ha seleccionado un nuevo archivo
+            $permitidos = array('image/jpeg', 'image/jpg', 'image/png');
+            if (in_array($archivo_tipo, $permitidos)) {
+                $carpeta_destino = '../../server/usuarios/';
+                $archivo_destino = $carpeta_destino . $archivo_nombre;
+                move_uploaded_file($archivo_tmp, $archivo_destino);
+                $ruta_guardar_bd = str_replace('../../server', '/ambiente/server', $archivo_destino);
+            } else {
+                echo "Formato de archivo no permitido. Sube una imagen en formato JPEG, JPG o PNG.";
+                exit;
+            }
+        } else {
+            // No se seleccionó un nuevo archivo, mantener la ruta anterior
+            $ruta_guardar_bd = $_POST['ruta_imagen_actual'];
+        }
+
     
             $sql = "UPDATE usuario SET
             id_rol = ?,
@@ -99,10 +109,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Devolver la respuesta al cliente (JavaScript)
             echo json_encode($response);
-    
-        } else {
-            echo "Formato de archivo no permitido. Sube una imagen en formato JPEG, JPG o PNG.";
-        }
 
 
     }

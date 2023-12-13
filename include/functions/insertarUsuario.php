@@ -19,8 +19,7 @@
         $nombreOk = false;
         $apellidosOk = false;
         $correoOk = false;
-        $contrasenaOk = false;
-        $telefonoOk = false;
+        $contrasenaOk = true;
 
         if ($usuario == ""){
             print "<p class=\¨aviso\"> No ha escrito un usuario valido. </p>\n";
@@ -50,19 +49,19 @@
             $correoOk = true;
         }
 
-        if ($contrasena == "" || $confirmarContra == ""){
-            print "<p class=\¨aviso\"> No ha escrito contraseñas </p>\n";
-            print "\n";
-        } elseif ($contrasena !== $confirmarContra ) {
-            print "<p class=\¨aviso\"> El dato de la categoria no es válido. </p>\n";
-            print "\n";
-        }else {
-            $contrasenaoOk = true;
-        }
+        // if ($contrasena == "" or $confirmarContra == ""){
+        //     print "<p class=\¨aviso\"> No ha escrito contraseñas </p>\n";
+        //     print "\n";
+        // } elseif ($contrasena !== $confirmarContra ) {
+        //     print "<p class=\¨aviso\"> El dato de la categoria no es válido. </p>\n";
+        //     print "\n";
+        // }else {
+        //     $contrasenaoOk = true;
+        // }
 
 
         if ($usuarioOk && $nombreOk && $apellidosOk && $correoOk && $contrasenaOk) {
-            $contrasenaEncripta = password_hash($_POST["contrasena"], PASSWORD_DEFAULT);
+            $contrasenaEncripta = password_hash($contrasena, PASSWORD_DEFAULT);
             $sql = "INSERT INTO usuario (id_rol, username, password, nombre, apellidos, correo, telefono)
                     VALUES ($id_rol, '$usuario', '$contrasenaEncripta', '$nombre', '$apellidos', '$correo', '$telefono')";
     
@@ -71,15 +70,14 @@
     
             // Ejecutar la consulta
             if ($stmt->execute()) {
-                echo "Usuario registrado exitosamente";
+                $response = ['status' => 'success', 'message' => 'Usuario actualizado con éxito'];
+                exit();
             } else {
-                echo "Error al registrar el usuario";
+                $response = ['status' => 'error', 'message' => 'Error al actualizar el usuario: ' . $e->getMessage()];
             }
     
     
             // Redirige de vuelta a la página de referencia
-            header("Location: ../../iniciosesion.php");
-
         }
 
     }

@@ -151,7 +151,6 @@ function mostrarVistaPreviaModif(input) {
 }
 
 function guardarCambios() {
-    /*Obtiene datos del formulario*/
     var id_producto = document.getElementById('id_producto').value;
     var categoria = document.getElementById('id_categoria').value;
     var descripcion = document.getElementById('descripcion').value;
@@ -161,10 +160,8 @@ function guardarCambios() {
     var imagenInput = document.getElementById('modif_imagen');
     var imagen = imagenInput.files[0];
 
-    /*Con esta funcion se puede ver una vista previa*/
     mostrarVistaPreviaModif(imagenInput);
 
-    // Crear un objeto FormData
     var formData = new FormData();
     formData.append('id_producto', id_producto);
     formData.append('id_categoria', categoria);
@@ -173,8 +170,13 @@ function guardarCambios() {
     formData.append('precio', precio);
     formData.append('existencias', existencias);
 
+    // Verificar si se seleccionó un nuevo archivo de imagen
     if (imagen) {
         formData.append('ruta_imagen', imagen, imagen.name);
+    } else {
+        // Si no se selecciona un nuevo archivo, enviar la ruta de imagen actual
+        var rutaImagenActual = document.getElementById('mostrar_modif_imagen').src;
+        formData.append('ruta_imagen_actual', rutaImagenActual);
     }
 
     $.ajax({
@@ -182,7 +184,7 @@ function guardarCambios() {
         method: 'POST',
         data: formData,
         processData: false,
-        contentType: false,  
+        contentType: false,
         dataType: 'json',
         success: function (r) {
             ActualizacionExitosa(r);
