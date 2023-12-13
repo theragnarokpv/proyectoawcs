@@ -3,6 +3,12 @@
     session_start();
 
     $conexion = $conn;
+
+    $id_rol_usuario = $_SESSION['id_rol'] ?? null;
+
+    // Verifica que se haya iniciado sesión y el rol sea menor o igual a 2
+    if (isset($_SESSION['id_usuario']) && $id_rol_usuario !== null && $id_rol_usuario <= 2) {
+        // Usuario autenticado y es un administrador
 ?>
 
 <!DOCTYPE html>
@@ -82,11 +88,11 @@
                             echo "<tr>";
                             echo "<th scope='row'>$contador</th>";
                             echo "<td>$nombreUsuario $apellidosUsuario</td>";
-                            echo "<td>" . implode("<br>", $productos) . "</td>";
+                            echo "<td class='admin_producto'>" . implode("<br>", $productos) . "</td>";
                             echo "<td>$fechaCompra</td>";
                             echo "<td>$metodoEntrega <br> $provincia <br> $canton <br> $distrito  <br> $adicionales </td>";
                             echo "<td>
-                                <a href='include/functions/pedido_eliminar.php?pedido=$idCompra'><button class='btn_carrito'>Eliminar</button></a>
+                                <a href='include/functions/pedido_eliminar.php?pedido=$idCompra'><button class='btn_admin'>Eliminar</button></a>
                             </td>";
                             echo "</tr>";
 
@@ -116,3 +122,11 @@
     <script src="js/jquery-ui-1.12.1/jquery-ui.js"></script>
 </body>
 </html>
+
+<?php
+} else {
+    // Usuario no autenticado o no es un administrador, redirige a la página de inicio de sesión
+    header("Location: inicioSesion.php");
+    exit();
+}
+?>

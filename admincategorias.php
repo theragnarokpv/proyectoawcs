@@ -1,6 +1,12 @@
 <?php
     include "include/functions/conexion.php";
     session_start();
+
+    $id_rol_usuario = $_SESSION['id_rol'] ?? null;
+
+    // Verifica que se haya iniciado sesión y el rol sea menor o igual a 2
+    if (isset($_SESSION['id_usuario']) && $id_rol_usuario !== null && $id_rol_usuario <= 2) {
+        // Usuario autenticado y es un administrador
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +31,24 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <button type='button' id="boton_agregar" class='btn btn_carrito' data-bs-toggle='modal' data-bs-target='#agregarcategoria'> Agregar Categoria</button>
+                    <button type='button' id="boton_agregar" class='btn btn_admin' data-bs-toggle='modal' data-bs-target='#agregarcategoria'> Agregar Categoria</button>
+                </div>
+
+                                <div ID="pnlMensaje" title="Error" style="display:none">
+                    <div>
+                        <strong>Atención!</strong> Se ha presentado el siguiente problema.
+                        <br />
+                        <br />
+                        <p ID="blMensajes"></p>
+                    </div>
+                </div>
+                <div ID="pnlInfo" title="Mensaje" style="display : none;">
+                    <div>
+                        <strong>Información!</strong> Procesamiento éxitoso.
+                        <br />
+                        <br />
+                        <p ID="blInfo"></p>
+                    </div>
                 </div>
 
                 <?php 
@@ -69,21 +92,20 @@
                 <div class="modal-dialog modal-dialog-scrollable">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar Producto</h1>
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar Categoria</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form id="formAgregarCategoria">
+                            <form id="formAgregarCategoria" enctype="multipart/form-data">
                                 <div class="mb-3">
                                     <label for="agregar_descripcion" class="form-label">Descripción:</label>
                                     <input type="text" class="form-control" id="agregar_descripcion" name="agregar_descripcion">
                                 </div>
                                 <div class="mb-3">
                                     <label for="agregar_imagen" class="form-label">Imagen:</label>
-                                    <img src="" alt="Imagen del Producto" id="agregar_imagen" class="img-fluid">
-                                    <input type="file" name="agregar__imagen" id="agregar_imagen">
+                                    <img src="" alt="Imagen de la categoria" id="mostrar_imagen" class="img-fluid">
+                                    <input type="file" name="agregar_imagen" id="agregar_imagen">
                                 </div>
-                                <!-- Agrega más campos según tus necesidades -->
                             </form>
                         </div>
                         <div class="modal-footer">
@@ -103,7 +125,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form id="formModificarCategoria">
+                            <form id="formModificarCategoria" enctype="multipart/form-data">
                                 <div class="mb-3">
                                     <label for="modif_id_categoria" class="form-label">ID Categoria:</label>
                                     <input type="text" class="form-control" id="modif_id_categoria" name="modif_id_categoria" readonly>
@@ -114,10 +136,9 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="modif_imagen" class="form-label">Imagen:</label>
-                                    <img src="" alt="Imagen del Producto" id="modif_imagen" class="img-fluid">
+                                    <img src="" alt="Imagen del Producto" id="mostrar_modif_imagen" class="img-fluid">
                                     <input type="file" name="modif_imagen" id="modif_imagen">
                                 </div>
-                                <!-- Agrega más campos según tus necesidades -->
                             </form>
                         </div>
                         <div class="modal-footer">
@@ -137,3 +158,12 @@
     <script src="js/jquery-ui-1.12.1/jquery-ui.js"></script>
 </body>
 </html>
+
+
+<?php
+} else {
+    // Usuario no autenticado o no es un administrador, redirige a la página de inicio de sesión
+    header("Location: inicioSesion.php");
+    exit();
+}
+?>

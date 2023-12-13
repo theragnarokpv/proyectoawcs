@@ -1,43 +1,68 @@
+/*MODAL AGREGAR CATEGORIA*/
 var ModalAgregarCat = new bootstrap.Modal(document.getElementById('agregarcategoria'));
 
+
+
 // Evento que se dispara al abrir el modal
+ModalAgregarCat._element.addEventListener('show.bs.modal', function(event) {
+
+    $('#agregar_imagen').change(function () {
+        mostrarVistaPrevia(this);
+    });
+
+});
+
+function mostrarVistaPrevia(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#mostrar_imagen').attr('src', e.target.result);
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
 
 // Función para guardar cambios (puedes ajustarla según tus necesidades)
 function guardarCategoria() {
     // Obtener datos del formulario
-    var descripcion = document.getElementById('modif_descripcion').value;
-    var imagen = document.getElementById('modif_imagen').value;
+    var descripcion = document.getElementById('agregar_descripcion').value;
+    var imagen = document.getElementById('agregar_imagen').files[0];
 
-    var datos = {
-        descripcion: descripcion,
-        imagen: imagen
-    };
+    mostrarVistaPrevia(imagen);
 
-    try {
-        $.ajax({
-            url: 'include/functions/categoria_agregar.php',
-            method: 'POST',
-            data: datos,
-            dataType: 'json',
-            success: function (r) {
-                ActualizacionExitosa(r);
+    var formData = new FormData();
+    formData.append('descripcion', descripcion);
 
-                ModalAgregarCat.hide();
-                location.reload();
-            },
-            error: function (r) {
-                ActualizacionFallida(r)
-            }
-    
-        })
-        
-    } catch (error) {
-        alert (err);
+    if (imagen) {
+        formData.append('ruta_imagen', imagen);
     }
+
+
+    $.ajax({
+        url: 'include/functions/categoria_agregar.php',
+        method: 'POST',
+        data: formData,
+        dataType: 'json',
+        contentType: false,
+        processData: false,
+        success: function (r) {
+            ActualizacionExitosa(r);
+
+            ModalAgregarCat.hide();
+            location.reload();
+        },
+        error: function (r) {
+            ActualizacionFallida(r)
+        }
+
+    })
+
 }
 
 
-
+/*MODAL PARA MODIFICAR LA CATEGORIA*/
 
 
 var ModalCat = new bootstrap.Modal(document.getElementById('modificarcategoria'));
@@ -54,28 +79,52 @@ ModalCat._element.addEventListener('show.bs.modal', function (event) {
     // Llenar los inputs del formulario con los datos
     document.getElementById('modif_id_categoria').value = id_categoria;
     document.getElementById('modif_descripcion').value = descripcion;
-    document.getElementById('modif_imagen').src = imagen;
+    document.getElementById('mostrar_modif_imagen').src = imagen;
+
+    $('#modif_imagen').change(function () {
+        mostrarVistaPreviaModif(this);
+    });
 });
+
+function mostrarVistaPreviaModif(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#mostrar_modif_imagen').attr('src', e.target.result);
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
 
 // Función para guardar cambios (puedes ajustarla según tus necesidades)
 function guardarCambios() {
     // Obtener datos del formulario
     var categoria = document.getElementById('modif_id_categoria').value;
     var descripcion = document.getElementById('modif_descripcion').value;
-    var imagen = document.getElementById('modif_imagen').value;
 
-    var datos = {
-        id_categoria: categoria,
-        descripcion: descripcion,
-        imagen: imagen
-    };
+    var imagenInput = document.getElementById('modif_imagen');
+    var imagen = imagenInput.files[0];
+
+    mostrarVistaPreviaModif(imagenInput);
+
+    var formData = new FormData();
+    formData.append('id_categoria', categoria);
+    formData.append('descripcion', descripcion);
+
+    if (imagen) {
+        formData.append('ruta_imagen', imagen, imagen.name);
+    }
 
     try {
         $.ajax({
             url: 'include/functions/categoria_actualizar.php',
             method: 'POST',
-            data: datos,
+            data: formData,
             dataType: 'json',
+            contentType: false,
+            processData: false,
             success: function (r) {
                 ActualizacionExitosa(r);
 

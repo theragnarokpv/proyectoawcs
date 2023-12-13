@@ -46,12 +46,12 @@
         
                                 echo"<div class='formula'>";
                                 
-                                    echo" <h2 class='use_pag'>",$datos['descripcion'],"</h2>";
+                                    echo" <h2 class='tit_pag'>",$datos['descripcion'],"</h2>";
                                     echo" <h2 class='use_pag'>Categoria:  ",$cDatos['descripcion']," </h2>";
                                     echo" <h2 class='use_pag'>Descripcion: ","<h6 class='com_pag'>",$datos['detalle'],"</h6>","</h2>";
                                     echo" <h2 class='use_pag'>Precio:  ₡",$datos['precio'],"</h2>";
 
-                                    echo"<a href='include/functions/agregarCarrito.php?codigo={$datos['id_producto']}'><button class='btn_compra' ><i class='bi bi-cart-plus-fill'></i>AÑADIR</button></a>";
+                                    echo"<a class='btn_pag' href='include/functions/agregarCarrito.php?codigo={$datos['id_producto']}'><button class='btn_compra' ><i class='bi bi-cart-plus-fill'></i>AÑADIR</button></a>";
                                 
                                 echo"</div>";
             

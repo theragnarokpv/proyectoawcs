@@ -1,6 +1,14 @@
 <?php
     include "include/functions/conexion.php";
     session_start();
+
+
+    
+    $id_rol_usuario = $_SESSION['id_rol'] ?? null;
+
+    // Verifica que se haya iniciado sesión y el rol sea menor o igual a 2
+    if (isset($_SESSION['id_usuario']) && $id_rol_usuario !== null && $id_rol_usuario <= 2) {
+        // Usuario autenticado y es un administrador
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +33,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <button type='button' id="boton_agregar" class='btn btn_carrito' data-bs-toggle='modal' data-bs-target='#agregarusuario'> Agregar Usuario </button>
+                    <button type='button' id="boton_agregar" class='btn btn_admin' data-bs-toggle='modal' data-bs-target='#agregarusuario'> Agregar Usuario </button>
                 </div>
 
                 <div ID="pnlMensaje" title="Error" style="display:none">
@@ -72,11 +80,11 @@
                                 echo "<td>$datos[rol]</td>";
                                 echo "<td>$datos[username]</td>";
                                 echo "<td>$datos[correo]</td>";
-                                echo "<td><button type='button' class='btn btn_carrito' data-bs-toggle='modal' data-bs-target='#modificarusuario' 
+                                echo "<td><button type='button' class='btn btn_admin' data-bs-toggle='modal' data-bs-target='#modificarusuario' 
                                 data-id='$datos[id_usuario]' data-id-rol='$datos[id_rol]' data-rol'$datos[rol]' 
                                 data-username='$datos[username]' data-password='$datos[password]' data-nombre='$datos[nombre]' 
                                 data-apellidos='$datos[apellidos]' data-correo='$datos[correo]' data-telefono='$datos[telefono]' data-imagen='$datos[ruta_imagen]'> Modificar </button>
-                                        <a href='include/functions/usuario_eliminar.php?usuario=$datos[id_usuario]'><button class='btn_carrito'> Eliminar </button></a>";
+                                        <a href='include/functions/usuario_eliminar.php?usuario=$datos[id_usuario]'><button class='btn_admin'> Eliminar </button></a>";
                                 echo "</tr>";
 
 
@@ -108,7 +116,6 @@
                                     <label for="agregar_correo" class="form-label">Correo:</label>
                                     <input type="email" class="form-control" id="agregar_correo" name="agregar_correo">
                                 </div>
-                                <!-- Agrega más campos según tus necesidades -->
                             </form>
                         </div>
                         <div class="modal-footer">
@@ -128,7 +135,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form id="formmodifUsuario">
+                            <form id="formmodifUsuario" enctype="multipart/form-data">
                                 <div class="mb-3">
                                     <label for="modif_id_usuario" class="form-label">ID Usuario:</label>
                                     <input type="text" class="form-control" id="modif_id_usuario" name="modif_id_usuario" readonly>
@@ -136,7 +143,7 @@
                                 <div class="mb-3">
                                     <label for="modif_rol" class="form-label">Roles:</label>
                                     <select class="form-select" id="modif_rol" name="modif_rol">
-                                        <!-- Opciones de categorías se llenarán dinámicamente con JavaScript -->
+                                        <!-- Opciones de categorías se llenarán  con JavaScript -->
                                     </select>
                                     <input type="hidden" id="modif_id_rol" name="modif_id_rol">
                                 </div>
@@ -169,7 +176,6 @@
                                     <img src="" alt="Imagen del Producto" id="modif_imagen" class="img-fluid">
                                     <input type="file" name="modif_imagen" id="modif_subir_imagen">
                                 </div>
-                                <!-- Agrega más campos según tus necesidades -->
                             </form>
                         </div>
                         <div class="modal-footer">
@@ -188,3 +194,12 @@
     <script src="js/jquery-ui-1.12.1/jquery-ui.js"></script>
 </body>
 </html>
+
+
+<?php
+} else {
+    // Usuario no autenticado o no es un administrador, redirige a la página de inicio de sesión
+    header("Location: inicioSesion.php");
+    exit();
+}
+?>

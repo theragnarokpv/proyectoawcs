@@ -31,14 +31,14 @@
         <form action="include/functions/MetodoPago.php" method="post" class="form-inline row">
             <div class="row">
                 <div class="col-md-6">
-                    <div class="form-check">
+                    <div class="form-check metodo">
                         <input class="form-check-input" type="radio" name="local" id="RadioLocal">
                         <label class="form-check-label metodo_pago" for="local">
                             Retiro en local
                         </label>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 metodo">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="domicilio" id="RadioDomicilio">
                         <label class="form-check-label  metodo_pago" for="domicilio">
@@ -51,7 +51,7 @@
             <div id="localOptions" class="row">
                 <div class="col-md-6">
                     <div class="form-label registro-label">Tienda:</div>
-                    <select class="form-control registro-input" id="tienda" name="tienda" style="width:350px; height: 45px; " required>
+                    <select class="form-control registro-input" id="tienda" name="tienda"  required>
                         <option value="Cartago">Tienda Cartago</option>
                         <option value="SanJose">Tienda San Jose</option>
                     </select>
@@ -61,19 +61,19 @@
             <div id="domicilioOptions" class="row">
                 <div class="col-md-6">
                     <div class="form-label registro-label">Provincia:</div>
-                    <input type="text" class="form-control registro-input" id="provincia" name="provincia" style="width:350px; color: white;" required>
+                    <input type="text" class="form-control registro-input" id="provincia" name="provincia" required>
                 </div>
                 <div class="col-md-6">
                     <div class="form-label registro-label">Cantón:</div>
-                    <input type="text" class="form-control registro-input" id="canton" name="canton" style="width:350px; color: white;" required>
+                    <input type="text" class="form-control registro-input" id="canton" name="canton" required>
                 </div>
                 <div class="col-md-6">
                     <div class="form-label registro-label">Distrito:</div>
-                    <input type="text" class="form-control registro-input" id="distrito" name="distrito" style="width:350px; color: white;" required>
+                    <input type="text" class="form-control registro-input" id="distrito" name="distrito" required>
                 </div>
                 <div class="col-md-6">
                     <div class="form-label registro-label">Datos Adicionales:</div>
-                    <textarea class="form-control registro-input" id="datos_adicionales" name="datos_adicionales" style="width:350px; color: white;"></textarea>
+                    <textarea class="form-control registro-input" id="datos_adicionales" name="datos_adicionales" ></textarea>
                 </div>
             </div>
 
@@ -86,19 +86,19 @@
             <div id="tarjetaOptions" class="row">
                 <div class="col-md-6">
                     <div class="form-label registro-label">Número de Tarjeta:</div>
-                    <input type="text" class="form-control registro-input" id="num_tarjeta" name="num_tarjeta" style="width:350px;color: white; " required>
+                    <input type="text" class="form-control registro-input" id="num_tarjeta" name="num_tarjeta" required>
                 </div>
                 <div class="col-md-6">
                     <div class="form-label registro-label">Número de Seguridad:</div>
-                    <input type="text" class="form-control registro-input" id="num_seguridad" name="num_seguridad" style="width:350px;color: white; " required>
+                    <input type="text" class="form-control registro-input" id="num_seguridad" name="num_seguridad" required>
                 </div>
                 <div class="col-md-6">
                     <div class="form-label registro-label">Nombre del Propietario:</div>
-                    <input type="text" class="form-control registro-input" id="nombre_propietario" name="nombre_propietario" style="width:350px;color: white; " required>
+                    <input type="text" class="form-control registro-input" id="nombre_propietario" name="nombre_propietario"  required>
                 </div>
                 <div class="col-md-6">
                     <div class="form-label registro-label">Fecha de Expiración:</div>
-                    <input type="text" class="form-control registro-input" id="fecha_expiracion" name="fecha_expiracion" style="width:350px;color: white; " required>
+                    <input type="text" class="form-control registro-input" id="fecha_expiracion" name="fecha_expiracion" required>
                 </div>
             </div>
 
@@ -106,9 +106,9 @@
                 <div class="col-md-4">
                     <a href="carrito.php" class="btn btn_carrito mt-3">Volver</a>
                 </div>
-                <div class="col-md-7">
+                <div class="col-md-5">
                 </div>
-                <div class="col-md-1">
+                <div class="col-md-3">
                     <button type="submit" class="btn btn_carrito mt-3">Confirmar</button>
                 </div>
             </div>

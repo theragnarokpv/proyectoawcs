@@ -1,6 +1,13 @@
 <?php
     include "include/functions/conexion.php";
     session_start();
+
+    
+    $id_rol_usuario = $_SESSION['id_rol'] ?? null;
+
+    // Verifica que se haya iniciado sesión y el rol sea menor o igual a 2
+    if (isset($_SESSION['id_usuario']) && $id_rol_usuario !== null && $id_rol_usuario <= 2) {
+        // Usuario autenticado y es un administrador
 ?>
 
 <!DOCTYPE html>
@@ -29,7 +36,7 @@
 
             <div class="row">
                 <div class="col-md-3">
-                    <button type='button' id="boton_agregar" class='btn btn_carrito' data-bs-toggle='modal' data-bs-target='#agregarproducto'> Agregar Producto</button>
+                    <button type='button' id="boton_agregar" class='btn btn_admin' data-bs-toggle='modal' data-bs-target='#agregarproducto'> Agregar Producto</button>
                 </div>
 
     
@@ -65,7 +72,7 @@
                                 echo "<th scope='col'>#</th>";
                                 echo "<th scope='col'>Categoria</th>";
                                 echo "<th scope='col'>Descripcion</th>";
-                                echo "<th scope='col'>Detalle</th>";
+                                echo "<th class='admin_detalle' scope='col'>Detalle</th>";
                                 echo "<th scope='col'>Precio</th>";
                                 echo "<th scope='col'>Existencias</th>";
                                 echo "<th scope='col'>Botones</th>";
@@ -78,12 +85,12 @@
                                 echo "<th scope='row'>$datos[id_producto]</th>";
                                 echo "<td>$datos[categorias]</td>";
                                 echo "<td>$datos[nombre_producto]</td>";
-                                echo "<td>$datos[detalle]</td>";
+                                echo "<td class='admin_detalle' >$datos[detalle]</td>";
                                 echo "<td>$datos[precio]</td>";
                                 echo "<td>$datos[existencias]</td>";
-                                echo "<td><button type='button' class='btn btn_carrito' data-bs-toggle='modal' data-bs-target='#exampleModal' 
+                                echo "<td><button type='button' class='btn btn_admin' data-bs-toggle='modal' data-bs-target='#exampleModal' 
                                         data-id='$datos[id_producto]' data-id-categoria='$datos[id_categoria]' data-categoria='$datos[categorias]' data-descripcion='$datos[nombre_producto]' data-detalle='$datos[detalle]' data-precio='$datos[precio]' data-existencias='$datos[existencias]' data-imagen='$datos[ruta_imagen]'> Modificar </button>
-                                        <a href='include/functions/producto_eliminar.php?producto=$datos[id_producto]'><button class='btn_carrito'> Eliminar </button></a>";
+                                        <a href='include/functions/producto_eliminar.php?producto=$datos[id_producto]'><button class='btn_admin'> Eliminar </button></a>";
                                             echo "</tr>";
 
 
@@ -102,11 +109,10 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form id="formAgregarProducto">
+                            <form id="formAgregarProducto" enctype="multipart/form-data">
                                 <div class="mb-3">
                                     <label for="agregar_categoria" class="form-label">Categoría:</label>
                                     <select class="form-select" id="agregar_categoria" name="agregar_categoria">
-                                        <!-- Opciones de categorías se llenarán dinámicamente con JavaScript -->
                                     </select>
                                     <input type="hidden" id="agregar_id_categoria" name="agregar_id_categoria">
                                 </div>
@@ -128,10 +134,9 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="existencias" class="form-label">Imagen:</label>
-                                    <img src="" alt="Imagen del Producto" id="agregar_imagen" class="img-fluid">
+                                    <img src="" alt="Imagen del Producto" id="mostrar_imagen" class="img-fluid">
                                     <input type="file" name="agregar_imagen" id="agregar_imagen">
                                 </div>
-                                <!-- Agrega más campos según tus necesidades -->
                             </form>
                         </div>
                         <div class="modal-footer">
@@ -151,7 +156,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form id="formModificarProducto">
+                            <form id="formModificarProducto" enctype="multipart/form-data">
                                 <div class="mb-3">
                                     <label for="id_producto" class="form-label">ID Producto:</label>
                                     <input type="text" class="form-control" id="id_producto" name="id_producto" readonly>
@@ -159,7 +164,6 @@
                                 <div class="mb-3">
                                     <label for="categoria" class="form-label">Categoría:</label>
                                     <select class="form-select" id="categoria" name="categoria">
-                                        <!-- Opciones de categorías se llenarán dinámicamente con JavaScript -->
                                     </select>
                                     <input type="hidden" id="id_categoria" name="id_categoria">
                                 </div>
@@ -181,10 +185,9 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="existencias" class="form-label">Imagen:</label>
-                                    <img src="" alt="Imagen del Producto" id="imagen" class="img-fluid">
-                                    <input type="file" name="imagen" id="imagen">
+                                    <img src="" alt="Imagen del Producto" id="mostrar_modif_imagen" class="img-fluid">
+                                    <input type="file" name="imagen" id="modif_imagen">
                                 </div>
-                                <!-- Agrega más campos según tus necesidades -->
                             </form>
                         </div>
                         <div class="modal-footer">
@@ -205,3 +208,11 @@
     
 </body>
 </html>
+
+<?php
+} else {
+    // Usuario no autenticado o no es un administrador, redirige a la página de inicio de sesión
+    header("Location: inicioSesion.php");
+    exit();
+}
+?>

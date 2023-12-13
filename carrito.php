@@ -25,71 +25,74 @@
     </div>
 
     <div class="container">
-        <div id='datos_prod'>
-            <?php
-                $total = 0;
-                if (isset($_SESSION['carrito']) && !empty($_SESSION['carrito'])) {
-                    foreach ($_SESSION['carrito'] as $codigo => $producto) {
-                        $subtotal = $producto['precio'] * $producto['cantidad'];
-                        $total += $subtotal;
+        <div class="container_carrito">
 
-                        echo "<div class='tarj_cuerpo'>";
-                            echo "<div class='img_prod'>";
-                                echo "<img src='{$producto['ruta_imagen']}' alt=''>";
-                            echo "</div>";
+            <div id='datos_prod'>
+                <?php
+                    $total = 0;
+                    if (isset($_SESSION['carrito']) && !empty($_SESSION['carrito'])) {
+                        foreach ($_SESSION['carrito'] as $codigo => $producto) {
+                            $subtotal = $producto['precio'] * $producto['cantidad'];
+                            $total += $subtotal;
 
-                            echo "<div class='tarj_info'>";
-                                echo "<div class='nom_prod'>{$producto['descripcion']}</div>";
-                                
-                                echo "<div class='tarj_precio'>";
-                                    echo "<div class='precio_prod'>₡ {$producto['precio']}</div>";
-                                    echo "<div class='cant_prod'>
-                                              <input type='number' class='cantidad-input' data-codigo='{$codigo}' value='{$producto['cantidad']}' min='1' onchange='actualizarCantidad(this)'>
-                                          </div>";
+                            echo "<div class='tarj_cuerpo'>";
+                                echo "<div class='img_prod'>";
+                                    echo "<img src='{$producto['ruta_imagen']}' alt=''>";
+                                echo "</div>";
+
+                                echo "<div class='tarj_info'>";
+                                    echo "<div class='nom_prod'>{$producto['descripcion']}</div>";
+                                    
+                                    echo "<div class='tarj_precio'>";
+                                        echo "<div class='precio_prod'>₡ {$producto['precio']}</div>";
+                                        echo "<div class='cant_prod'>
+                                                <input type='number' class='cantidad-input' data-codigo='{$codigo}' value='{$producto['cantidad']}' min='1' onchange='actualizarCantidad(this)'>
+                                            </div>";
+                                    echo "</div>";
+                                echo "</div>";
+
+                                echo "<div class='eliminar_prod'>";
+                                    echo "<a href='include/functions/eliminarProducto.php?codigo={$codigo}'><button type='button' class='btn btn-danger'><i class='bi bi-x-circle-fill' id='circle_x'></i></button></a>";
                                 echo "</div>";
                             echo "</div>";
-
-                            echo "<div class='eliminar_prod'>";
-                                echo "<a href='include/functions/eliminarProducto.php?codigo={$codigo}'><button type='button' class='btn btn-danger'><i class='bi bi-x-circle-fill' id='circle_x'></i></button></a>";
-                            echo "</div>";
-                        echo "</div>";
+                        }
+                    } else {
+                        echo "<p class='total'>El carrito está vacío.</p>";
                     }
-                } else {
-                    echo "<p class='total'>El carrito está vacío.</p>";
-                }
-            ?>
-        </div>
-
-        <div id='precio_total'>
-            <div id='cuadro_precio'>
-                <div id='tit_precio'>
-                    Total a pagar
-                </div>
-                <div class='total'>
-                    ₡ <span id="total"><?php echo $total; ?></span>
-                </div>
+                ?>
             </div>
 
-            <div id='btn_opciones'>
-                <div class='limpiar'>
-                    <a href='#'><button class='btn_carrito'>Limpiar historial</button></a>
+            <div id='precio_total'>
+                <div id='cuadro_precio'>
+                    <div id='tit_precio'>
+                        Total a pagar
+                    </div>
+                    <div class='total'>
+                        ₡ <span id="total"><?php echo $total; ?></span>
+                    </div>
                 </div>
 
-                <?php
-                    if (isset($_SESSION['id_usuario'])) :
-                ?>
-                    <div class='terminar'>
-                        <a href='pago.php'><button class='btn_carrito'>Terminar Proceso</button></a>
+                <div id='btn_opciones'>
+                    <div class='limpiar'>
+                        <a href='#'><button class='btn_carrito'>Limpiar historial</button></a>
                     </div>
-                <?php
-                    else :
-                ?>
-                    <a href='inicioSesion.php' class='btn'>
-                        <a href='inicioSesion.php'><button class='btn_carrito'>Terminar Proceso</button></a>
-                    </a>
-                <?php
-                    endif;
-                ?>
+
+                    <?php
+                        if (isset($_SESSION['id_usuario'])) :
+                    ?>
+                        <div class='terminar'>
+                            <a href='pago.php'><button class='btn_carrito'>Terminar Proceso</button></a>
+                        </div>
+                    <?php
+                        else :
+                    ?>
+                        <a href='inicioSesion.php' class='btn'>
+                            <a href='inicioSesion.php'><button class='btn_carrito'>Terminar Proceso</button></a>
+                        </a>
+                    <?php
+                        endif;
+                    ?>
+                </div>
             </div>
         </div>
     </div>

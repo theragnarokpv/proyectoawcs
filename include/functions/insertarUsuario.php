@@ -8,29 +8,79 @@
         $nombre = $_POST["nombre"];
         $apellidos = $_POST["apellidos"];
         $correo = $_POST["correo"];
-        $contrasena = password_hash($_POST["contrasena"], PASSWORD_DEFAULT); // Encriptar la contraseña
+        $contrasena = $_POST["contrasena"];
+        $confirmarContra = $_POST["confirmarContrasena"];
+
         $telefono = $_POST["telefono"];
-        
-        // Puedes asignar un valor predeterminado para otros campos si es necesario
-
-        // Insertar datos en la tabla de usuarios
-        $sql = "INSERT INTO usuario (id_rol, username, password, nombre, apellidos, correo, telefono)
-                VALUES ($id_rol, '$usuario', '$contrasena', '$nombre', '$apellidos', '$correo', '$telefono')";
-
-        $stmt = $conn->prepare($sql);
-
-        // Puedes asignar un rol por defecto o obtenerlo de alguna manera // Por ejemplo, asignando el rol con id 1
 
 
-        // Ejecutar la consulta
-        if ($stmt->execute()) {
-            echo "Usuario registrado exitosamente";
+        /* VERIFICAR DE DATOS */
+        $usuarioOk = false;
+        $nombreOk = false;
+        $apellidosOk = false;
+        $correoOk = false;
+        $contrasenaOk = false;
+        $telefonoOk = false;
+
+        if ($usuario == ""){
+            print "<p class=\¨aviso\"> No ha escrito un usuario valido. </p>\n";
+            print "\n";
         } else {
-            echo "Error al registrar el usuario";
+            $usuarioOk = true;
+        }
+
+        if ($nombre == ""){
+            print "<p class=\¨aviso\"> No ha escrito un nombre </p>\n";
+            print "\n";
+        } else {
+            $nombreOk = true;
+        }
+
+        if ($apellidos == ""){
+            print "<p class=\¨aviso\"> No ha escrito el o los apellidos</p>\n";
+            print "\n";
+        } else {
+            $apellidosOk = true;
+        }
+
+        if ($correo == ""){
+            print "<p class=\¨aviso\"> No ha escrito un correo electronico </p>\n";
+            print "\n";
+        } else {
+            $correoOk = true;
+        }
+
+        if ($contrasena == "" || $confirmarContra == ""){
+            print "<p class=\¨aviso\"> No ha escrito contraseñas </p>\n";
+            print "\n";
+        } elseif ($contrasena !== $confirmarContra ) {
+            print "<p class=\¨aviso\"> El dato de la categoria no es válido. </p>\n";
+            print "\n";
+        }else {
+            $contrasenaoOk = true;
         }
 
 
-        // Redirige de vuelta a la página de referencia
-        header("Location: ../../iniciosesion.php");
+        if ($usuarioOk && $nombreOk && $apellidosOk && $correoOk && $contrasenaOk) {
+            $contrasenaEncripta = password_hash($_POST["contrasena"], PASSWORD_DEFAULT);
+            $sql = "INSERT INTO usuario (id_rol, username, password, nombre, apellidos, correo, telefono)
+                    VALUES ($id_rol, '$usuario', '$contrasenaEncripta', '$nombre', '$apellidos', '$correo', '$telefono')";
+    
+            $stmt = $conn->prepare($sql);
+    
+    
+            // Ejecutar la consulta
+            if ($stmt->execute()) {
+                echo "Usuario registrado exitosamente";
+            } else {
+                echo "Error al registrar el usuario";
+            }
+    
+    
+            // Redirige de vuelta a la página de referencia
+            header("Location: ../../iniciosesion.php");
+
+        }
+
     }
 ?>

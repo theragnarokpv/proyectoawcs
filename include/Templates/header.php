@@ -31,7 +31,7 @@
     <header>
         <div class="top-bar">
             <div class="container">
-                <a href="index.php">
+                <a href="index.php" id="link_contenido">
                     <div class="logo-container">
                         <img src="img/casa-inteligente.png" alt="Logo" class="logo">
                         <h1 class="store-name">TIENDA VALHALLA</h1>

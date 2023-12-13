@@ -41,11 +41,10 @@ function guardarUsuario() {
 
 var myModal = new bootstrap.Modal(document.getElementById('modificarusuario'));
 
-// Evento que se dispara al abrir el modal
-myModal._element.addEventListener('show.bs.modal', function (event) {
-    var button = event.relatedTarget; // Botón que activó el modal
 
-    // Obtener datos de los atributos data-*
+myModal._element.addEventListener('show.bs.modal', function (event) {
+    var button = event.relatedTarget;
+
     var id_usuario = button.getAttribute('data-id');
     var id_rol = button.getAttribute('data-id-rol');
     var username = button.getAttribute('data-username');
@@ -86,15 +85,30 @@ myModal._element.addEventListener('show.bs.modal', function (event) {
             });
 
             $('#modif_rol').val(rolActual);
-            // Resto del código
         },
         error: function (error) {
             console.error('Error al obtener roles:', error);
         }
     });
+
+    $('#modif_subir_imagen').change(function () {
+        mostrarVistaPreviaModif(this);
+    });
 });
 
-// Función para guardar cambios (puedes ajustarla según tus necesidades)
+function mostrarVistaPreviaModif(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#modif_imagen').attr('src', e.target.result);
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+
 function modificarUsuario() {
     // Obtener datos del formulario
 
@@ -106,40 +120,46 @@ function modificarUsuario() {
     var apellidos = document.getElementById('modif_apellidos').value ;
     var correo = document.getElementById('modif_correo').value;
     var telefono = document.getElementById('modif_telefono').value;
-    //var imagen = document.getElementById('agregar_imagen').value;
 
-    var datos = {
-        id_usuario: id_usuario,
-        id_rol: id_rol,
-        username: username,
-        password: password,
-        nombre: nombre,
-        apellidos: apellidos,
-        correo: correo,
-        telefono: telefono,
-    };
+    var imagenInput = document.getElementById('modif_subir_imagen');
+    var imagen = imagenInput.files[0];
 
-    try {
-        $.ajax({
-            url: 'include/functions/usuario_actualizar.php',
-            method: 'POST',
-            data: datos,
-            dataType: 'json',
-            success: function (r) {
-                ActualizacionExitosa(r);
 
-                myModal.hide();
-                location.reload();
-            },
-            error: function (r) {
-                ActualizacionFallida(r)
-            }
-    
-        })
-        
-    } catch (error) {
-        alert (err);
+    mostrarVistaPreviaModif(imagenInput);
+
+    var formData = new FormData();
+    formData.append('id_usuario', id_usuario);
+    formData.append('id_rol', id_rol);
+    formData.append('username', username);
+    formData.append('password', password);
+    formData.append('nombre', nombre);
+    formData.append('apellidos', apellidos);
+    formData.append('correo', correo);
+    formData.append('telefono', telefono);
+
+    if (imagen) {
+        formData.append('ruta_imagen', imagen, imagen.name);
     }
+    
+    $.ajax({
+        url: 'include/functions/usuario_actualizar.php',
+        method: 'POST',
+        data: formData,
+        processData: false,
+        contentType: false,  
+        dataType: 'json',
+        success: function (r) {
+            ActualizacionExitosa(r);
+
+            myModal.hide();
+            location.reload();
+        },
+        error: function (r) {
+            ActualizacionFallida(r)
+        }
+
+    })
+
 }
 
 

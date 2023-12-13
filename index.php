@@ -67,6 +67,8 @@
                         echo"</div>";
                     }
 
+                    
+
                     while ($datos != null){
                         echo "<div class='col-md-3'>";
                             echo "<div class='product'>";
@@ -85,7 +87,7 @@
         </div>
     </section>
 
-    <!-- Modal para agregar categoria -->
+    <!-- Modal para filtrar productos -->
     <div class="modal fade" id="filtrarproductos" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable">
             <div class="modal-content">

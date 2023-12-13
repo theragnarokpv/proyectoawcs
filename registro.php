@@ -29,7 +29,24 @@
     </div>
 
     <div class="container_registro">
-        <form action="include/functions/insertarUsuario.php" method="post" class="form-inline row">
+        <form method="post" class="form-inline row" id="formRegistro">
+            <div id="pnlMensaje" title="Error" style="display:none">
+                <div>
+                    <strong>Atención!</strong> Se ha presentado el siguiente problema.
+                    <br />
+                    <br />
+                    <p id="bnlMensajes"></p>
+                </div>
+            </div>
+            <div id="pnlInfo" title="Mensaje" style="display : none;">
+                <div>
+                    <strong>Información!</strong> Procesamiento éxitoso.
+                    <br />
+                    <br />
+                    <p id="blInfo"></p>
+                </div>
+            </div>
+
 
             <div class="row">
                 <div class="col-md-6">
@@ -81,6 +98,11 @@
 
         </form>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="js/jquery-3.7.1.js"></script>
+    <script src="js/registro.js"></script>
+    <script src="js/jquery-ui-1.12.1/jquery-ui.js"></script>
 </body>
 
 </html>

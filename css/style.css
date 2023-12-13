@@ -1,631 +1,384 @@
 body {
-  background-color: #212020; /* Cambiar el color de fondo de la página */
+    background-color: #212020; /* Cambiar el color de fondo de la página */
 }
 
-
+/*HEADER*/
 .top-bar {
-  background: rgb(73,24,140);
-  background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
-  padding: 10px;
-  z-index: 2;
+    background: rgb(73,24,140);
+    background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+    padding: 10px;
+    z-index: 2;
 }
 
 .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo-container {
-  display: flex;
-  align-items: center;
-}
-
-.logo {
-  max-width: 50px; /* Ajusta el tamaño máximo del logo según tus necesidades */
-  margin-right: 10px;
+    display: flex;
+    align-items: center;
 }
 
 .store-name {
-  font-size: 27px; /* Ajusta el tamaño de la fuente del nombre de la tienda según tus necesidades */
+    color: white;
+    
+}
+
+#link_contenido{
+    text-decoration: none;
 }
 
 .other-logos {
-  display: flex;
-  align-items: center;
-}
-
-.other-logo {
-  max-width: 30px; /* Ajusta el tamaño máximo de los otros logos según tus necesidades */
-  margin-left: 22px;
+    display: flex;
+    align-items: center;
 }
 
 #drop {
-  background: rgb(73,24,140);
-  background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%); 
+    background: rgb(73,24,140);
+    background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%); 
 }
 
 #drop li{
-  border-bottom: white 2px solid;
+    border-bottom: white 2px solid;
 } 
 
 #drop li a:hover{
-  backdrop-filter: blur(5px);
-  background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, 0.1);
 }
-
 
 #drop li a{
-  color: white;
-  font-size: 16px;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
+ /*Titulos*/
+
+ .main-content {
+    margin-top: 20px;
+}
+ #tit_carrito{
+    color: white;
+    font-size: 25px;
+    margin-top: 20px;
+  
+    display: flex;
+    justify-content: center;
+}
+
+/*Navegador Categorias*/
 .sidebar {
-  background: rgb(73,24,140);
-  background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
-  width: 80px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  display: flex;
-  padding-top: 120px;
-  justify-content: center;
+    background: rgb(73,24,140);
+    background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
 }
 
 .sidebar-logos {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
-.sidebar-logo {
-  max-width: 50px; /* Ajusta el tamaño máximo de los logos en la barra lateral según tus necesidades */
-  margin-bottom: 33px;
-}
+
+/*Productos*/
 
 .product {
-  background: rgb(73,24,140);
-  background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
-
-  text-align: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  width: 250px;
-  height: 270px;
-  position: relative;
-  border-radius: 10px; /* Agregar bordes redondeados a las cajas de productos */
-  overflow: hidden; /* Asegurar que el contenido no sobresalga de los bordes redondeados */
-}
-
-.btn-mas{
-  position: fixed;
-  display: flex;
-  justify-content: end;
-
-  bottom: 20px;
-  right: 80px;
-
-  width: 60px;
-  height: 60px;
-
-  background: rgb(73,24,140);
-  background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
-  border-radius: 100%;
-}
-
-#boton_buscar img{
-  right: 80px;
+    background: rgb(73,24,140);
+    background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+  
+    text-align: center;
+    position: relative;
+    overflow: hidden; 
 }
 
 
 .product-image {
-  width: 150px;
-  height: 100px;
-  border-radius: 10px;
-  margin-top: 10px;
-
+    border-radius: 10px;
+    margin-top: 10px;
+  
 }
-
+  
 .product-name {
-  margin-top: 10px;
-  font-size: 24px;
-  font-weight: bold;
-  color: #efe7e7; /* Cambiar el color de texto del nombre del producto */
-  font-family:'Times New Roman', Times, serif /* Cambiar el tipo de letra del nombre del producto */
+    font-weight: bold;
+    color: #efe7e7;
+    font-family:'Times New Roman', Times, serif 
 }
-  
+    
 .product-price {
-  margin-top: 5px;
-  margin-bottom: 15px;
-  font-size: 18px;
-  font-weight: bold;
-  color: #ede9e9; /* Cambiar el color de texto del precio del producto */
-  font-family:'Times New Roman', Times, serif /* Cambiar el tipo de letra del precio del producto */
+    font-weight: bold;
+    color: #ede9e9;
+    font-family:'Times New Roman', Times, serif 
 }
-
-.btn_compra{
-  background: rgb(47,217,210);
-  background: radial-gradient(circle, rgba(47,217,210,1) 64%, rgba(237,237,237,1) 100%);
-
-  color: black;
-  font-size: 20px;
-  padding:  10px 20px 10px 20px;
-  font-weight: bold;
-  border-radius: 25px;
-
-}
-
-.bi-cart-plus-fill {
-  margin-right: 5px;
-}
-
   
-.corner-logo {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 30px;
-  height: 30px;
-}
+.btn_compra{
+    background: rgb(47,217,210);
+    background: radial-gradient(circle, rgba(47,217,210,1) 64%, rgba(237,237,237,1) 100%);
 
-.store-name {
-  font-family: "Times New Roman", Times, serif; /* Cambiar el tipo de letra del nombre de la tienda en la barra superior */
-  color: #ede8e8; /* Cambiar el color del nombre de la tienda */
-}
+    color: black;
+    font-weight: bold;
 
-/* Agregar espacio entre la barra superior y los productos */
-.main-content {
-  margin-top: 20px;
+}
+  
+.bi-cart-plus-fill {
+    margin-right: 5px;
 }
 
 
-  /*Carrito de compras*/
-#tit_carrito{
-  color: white;
-  font-size: 25px;
-  margin-top: 20px;
 
-  display: flex;
-  justify-content: center;
-}
+/*CARRITO.PHP*/
 
 .tarj_cuerpo{
-  width: 600px;
-  display: flex;
-
-  background-color: rgb(245, 245, 245);
-  margin: 20px;
-  border-radius: 20px;
-}
-
-.img_prod img{
-  height: 90px;
-  width: 90px;
-  padding: 10px;
-  border-radius: 25px;
-}
-
-.tarj_info{
-  margin-left: 60px;
-  width: 300px;
+    width: 600px;
+    display: flex;
+  
+    background-color: rgb(245, 245, 245);
+    margin: 20px;
+    border-radius: 20px;
 }
 
 .nom_prod {
-  padding-top: 10px;
-  font-size: 26px;
-  font-weight: bold;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding-top: 10px;
+    font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .tarj_precio{
-  display: 	flex;
-  font-size: 20px;
-
-  margin-top: 4px;
-  margin-left: 10px;
+    display: 	flex;
 }
 
 .cant_prod{
-  margin-left: 80px;
-  display: flex;
-
-  height: 30px;
-  width: 30px;
-}
-
-.cant_prod input{
-  width: 50px;
+    display: flex;
 }
 
 #cant_prod_e{
-  margin-left: 10px;
-  width: 35px;
-  
-}
+    margin-left: 10px;
+    width: 35px;
 
-
-.eliminar_prod{
-  margin-top: 20px;
-  margin-left: 80px;
 }
 
 .btn-danger{
-  border-radius: 50%;
+    border-radius: 50%;
 }
 
 #circle_x{
-  font-size: 20px;
+    font-size: 20px;
 }
-
 
 #cuadro_precio{
-  width: 300px;
-  height: 300px;
-  margin-bottom: 70px;
-  margin-left: 50px;
-
-  background: rgb(73,24,140);
-  background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
-  border-radius: 30px;
+  
+    background: rgb(73,24,140);
+    background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+    border-radius: 30px;
 }
-
+  
 #tit_precio{
-  color: white;
-  font-size: 25px;
-  display: flex;
-
-  justify-content: center;
-
-  padding-top: 60px;
+    color: white;
+    display: flex;
+    justify-content: center;
 }
 
 .total{
-  color: white;
-  font-size: 32px;
-  display: flex;
-
-  justify-content: center;
-
-  padding-top: 30px;
+    color: white;
+    display: flex;
+    justify-content: center;
 }
 
 #btn_opciones{
-  display: flex;
+    display: flex;
 }
 
 .btn_carrito{
-  background: rgb(73,24,140);
-  background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
-
-  color: white;
-  font-size: 20px;
-  padding:  10px 20px 10px 20px;
-  font-weight: bold;
-  border-radius: 15px;
-
-  margin-right: 8px;
-}
-
-
-/* Estilo para usuario.php
-   ========================================================================== */
-
-   .login-container {
-  
-    margin-left: 200px;
-    margin-right: 100px;
-    border-radius: 8px;
-    padding: 20px;
-    display: flex; 
-    align-items: center; 
-    justify-content: space-between; 
-  }
-  
-  .profile-picture {
-    width: 20rem;
-    height: 20rem;
-    border-radius: 20%;
-    margin-right: 20rem;
-    border: 5px solid #ccc;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    width: 60%; 
-  }
-  .formula {
-    display: flex;
-    flex-direction: column;
-    width: 60%; 
-  }
-  
-  .sesion-label {
-    margin-left: 16rem;
-    padding-top: 5px;
-    margin-top: 20px;
-    color:white;
-  }
-  
-  .session-input {
-    
-    padding: 10px;
-    margin-bottom: 16px;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    color:white;
     background: rgb(73,24,140);
     background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
-    margin-left: 15rem;
-    margin-right: 15rem;
-  }
-  
-  .btn-log {
-    background: rgb(73,24,140);
-    background: radial-gradient(circle, rgb(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
-    color: #fff;
-    margin-left: 20rem;
-    margin-right: 20rem;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    cursor: pointer;
-    margin-top: 20px;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  .name_pag{
-    margin-top: 3rem;
-    color:white;
-    text-align: center;
-  }
-  .recover{
-    
-    color:white;
-    margin-right: 2rem;
-  }
-  
-  .recover-content-pass{
-    margin-top: 3rem;
-    color:white;
-    display: flex; 
-    padding-left: 15rem;
-  
-  
-  }
-  
-  .recover-content-log{
-    margin-top: 1rem;
-    color:white;
-    display: flex; 
-    padding-left: 15rem;
-  
-  
-  }
-  .redi-link{
-    color:rgb(89, 38, 162);
-  }
-  
-  
-  /* Estilo para producto.php
-     ========================================================================== */
-  
-  .product-container{
-    
+    color: white;
+    font-weight: bold;
+    border-radius: 15px;
+}
+
+/*PRODUCTO.PHP*/
+.product-container{
     margin-left: 50px;
     margin-right: 100px;
     border-radius: 8px;
     padding: 20px;
-    display: flex; 
-    align-items: center; 
-    justify-content: space-between; 
-  }
-  
-  .product-picture {
-    width: 20rem;
-    height: 20rem;
-    border-radius: 20%;
-    margin-right: 3rem;
-    border: 5px solid #ccc;
-  }
-  .use_pag{
+}
+
+.tit_pag{
     margin-top: 3rem;
     color:white;
-    text-align: left;
-  }
-  
-  .com_pag{
+}
+
+.use_pag{
+    margin-top: 3rem;
+    color:white;
+}
+
+.com_pag{
     margin-left: 4rem;
     margin-top: 1rem;
     color:white;
     text-align: left;
     font-style: italic;
-  }
-
-  /* Estilo para registro.php
-    ========================================================================== */
-.container_registro{
-  margin-left: 500px;
 }
 
+/*PAGO.PHP*/
+.metodo_pago{
+    color: white;
+    margin-left: 10PX;
+    font-weight: bold;
+}
+
+
 .registro-label{
-  margin-left: 140px;
-  padding-top: 5px;
-  margin-top: 20px;
-  color:white;
-  font-size: 18px;
-  font-weight: bold;
+    color:white;
+    font-weight: bold;
 }
 
 .registro-input{
-  padding: 10px;
-  margin-left: 140px;
-  margin-bottom: 16px;
-  border: 1px solid #ccc;
-  border-radius: 20px;
-  color:white;
-  background: rgb(73,24,140);
-  background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    color:white;
+    background: rgb(73,24,140);
+    background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+}
+
+.registro-input:focus{
+    color: white;
 }
 
 #btn_registrar{
-  background: rgb(73,24,140);
-  background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+    background: rgb(73,24,140);
+    background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
 
-  color: white;
-  font-size: 20px;
-  padding:  10px 20px 10px 20px;
-  font-weight: bold;
-  border-radius: 25px;
-}
-
- /* Estilo para pago.php
-    ========================================================================== */
-.metodo_pago{
-  color: white;
-  margin-left: 10PX;
-  font-weight: bold;
-}
-
-/* Estilo para adminIndex.php
-    ========================================================================== */
-#titAdmin{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  color: white;
-  font-size: 20px;
-  margin-top: 25px;
-  margin-bottom: 25px;
-}
-
-.layout {
-  display: grid;
-  
-  grid-template-rows: repeat(2, 1fr);
-  grid-template-columns: repeat(2, 1fr);
-  gap: 50px 8px;
-}
-
-.cuerpo_carta{
-  display: flex;
-  justify-content: center;
-}
-
-.card{
-  height: 100px;
-  width: 300px;
-  background: rgb(73,24,140);
-  background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
-
-}
-
-.card a{
-  text-decoration: none;
-  color: white;
-  font-size: 20px;
-}
-
-.card-body{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-
-/* Estilo para navadmin.php
-    ========================================================================== */
-
-.admin{
-  background: rgb(73,24,140);
-  background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
-  width: 150px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  display: flex;
-  padding-top: 120px;
-  justify-content: center;
-}
-
-.opciones_admin {
-  display: flex;
-  flex-direction: column;
-  font-size: 18px;
-}
-
-.opciones_admin a{
-  color: white;
-  text-decoration: none;
-
-  padding-top: 25px;
-}
-
-.opciones_admin a .bi {
-  padding-right: 10px;
-}
-
-
-/* Estilo para admincategorias.php
-  ========================================================================== */
-
-.catimg_adm img{
-  height: 80px;
-  width: 80px;
-}
-
-/* Estilo para adminproductos.php
-  ========================================================================== */
-
-  #boton_agregar{
-    margin-bottom: 35px;
-  }
-
-/* Estilo para perfil.php
-  ========================================================================== */
-
-  .tituloperfil, .datosperfil{
     color: white;
-  }
+    font-size: 20px;
+    padding:  10px 20px 10px 20px;
+    font-weight: bold;
+    border-radius: 25px;
+}
 
-  .tituloperfil{
+
+/*PEDIDO.PHP*/
+
+#pedidos-container {
+    display: flex;
+    flex-direction: column;
+}
+
+#titulo-pedidos {
+    color: white;
+}
+
+
+.pedido-box {
+    background: rgb(73, 24, 140);
+    background: radial-gradient(circle, rgba(73, 24, 140, 1) 0%, rgba(21, 2, 62, 1) 57%);
+    color: white;
+    border-radius: 15px;
+    text-align: center;
+
+    display: flex;
+}
+
+
+/*INICIOSESION.PHP*/
+
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.session-input {
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    color:white;
+    background: rgb(73,24,140);
+    background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+}
+
+.btn-log {
+    background: rgb(73,24,140);
+    background: radial-gradient(circle, rgb(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+    color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.name_pag{
+    margin-top: 3rem;
+    color:white;
+    text-align: center;
+}
+.recover{
+    
+    color:white;
+    margin-right: 2rem;
+}
+
+.recover-content-pass, .recover-content-log{
+    margin-top: 1rem;
+    color:white;
+    display: flex;
+}
+
+.redi-link{
+    color:rgb(89, 38, 162);
+}
+
+
+/*PERFIL.PHP*/
+.tituloperfil, .datosperfil{
+    color: white;
+}
+
+.tituloperfil{
     margin-top: 80px;
     font-size: 22px;
     font-weight: bold;
-  } 
+} 
 
-  .datosperfil{
+.datosperfil{
     
     font-size: 18px;
-  }
+}
 
-  .profile-img {
+.profile-img {
     max-width: 500px;
     max-height: 170px;
     margin-bottom: 20px;
-  }
+}
 
-  #avatar_usuario{
+#avatar_usuario{
     display: flex;
-  }
+}
 
-  #usuario{
+#usuario{
     margin-top: 70px;
     margin-left: 30px;
     font-size: 30px;
-  }
+}
 
-  #tit{
+/*EditarPerfil.php*/
+
+#tit{
     color: white;
     font-size: 25px;
-  }
+    margin-top: 20px;
+}
 
-  .perfil-input{
+.perfil-input{
     height: 40px;
     padding: 10px;
     border: 1px solid #ccc;
@@ -634,45 +387,1145 @@ body {
     background: rgb(73,24,140);
     background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
     
-  }
+}
 
-  #input-usuario{
-    margin-top: 70px;
-    margin-left: 30px;
-  }
-
-  #btn_confirmar{
+#btn_confirmar{
     margin-top: 80px;
-  }
+}
 
-  /* Estilo para pedido.php
-  ========================================================================== */
-  /* Agrega estilos específicos aquí */
-  #pedidos-container {
+#modif_imagen_perfil{
+    overflow: hidden;
+    width: 110px;
+}
+
+/*AdminIndex.php*/
+#titAdmin{
     display: flex;
-    flex-direction: column;/* Ajusta la altura al 100% de la ventana */
-  }
-
-  #titulo-pedidos {
-      color: white;
-  }
-
-  .pedido_productos{
-    margin-left: 25px;
-    width: 500px;
-  }
-
-  .pedido-box {
-    background: rgb(73, 24, 140);
-    background: radial-gradient(circle, rgba(73, 24, 140, 1) 0%, rgba(21, 2, 62, 1) 57%);
+    align-items: center;
+    justify-content: center;
+  
     color: white;
     font-size: 20px;
-    padding: 10px;
-    margin-top: 20px;
-    margin-left: 80px;
-    width: 750px;
-    border-radius: 15px;
-    text-align: center;
-
-    display: flex;
+    margin-top: 25px;
+    margin-bottom: 25px;
   }
+  
+  .layout {
+    display: grid;
+    
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px 8px;
+  }
+  
+  .cuerpo_carta{
+    display: flex;
+    justify-content: center;
+  }
+  
+  .card{
+    height: 100px;
+    width: 300px;
+    background: rgb(73,24,140);
+    background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+  
+  }
+  
+  .card a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+  }
+  
+  .card-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .btn_admin{
+        background: rgb(73,24,140);
+        background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+        color: white;
+        font-weight: bold;
+        border-radius: 15px;
+    }
+
+
+/*RESPONSIVE DESKOPT*/
+@media screen and (min-width:1024px) {  
+    /*HEADER*/
+    .logo {
+        max-width: 50px;
+        margin-right: 10px;
+    }  
+
+    .other-logo {
+        max-width: 55px;
+        margin-left: 22px;
+    }
+
+    .store-name {
+        font-size: 27px;
+    }
+
+    #drop li a{
+        font-size: 16px;
+    }
+
+    /*Navegador Categorias*/
+    .sidebar {
+        width: 80px;
+        padding-top: 120px;
+    }
+
+    .sidebar-logo {
+        max-width: 50px; 
+        margin-bottom: 33px;
+    }
+
+    /*Productos*/
+
+    .product {
+        margin-top: 15px;
+        margin-bottom: 20px;
+        width: 250px;
+        height: 270px;
+        border-radius: 10px; 
+    }
+
+    .product-image {
+        width: 170px;
+        height: 120px;
+    }
+
+    .product-name {
+        margin-top: 10px;
+        font-size: 20px;
+    }
+
+    .product-price {
+        margin-top: 5px;
+        margin-bottom: 10px;
+        font-size: 24px;
+    }
+
+    .btn_compra{
+        font-size: 20px;
+        padding:  10px 20px 10px 20px;
+        border-radius: 25px;
+    
+    }
+
+    .bi-cart-plus-fill {
+        margin-right: 5px;
+    }
+
+    /*Boton Filtrar*/
+    .btn-mas{
+        position: fixed;
+        display: flex;
+        justify-content: end;
+        
+        bottom: 20px;
+        right: 80px;
+        
+        width: 60px;
+        height: 60px;
+        
+        background: rgb(73,24,140);
+        background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+        border-radius: 100%;
+    }
+    
+    #boton_buscar img{
+        width: 40px;
+        height: 40px;
+        right: 80px;
+    }
+
+    /*CARRITO.PHP*/
+    .container_carrito {
+        display: flex;
+    }
+
+    .tarj_cuerpo{
+        width: 600px;
+        display: flex;
+    }
+
+    .img_prod img{
+        height: 90px;
+        width: 90px;
+        padding: 10px;
+        border-radius: 25px;
+    }
+
+    .tarj_info{
+        margin-left: 60px;
+        width: 300px;
+    }
+    
+    .nom_prod {
+        padding-top: 10px;
+        font-size: 26px;
+        font-weight: bold;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+    .tarj_precio{
+        font-size: 20px;
+    
+        margin-top: 4px;
+        margin-left: 10px;
+    }
+    
+    .cant_prod{
+        margin-left: 80px;
+    
+        height: 30px;
+        width: 30px;
+    }
+    
+    .cant_prod input{
+        width: 50px;
+    }
+
+    .eliminar_prod{
+        margin-top: 20px;
+        margin-left: 80px;
+    }
+
+    #cuadro_precio{
+        width: 300px;
+        height: 300px;
+        margin-bottom: 70px;
+        margin-left: 50px;
+    }
+
+    #tit_precio{
+        font-size: 25px;
+        padding-top: 60px;
+    }
+
+    .total{
+        font-size: 32px;
+        padding-top: 30px;
+    }
+
+    .btn_carrito{
+        font-size: 20px;
+        padding:  10px 20px 10px 20px;
+        margin-right: 8px;
+    }
+
+    /*PRODUCTO.PHP*/
+    .product-container{
+        display: flex; 
+        align-items: center; 
+        justify-content: space-between; 
+    }
+
+    .product-picture {
+        width: 20rem;
+        height: 20rem;
+        border-radius: 20%;
+        margin-right: 3rem;
+        border: 5px solid #ccc;
+    }
+
+    .tit_pag{
+        text-align: left;
+    }
+
+    .use_pag{
+        text-align: left;
+    }
+
+    /*PAGO.PHP*/
+    .container_registro{
+        margin-left: 300px;
+    }
+
+    .registro-label{
+        margin-left: 140px;
+        padding-top: 5px;
+        margin-top: 20px;
+        font-size: 18px;
+    }
+    
+    .registro-input{
+        padding: 10px;
+        margin-left: 140px;
+        margin-bottom: 16px;
+        border-radius: 20px;
+    }
+
+    #domicilioOptions input, #domicilioOptions textarea, #localOptions select{
+        width: 350px;
+    }
+
+    #tarjetaOptions input, #tarjetaOptions textarea{
+        width: 350px;
+    }
+
+    /*PEDIDOS.PHP*/
+    .pedido_productos{
+        margin-left: 25px;
+        width: 500px;
+    }
+
+    .pedido-box {
+        font-size: 20px;
+        padding: 10px;
+        margin-top: 20px;
+        margin-left: 80px;
+        width: 750px;
+
+        margin-left: 400px;
+    }
+
+    /*INICIOSESION.PHP*/
+
+    .login-container {
+    
+        margin-left: 200px;
+        margin-right: 100px;
+        border-radius: 8px;
+        padding: 20px;
+        display: flex; 
+        align-items: center; 
+        justify-content: space-between; 
+    }
+
+    .sesion-label {
+        margin-left: 15rem;
+        padding-top: 5px;
+        margin-top: 20px;
+        color:white;
+    }
+    
+    .session-input {
+        
+        padding: 10px;
+        margin-bottom: 16px;
+        margin-left: 15rem;
+        margin-right: 15rem;
+        width: 350px;
+    }
+
+    .btn-log {
+        margin-left: 20rem;
+        margin-right: 20rem;
+        padding: 12px;
+        margin-top: 20px;
+    }
+
+    .recover-content-pass, .recover-content-log{
+        padding-left: 15rem;
+    }
+
+    .profile-picture {
+        width: 20rem;
+        height: 20rem;
+        border-radius: 20%;
+        margin-right: 20rem;
+        border: 5px solid #ccc;
+    }
+
+    /*editarperfil.php*/
+    #grupo_imagen{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #input-usuario{
+        margin-top: 70px;
+        margin-left: 40px;
+    }
+
+      /* NavAdmin*/
+    .admin{
+        background: rgb(73,24,140);
+        background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+        width: 150px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        display: flex;
+        padding-top: 120px;
+        justify-content: center;
+    }
+
+    .opciones_admin {
+        display: flex;
+        flex-direction: column;
+        font-size: 18px;
+    }
+
+    .opciones_admin a{
+        color: white;
+        text-decoration: none;
+
+        padding-top: 25px;
+    }
+
+    .opciones_admin a .bi {
+        padding-right: 10px;
+    }
+
+
+    .btn_admin{
+        font-size: 20px;
+        padding:  10px 20px 10px 20px;
+        margin-right: 8px;
+        margin-bottom: 20px;
+    }
+
+    /*Admin Categorias*/
+    .catimg_adm img{
+        height: 80px;
+        width: 80px;
+    }
+}
+
+/*RESPONSIVE TABLET*/
+@media screen and (min-width:767px) and (max-width: 1023px){
+    /*HEADER*/
+    .logo-container {
+        margin-left: 70px;
+    }
+
+    .logo {
+        max-width: 30px;
+        margin-right: 10px;
+    } 
+
+    .other-logo {
+        max-width: 30px;
+        margin-left: 22px;
+    }
+
+    .store-name {
+        font-size: 27px; /* Ajusta el tamaño de la fuente del nombre de la tienda según tus necesidades */
+    }
+
+    #drop li a{
+        font-size: 10px;
+    }
+
+    /*Navegador Categorias*/
+    .sidebar {
+        width: 80px;
+        padding-top: 120px;
+    }
+
+    .sidebar-logo {
+        max-width: 50px; 
+        margin-bottom: 33px;
+    }
+
+
+
+    /*Producto*/
+    .product {
+        margin-top: 15px;
+        margin-bottom: 20px;
+        margin-left: 44px;
+        width: 9rem;
+        height: 14rem;
+        position: relative;
+        border-radius: 1rem;
+    }
+    
+    .product-image {
+        width: 110px;
+        height: 70px;
+    }
+
+    .product-name {
+        margin-top: 10px;
+        font-size: 14px;
+    }
+    
+    .product-price {
+        margin-top: 5px;
+        margin-bottom: 10px;
+        font-size: 20px;
+    }
+    
+    .btn_compra{
+        font-size: 10px;
+        padding:  5px 15px 5px 15px;
+        border-radius: 25px;
+    
+    }
+    
+    .bi-cart-plus-fill {
+        margin-right: 5px;
+    }
+
+    /*Boton Filtrar*/
+    .btn-mas{
+        position: fixed;
+        display: flex;
+        justify-content: end;
+        
+        top: 20px;
+        left: 10px;
+        
+        width: 60px;
+        height: 60px;
+        
+        background: rgb(73,24,140);
+        background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+        border-radius: 100%;
+    }
+    
+    #boton_buscar img{
+        width: 30px;
+        height: 30px;
+        right: 80px;
+    }
+
+    /*CARRITO.PHP*/
+
+    #datos_prod{
+        margin-left: 80px;
+    }
+
+    .tarj_cuerpo{
+        width: 500px;
+    }
+
+    .img_prod img{
+        height: 90px;
+        width: 90px;
+        padding: 10px;
+        border-radius: 25px;
+    }
+
+    .tarj_info{
+        margin-left: 50px;
+        width: 250px;
+    }
+    
+    .nom_prod {
+        padding-top: 4px;
+        font-size: 26px;
+    }
+
+    .tarj_precio{
+        font-size: 20px;
+    
+        margin-top: 4px;
+        margin-left: 10px;
+    }
+    
+    .cant_prod{
+        margin-left: 80px;
+    
+        height: 30px;
+        width: 30px;
+    }
+    
+    .cant_prod input{
+        width: 50px;
+    }
+
+    .eliminar_prod{
+        margin-top: 20px;
+        margin-left: 15px;
+    }
+
+    #cuadro_precio{
+        width: 250px;
+        height: 200px;
+        margin-top: 40px;
+        margin-bottom: 50px;
+        margin-left: 200px;
+    }
+
+    #tit_precio{
+        font-size: 25px;
+        padding-top: 40px;
+    }
+
+    .total{
+        font-size: 28px;
+        padding-top: 30px;
+    }
+
+    #btn_opciones{
+        margin-left: 120px;
+    }
+
+    .btn_carrito{
+        font-size: 20px;
+        padding:  10px 20px 10px 20px;
+        margin-right: 8px;
+    }
+
+    /*PRODUCTO.PHP*/
+    .product-picture {
+        width: 16rem;
+        height: 16rem;
+        border-radius: 20%;
+        margin-left: 11rem;
+        border: 5px solid #ccc;
+    }
+
+    .tit_pag{
+        margin-left: 185px;
+    }
+
+    .use_pag{
+        text-align: left;
+    }
+
+    .com_pag{
+        width: 600px;
+    }
+
+    .btn_pag{
+        margin-left: 250px;
+    }
+
+    /*PAGO.PHP*/
+    .registro-label{
+        margin-left: 70px;
+        padding-top: 5px;
+        margin-top: 20px;
+        font-size: 18px;
+    }
+
+    .registro-input{
+        padding: 10px;
+        margin-left: 70px;
+        margin-bottom: 16px;
+        border-radius: 20px;
+    }
+
+    #domicilioOptions input, #domicilioOptions textarea, #localOptions select{
+        width: 250px;
+    }
+
+    #tarjetaOptions input, #tarjetaOptions textarea{
+        width: 250px;
+    }
+
+    /*PEDIDOS.PHP*/
+
+    .pedido_productos{
+        margin-left: 25px;
+        width: 350px;
+    }
+
+    .pedido-box {
+        font-size: 20px;
+        padding: 10px;
+        margin-top: 20px;
+        width: 600px;
+        margin-left: 40px;
+    }
+
+    /*INICIOSESION.PHP*/
+
+    .login-container {
+        border-radius: 8px;
+        padding: 20px;
+        display: flex; 
+        align-items: center; 
+        justify-content: space-between; 
+    }
+
+    .sesion-label {
+        margin-left: 4rem;
+        padding-top: 5px;
+        margin-top: 20px;
+        color:white;
+    }
+    
+    .session-input {
+        padding: 10px;
+        margin-bottom: 16px;
+        margin-left: 4rem;
+        width: 280px;
+    }
+
+    .btn-log {
+        margin-left: 7rem;
+        padding: 12px;
+        margin-top: 20px;
+        width: 150px;
+    }
+
+    .recover-content-pass, .recover-content-log{
+        padding-left: 4rem;
+    }
+
+    .profile-picture {
+        width: 15rem;
+        height: 15rem;
+        border-radius: 20%;
+        margin-right: 35px;
+        border: 5px solid #ccc;
+    }
+
+    #input-usuario{
+        margin-top: 70px;
+        margin-left: 70px;
+    }
+
+    #grupo_imagen{
+        margin-left: 90px;
+    }
+
+    /*NavAdmin*/
+
+    .admin{
+
+        top: 0;
+        left: 0;
+        display: flex;
+    }
+
+    .opciones_admin {
+        background: rgb(73,24,140);
+        background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+        height: 50px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        font-size: 18px;
+        padding-left: 120px;
+    }
+
+    .opciones_admin a{
+        color: white;
+        text-decoration: none;
+        padding-left: 25px;
+    }
+
+    .opciones_admin a .bi {
+        padding-right: 10px;
+    }
+
+    .btn_admin{
+        font-size: 20px;
+        padding:  10px 20px 10px 20px;
+        margin-right: 8px;
+    }
+
+    .admin_detalle{
+        display: none;
+    }
+
+    .btn_admin{
+        font-size: 15px;
+        padding:  8px 15px 8px 15px;
+        margin-bottom: 20px;
+        width: 180px;
+    }
+
+    /*Admin Categorias*/
+    .catimg_adm img{
+        height: 70px;
+        width: 70px;
+    }
+}
+
+/*RESPONSIVE MOVIL*/
+@media screen and (max-width:767px){
+    /*HEADER*/
+    .logo-container {
+        margin-left: 60px;
+    }
+
+    .logo {
+        max-width: 30px;
+        margin-right: 10px;
+    } 
+
+    .other-logo {
+        max-width: 30px; 
+        margin-left: 22px;
+    }
+
+    .store-name {
+        font-size: 15px; /* Ajusta el tamaño de la fuente del nombre de la tienda según tus necesidades */
+    }
+
+    #drop li a{
+        font-size: 10px;
+    }
+
+
+    /*Navegador Categorias*/
+    .sidebar {
+        width: 50px;
+        padding-top: 120px;
+    }
+
+    .sidebar-logo {
+        max-width: 35px; 
+        margin-bottom: 33px;
+    }
+
+
+    /*Producto*/
+    .product {
+        text-align: center;
+        margin-bottom: 1rem;
+        margin-left: 150px;
+
+        width: 9rem;
+        height: 12rem;
+        position: relative;
+        border-radius: 1rem;
+        overflow: hidden;
+    } 
+
+    .product-image {
+        width: 90px;
+        height: 70px;
+    }
+      
+    .product-name {
+        margin-top: 10px;
+        font-size: 14px;
+    }
+        
+    .product-price {
+        margin-top: 5px;
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+
+    .btn_compra{
+        font-size: 6px;
+        padding:  8px 20px 8px 20px;
+        border-radius: 25px;
+    
+    }
+
+    .bi-cart-plus-fill {
+        margin-right: 5px;
+        font-size: 10px;
+    }
+
+    /*Boton Filtrar*/
+    .btn-mas{
+        position: fixed;
+        display: flex;
+        justify-content: end;
+        
+        top: 20px;
+        left: 10px;
+        
+        width: 60px;
+        height: 60px;
+        
+        background: rgb(73,24,140);
+        background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+        border-radius: 100%;
+    }
+    
+    #boton_buscar img{
+        width: 30px;
+        height: 30px;
+        right: 80px;
+    }
+
+    /*CARRITO.PHP*/
+
+    .tarj_cuerpo{
+        width: 320px;
+    }
+
+    .img_prod img{
+        height: 90px;
+        width: 90px;
+        padding: 10px;
+        border-radius: 25px;
+    }
+
+    .tarj_info{
+        margin-left: 5px;
+        width: 160px;
+    }
+    
+    .nom_prod {
+        font-size: 18px;
+    }
+
+    .tarj_precio{
+        font-size: 20px;
+    
+        margin-top: 4px;
+        margin-left: 10px;
+    }
+    
+    .cant_prod{
+        margin-left: 30px;
+    
+        height: 30px;
+        width: 30px;
+    }
+    
+    .cant_prod input{
+        width: 40px;
+    }
+
+    .eliminar_prod{
+        margin-top: 20px;
+        margin-left: 10px;
+    }
+
+    #cuadro_precio{
+        width: 200px;
+        height: 180px;
+        margin-top: 40px;
+        margin-bottom: 30px;
+        margin-left: 70px;
+    }
+
+    #tit_precio{
+        font-size: 25px;
+        padding-top: 30px;
+    }
+
+    .total{
+        font-size: 24px;
+        padding-top: 30px;
+    }
+
+    #btn_opciones{
+        margin-left: 20px;
+    }
+
+    .btn_carrito{
+        font-size: 14px;
+        padding:  10px 20px 10px 20px;
+        margin-right: 8px;
+    }
+
+    /*PRODUCTO.PHP*/
+    .product-picture {
+        width: 12rem;
+        height: 12rem;
+        border-radius: 20%;
+        margin-left: 4rem;
+        border: 5px solid #ccc;
+    }
+
+    .tit_pag{
+        margin-left: 65px;
+        font-size: 25px;
+    }
+
+    .use_pag{
+        margin-left: 10px;
+        font-size: 25px;
+    }
+
+    .com_pag{
+        width: 200px;
+    }
+    
+    .btn_pag{
+        margin-left: 110px;
+    }
+
+    /*PAGO.PHP*/
+    .metodo{
+        margin-left: 50px;
+    }
+
+    .registro-label{
+        margin-left: 70px;
+        padding-top: 5px;
+        margin-top: 20px;
+        font-size: 18px;
+    }
+
+    .registro-input{
+        padding: 10px;
+        margin-left: 70px;
+        margin-bottom: 16px;
+        border-radius: 20px;
+        
+    }
+
+
+
+    #domicilioOptions input, #domicilioOptions textarea, #localOptions select{
+        width: 250px;
+    }
+
+    #tarjetaOptions input, #tarjetaOptions textarea{
+        width: 250px;
+    }
+
+
+    /*Pago Hecho*/
+    #exito-texto{
+        font-size: 14px;
+    }
+
+    /*PEDIDOS.PHP*/
+    .pedido_productos{
+        margin-left: 5px;
+        width: 250px;
+    }
+
+    .pedido-box {
+        font-size: 16px;
+        padding: 10px;
+        margin-top: 20px;
+        width: 370px;
+        margin-left: 10px;
+    }
+
+    /*INICIOSESION.PHP*/
+
+    .login-container {
+        border-radius: 8px;
+        padding: 20px;
+    }
+
+    .sesion-label {
+        margin-left: 1rem;
+        padding-top: 5px;
+        margin-top: 20px;
+        color:white;
+    }
+    
+    .session-input {
+        padding: 10px;
+        margin-bottom: 16px;
+        margin-left: 1rem;
+        width: 280px;
+    }
+
+    .btn-log {
+        margin-left: 5rem;
+        padding: 12px;
+        margin-top: 20px;
+        width: 150px;
+    }
+
+    .recover-content-pass, .recover-content-log{
+        padding-left: 1rem;
+    }
+
+    .profile-picture {
+        width: 12rem;
+        height: 12rem;
+        border-radius: 20%;
+        margin-top: 25px;
+        margin-left: 55px;
+        border: 5px solid #ccc;
+    }
+
+    /*Perfil.php*/
+    #avatar_usuario{
+        margin-top: 30px;
+    }
+
+    .tituloperfil{
+        margin-top: 50px;
+    }
+
+    #input-usuario{
+        margin-top: 70px;
+    }
+
+
+    /*AdminIndex*/
+    .layout {
+        display: grid;
+        
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns: repeat(1, 1fr);
+        gap: 50px 8px;
+    }
+
+    /*NavAdmin*/
+
+    .admin{
+
+        top: 0;
+        left: 0;
+        display: flex;
+    }
+
+    .opciones_admin {
+        background: rgb(73,24,140);
+        background: radial-gradient(circle, rgba(73,24,140,1) 0%, rgba(21,2,62,1) 57%);
+        height: 50px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        font-size: 14px;
+        padding-left: 14px;
+    }
+
+    .opciones_admin a{
+        color: white;
+        text-decoration: none;
+        padding-left: 10px;
+    }
+
+    .opciones_admin a .bi {
+        padding-right: 5px;
+    }
+
+    /*AdminPedidos*/
+    .table{
+        border-collapse: collapse;
+        font-size: 10px;
+    }
+
+    th,
+    td {
+      padding: 8px;
+      text-align: left;
+      border: 1px solid #ddd;
+    }
+
+    tbody tr:hover {
+        background-color: #f5f5f5;
+    }
+
+    th {
+        color: white;
+    }
+
+    .admin_producto{
+        font-size: 8px;
+    }
+
+    .btn_admin{
+        font-size: 8px;
+        padding:  4px 10px 4px 10px;
+        margin-bottom: 20px;
+    }
+
+    .admin_detalle{
+        display: none;
+    }
+
+    #mostar_imagen, #mostar_modif_imagen{
+        width: 30px;
+        height: 30px;
+    }
+
+    /*Admin Categorias*/
+    .catimg_adm img{
+        height: 50px;
+        width: 50px;
+    }
+
+}

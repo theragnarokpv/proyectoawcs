@@ -33,9 +33,9 @@
     </div>
 
     <div class="row">
-        <div class="col-md-3"></div>
+        <div class="col-md-1"></div>
 
-        <div id="pedidos-container" class="col-md-4">
+        <div id="pedidos-container" class="col-md-6">
         <?php
         // Iterar a través de los resultados de la consulta de pedidos
         while ($pedido = mysqli_fetch_assoc($resultadoPedidos)) {
